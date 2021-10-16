@@ -8,11 +8,11 @@
 
 
 class Convolution : public Filter {
-private:
+protected:
 Kernal colonel;
 
 public:
 virtual void Apply(std::vector<Image*> input, std::vector<Image*> output) = 0;
-}
+};
 
 #endif
