@@ -12,6 +12,9 @@ Kernal::Kernal(std::vector<std::vector<float>> k){
         kernal.push_back(temp);
     }
 }
+Kernal::Kernal(){
+    size=0;
+}
 Kernal::~Kernal(){
     return;
 }
