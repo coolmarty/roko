@@ -7,6 +7,7 @@
 #include "filter.h"
 #include "simple_filter.h"
 #include "greyscale_filter.h"
+#include "invert.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ int main(int argc, const char* argv[]) {
     // Create available filters (unique_ptr handles dynamic memory)
     std::map<std::string, unique_ptr<Filter>> filters;
     filters["greyscale"] = unique_ptr<Filter>(new GreyScaleFilter());
+    filters["invert"] = unique_ptr<Filter>(new InvertFilter());
 
     // Create input and output vectors
     Image input(inputFile);
