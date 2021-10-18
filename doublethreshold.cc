@@ -1,4 +1,4 @@
-#include "doublethreshold.cc"
+#include "doublethreshold.h"
 #include <math.h>
 
 DoubleThresholdFilter::DoubleThresholdFilter(){
@@ -14,7 +14,7 @@ DoubleThresholdFilter::DoubleThresholdFilter(float t1, float t2){
 
 unsigned char* DoubleThresholdFilter::applyAtPixel(unsigned char* pixel){
   unsigned char* newPixel= new unsigned char[4];
-  float luminance = floor(GetLuminance(pixel[0],pixel[1],pixel[2]));
+  float luminance = floor(DoubleThresholdFilter::GetLuminance(pixel[0],pixel[1],pixel[2]));
   if(luminance > threshold1){
     newPixel[0]=255;
     newPixel[1]=255;

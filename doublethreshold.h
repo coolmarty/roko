@@ -3,6 +3,7 @@
 
 #include "simple_filter.h"
 
+
 class DoubleThresholdFilter : public SimpleFilter {
 public:
     DoubleThresholdFilter();

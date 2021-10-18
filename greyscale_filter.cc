@@ -10,7 +10,7 @@ GreyScaleFilter::GreyScaleFilter(){
 
 unsigned char* GreyScaleFilter::applyAtPixel(unsigned char* pixel){
         unsigned char* newPixel= new unsigned char[4];
-        float luminance = floor(DoubleThreshold::GetLuminance(pixel[0],pixel[1],pixel[2]));
+        float luminance = floor(GreyScaleFilter::GetLuminance(pixel[0],pixel[1],pixel[2]));
         newPixel[0]=luminance;
         newPixel[1]=luminance;
         newPixel[2]=luminance;
