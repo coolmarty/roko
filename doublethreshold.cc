@@ -21,7 +21,7 @@ unsigned char* DoubleThresholdFilter::applyAtPixel(unsigned char* pixel){
     newPixel[2]=255;
     newPixel[3]=255;
   }
-  else if(luminance >threshold2){
+  else if(luminance > threshold2 && luminance < threshold1){
     newPixel[0]=25;
     newPixel[1]=25;
     newPixel[2]=25;
