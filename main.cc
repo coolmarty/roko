@@ -22,7 +22,7 @@ int main(int argc, const char* argv[]) {
     // Create available filters (unique_ptr handles dynamic memory)
     std::map<std::string, unique_ptr<Filter>> filters;
     filters["greyscale"] = unique_ptr<Filter>(new GreyScaleFilter());
-    filters["doublethreshold"] = unique_ptr<Filter>(new DoubleThresholdFilter(200,100));
+    filters["doublethreshold"] = unique_ptr<Filter>(new DoubleThresholdFilter(200,10));
 
     // Create input and output vectors
     Image input(inputFile);
