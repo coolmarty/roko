@@ -8,7 +8,7 @@
 #include "simple_filter.h"
 #include "greyscale_filter.h"
 #include "invert.h"
-
+#include "doublethresholdfilter.h"
 using namespace std;
 
 int main(int argc, const char* argv[]) {
@@ -23,6 +23,7 @@ int main(int argc, const char* argv[]) {
     std::map<std::string, unique_ptr<Filter>> filters;
     filters["greyscale"] = unique_ptr<Filter>(new GreyScaleFilter());
     filters["invert"] = unique_ptr<Filter>(new InvertFilter());
+    filters["threshold"] = unique_ptr<Filter>(new DoubleThresholdFilter(200,20));
 
     // Create input and output vectors
     Image input(inputFile);
