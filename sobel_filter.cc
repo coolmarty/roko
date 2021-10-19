@@ -77,21 +77,20 @@ void SobelFilter::Apply(std::vector<Image*> input, std::vector<Image*> output){
 
             // std::cout<< floor(atan2(red_y,red_x)*180/3.1415926535)<<" "<< floor(atan2(green_y,green_x)*180/3.1415926535)<<" "<< floor(atan2(blue_y,blue_x)*180/3.1415926535)<<std::endl;
 
-            // if(red_x==0||green_x==0||blue_x==0){
-            //     newPixel_d[0]=0;
-            //     newPixel_d[1]=0;
-            //     newPixel_d[2]=0;
-            // }
-            // else{
-            float red = abs(atan2(red_y,red_x));
-            red*=40;
-            std::cout<<red<<std::endl;
-            newPixel_d[0] = red;
-            newPixel_d[1] = red;
-            newPixel_d[2] = red;
-            // }
-
-
+            if(atan2(red_y,red_x)==0){
+                newPixel_d[0]=0;
+                newPixel_d[1]=0;
+                newPixel_d[2]=0;
+            }
+            else{
+                float red = atan2(red_y,red_x)+M_PI;
+                // red = abs(red);
+                red*=20;
+                // std::cout<<red<<std::endl;
+                newPixel_d[0] = red;
+                newPixel_d[1] = red;
+                newPixel_d[2] = red;
+            }
 
             newPixel_d[3] = 255;
 
