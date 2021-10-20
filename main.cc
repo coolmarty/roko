@@ -34,7 +34,6 @@ int main(int argc, const char* argv[]) {
 
     // Apply filter based on filter type
     filters[filterType]->Apply(inputs, outputs);
-    filters[filterType]->Apply(outputs,inputs);
 
 
     // Save output image
