@@ -7,7 +7,8 @@
 #include "filter.h"
 #include "simple_filter.h"
 #include "greyscale_filter.h"
-#include "doublethreshold.h"
+#include "gaussian_blur.h"
+
 
 using namespace std;
 
@@ -22,7 +23,8 @@ int main(int argc, const char* argv[]) {
     // Create available filters (unique_ptr handles dynamic memory)
     std::map<std::string, unique_ptr<Filter>> filters;
     filters["greyscale"] = unique_ptr<Filter>(new GreyScaleFilter());
-    filters["doublethreshold"] = unique_ptr<Filter>(new DoubleThresholdFilter(200,10));
+    filters["gaussian"] = unique_ptr<Filter>(new Gaussian_Blur());
+
 
     // Create input and output vectors
     Image input(inputFile);
@@ -33,10 +35,8 @@ int main(int argc, const char* argv[]) {
     outputs.push_back(&output);
 
     // Apply filter based on filter type
-    for(int i =0;i<200;i++){
-        filters[filterType]->Apply(inputs, outputs);
-        filters[filterType]->Apply(outputs,inputs);
-    }
+    filters[filterType]->Apply(inputs, outputs);
+
 
     // Save output image
     output.SaveAs(outputFile);
