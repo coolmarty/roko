@@ -8,6 +8,7 @@
 #include "simple_filter.h"
 #include "greyscale_filter.h"
 #include "gaussian_blur.h"
+#include "invert.h"
 
 using namespace std;
 
@@ -23,6 +24,7 @@ int main(int argc, const char* argv[]) {
     std::map<std::string, unique_ptr<Filter>> filters;
     filters["greyscale"] = unique_ptr<Filter>(new GreyScaleFilter());
     filters["gaussian"] = unique_ptr<Filter>(new Gaussian_Blur());
+    filters["invert"] = unique_ptr<Filter>(new InvertFilter());
 
     // Create input and output vectors
     Image input(inputFile);
