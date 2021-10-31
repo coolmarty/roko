@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb4696a4e708f875b8c79119e1c8884180b7cf18
 /**
  * @file sobel_filter.h
  *
@@ -33,4 +37,8 @@ public:
     void Apply(std::vector<Image*> input, std::vector<Image*> output);
 };
 
+<<<<<<< HEAD
 #endif
+=======
+#endif
+>>>>>>> fb4696a4e708f875b8c79119e1c8884180b7cf18

@@ -1,0 +1,34 @@
+\hypertarget{index_intro_sec}{}\doxysection{Introduction}\label{index_intro_sec}
+Canny Edge detection program by
+
+Emily Iverson
+
+Matthew Altamann
+
+Julia Schechter
+
+Gabriel Subra\hypertarget{index_how_to_make}{}\doxysection{How to compile/run}\label{index_how_to_make}
+Simply type make from the provided Makefile and you will generate\+:
+
+image\+\_\+processor
+
+To run the program simply type
+
+./image\+\_\+processor \{input file path\} \{filter to apply\} \{output file path\}\hypertarget{index_class_overview}{}\doxysection{Class Overview}\label{index_class_overview}
+\hypertarget{index_autotoc_md0}{}\doxysubsection{Image}\label{index_autotoc_md0}
+The image class is the main way we work with image data, it holds a one dimensional unsigned char array of length width$\ast$height$\ast$components of the image
+
+We have getters and setters for individual pixels (4 length unsigned char arrays)
+
+There is also a copy constructor/operator= method to allow for copying images
+
+As well as methods to save to and load from files\hypertarget{index_autotoc_md1}{}\doxysubsection{Filter}\label{index_autotoc_md1}
+The \mbox{\hyperlink{classFilter}{Filter}} class is our abstract class for all filters, it has one method, Apply, that applies the filter to an image\hypertarget{index_autotoc_md2}{}\doxysubsection{Simple\+Filter}\label{index_autotoc_md2}
+The simple filter class has 2 methods, Apply which iterates through an image and calls Apply\+At\+Pixel For every pixel in the image\hypertarget{index_autotoc_md3}{}\doxysubsection{Convolution}\label{index_autotoc_md3}
+The convolution class has the virtual method Apply to apply a convolutional filter, as well as a protected variable for the \mbox{\hyperlink{classKernal}{Kernal}}\hypertarget{index_autotoc_md4}{}\doxysubsection{Kernal}\label{index_autotoc_md4}
+The kernal class is for getting values from a kernel
+
+(unintentional misspelling, found too late)\hypertarget{index_extending}{}\doxysection{How to extend the system}\label{index_extending}
+To add a new filter simply make it inherit from convolution or simple filter
+
+if its a simple filter the entire apply function must be made, if its only a simple filter only the apply at pixel method must be implemented 

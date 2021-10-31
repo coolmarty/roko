@@ -1,0 +1,115 @@
+\hypertarget{classKernal}{}\doxysection{Kernal Class Reference}
+\label{classKernal}\index{Kernal@{Kernal}}
+
+
+a class for creating kernals to be used with convolutional filters;  
+
+
+
+
+{\ttfamily \#include $<$kernal.\+h$>$}
+
+
+
+Collaboration diagram for Kernal\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classKernal__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classKernal_a6c583be3479e032ae54f74168098da5d}{Kernal}} (std\+::vector$<$ std\+::vector$<$ float $>$$>$ k)
+\begin{DoxyCompactList}\small\item\em constructor for a \mbox{\hyperlink{classKernal}{Kernal}} that takes in a 2D vector; \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classKernal_a6b9b76d7863d4984485ed34cb492f12c}{Kernal}} ()
+\begin{DoxyCompactList}\small\item\em default constructor for a \mbox{\hyperlink{classKernal}{Kernal}}; \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classKernal_aab6e0d2f014ad2f828bbbd8236cdeedc}{$\sim$\+Kernal}} ()
+\begin{DoxyCompactList}\small\item\em destructor for a kernal; \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classKernal_a0767772b0bf3f7eacb910fcd9ae1bfcc}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em getter for the size of a kernal; \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classKernal_a4dfa813ba722fa66f40fb89443b23561}{get}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em a getter for the value located at \mbox{\hyperlink{classKernal}{Kernal}}\mbox{[}y\mbox{]}\mbox{[}x\mbox{]}; \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+a class for creating kernals to be used with convolutional filters; 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classKernal_a6c583be3479e032ae54f74168098da5d}\label{classKernal_a6c583be3479e032ae54f74168098da5d}} 
+\index{Kernal@{Kernal}!Kernal@{Kernal}}
+\index{Kernal@{Kernal}!Kernal@{Kernal}}
+\doxysubsubsection{\texorpdfstring{Kernal()}{Kernal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Kernal\+::\+Kernal (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ float $>$$>$}]{k }\end{DoxyParamCaption})}
+
+
+
+constructor for a \mbox{\hyperlink{classKernal}{Kernal}} that takes in a 2D vector; 
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classKernal}{Kernal}} object with that 2D vector; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKernal_a6b9b76d7863d4984485ed34cb492f12c}\label{classKernal_a6b9b76d7863d4984485ed34cb492f12c}} 
+\index{Kernal@{Kernal}!Kernal@{Kernal}}
+\index{Kernal@{Kernal}!Kernal@{Kernal}}
+\doxysubsubsection{\texorpdfstring{Kernal()}{Kernal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Kernal\+::\+Kernal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default constructor for a \mbox{\hyperlink{classKernal}{Kernal}}; 
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classKernal}{Kernal}} with a size of 0; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKernal_aab6e0d2f014ad2f828bbbd8236cdeedc}\label{classKernal_aab6e0d2f014ad2f828bbbd8236cdeedc}} 
+\index{Kernal@{Kernal}!````~Kernal@{$\sim$Kernal}}
+\index{````~Kernal@{$\sim$Kernal}!Kernal@{Kernal}}
+\doxysubsubsection{\texorpdfstring{$\sim$Kernal()}{~Kernal()}}
+{\footnotesize\ttfamily Kernal\+::$\sim$\+Kernal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructor for a kernal; 
+
+\begin{DoxyReturn}{Returns}
+none; 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classKernal_a4dfa813ba722fa66f40fb89443b23561}\label{classKernal_a4dfa813ba722fa66f40fb89443b23561}} 
+\index{Kernal@{Kernal}!get@{get}}
+\index{get@{get}!Kernal@{Kernal}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily float Kernal\+::get (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+a getter for the value located at \mbox{\hyperlink{classKernal}{Kernal}}\mbox{[}y\mbox{]}\mbox{[}x\mbox{]}; 
+
+\begin{DoxyReturn}{Returns}
+the value at (x,y) as a float; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKernal_a0767772b0bf3f7eacb910fcd9ae1bfcc}\label{classKernal_a0767772b0bf3f7eacb910fcd9ae1bfcc}} 
+\index{Kernal@{Kernal}!getSize@{getSize}}
+\index{getSize@{getSize}!Kernal@{Kernal}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily int Kernal\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for the size of a kernal; 
+
+\begin{DoxyReturn}{Returns}
+the size represented as an int; 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/\mbox{\hyperlink{kernal_8h}{kernal.\+h}}\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/kernal.\+cc\end{DoxyCompactItemize}

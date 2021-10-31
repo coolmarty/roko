@@ -35,4 +35,8 @@ public:
 };
 
 
+<<<<<<< HEAD
 #endif
+=======
+#endif
+>>>>>>> fb4696a4e708f875b8c79119e1c8884180b7cf18

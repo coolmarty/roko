@@ -57,4 +57,8 @@ void Gaussian_Blur::Apply(std::vector<Image*> original, std::vector<Image*> filt
             delete[] newPixel;//dont cause a mem leak
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fb4696a4e708f875b8c79119e1c8884180b7cf18
