@@ -89,8 +89,4 @@ void SobelFilter::Apply(std::vector<Image*> input, std::vector<Image*> output){
             delete[] newPixel_d;//delete so no mem leaks
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> fb4696a4e708f875b8c79119e1c8884180b7cf18
