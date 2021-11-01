@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kernal_32',['Kernal',['../classKernal.html',1,'']]]
+  ['hysteresisfilter',['HysteresisFilter',['../classHysteresisFilter.html',1,'']]]
 ];

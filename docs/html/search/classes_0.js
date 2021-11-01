@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['convolution_28',['Convolution',['../classConvolution.html',1,'']]]
+  ['convolution',['Convolution',['../classConvolution.html',1,'']]]
 ];

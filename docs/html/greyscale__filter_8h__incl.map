@@ -1,9 +1,5 @@
-<map id="/home/ivers743/3081_f21/repo&#45;team&#45;22/greyscale_filter.h" name="/home/ivers743/3081_f21/repo&#45;team&#45;22/greyscale_filter.h">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,216,61"/>
-<area shape="rect" id="node2" href="$simple__filter_8h_source.html" title=" " alt="" coords="53,109,169,136"/>
-<area shape="rect" id="node3" href="$filter_8h.html" title=" " alt="" coords="78,184,143,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="33,259,95,285"/>
-<area shape="rect" id="node5" href="$image_8h.html" title=" " alt="" coords="120,259,195,285"/>
-<area shape="rect" id="node6" title=" " alt="" coords="81,333,140,360"/>
-<area shape="rect" id="node7" title=" " alt="" coords="164,333,244,360"/>
+<map id="/home/user/repo/greyscale_filter.h" name="/home/user/repo/greyscale_filter.h">
+<area shape="rect" id="node2" href="$simple__filter_8h_source.html" title="simple_filter.h" alt="" coords="45,95,160,121"/>
+<area shape="rect" id="node3" href="$filter_8h.html" title="filter.h" alt="" coords="71,169,134,196"/>
+<area shape="rect" id="node5" href="$image_8h.html" title="image.h" alt="" coords="112,244,187,271"/>
 </map>

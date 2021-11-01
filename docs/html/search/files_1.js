@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['filter_2eh_36',['filter.h',['../filter_8h.html',1,'']]]
+  ['doublethreshold_2eh',['doublethreshold.h',['../doublethreshold_8h.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['greyscalefilter_30',['GreyScaleFilter',['../classGreyScaleFilter.html',1,'']]]
+  ['filter',['Filter',['../classFilter.html',1,'']]]
 ];
