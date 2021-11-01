@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['saveas_53',['SaveAs',['../classImage.html#a7884b109eec6cdc52295011f4e0552fd',1,'Image']]],
-  ['setpixel_54',['SetPixel',['../classImage.html#a70147670b58d1b095e5c38b1f8bfb2db',1,'Image']]]
+  ['kernal',['Kernal',['../classKernal.html#a6c583be3479e032ae54f74168098da5d',1,'Kernal::Kernal(std::vector&lt; std::vector&lt; float &gt;&gt; k)'],['../classKernal.html#a6b9b76d7863d4984485ed34cb492f12c',1,'Kernal::Kernal()']]]
 ];

@@ -1,5 +1,5 @@
-\hypertarget{classSimpleFilter}{}\doxysection{Simple\+Filter Class Reference}
-\label{classSimpleFilter}\index{SimpleFilter@{SimpleFilter}}
+\hypertarget{classSimpleFilter}{}\section{Simple\+Filter Class Reference}
+\label{classSimpleFilter}\index{Simple\+Filter@{Simple\+Filter}}
 
 
 a class for creating simple filters;  
@@ -11,45 +11,45 @@ a class for creating simple filters;
 
 
 
-Inheritance diagram for Simple\+Filter\+:\nopagebreak
+Inheritance diagram for Simple\+Filter\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=189pt]{classSimpleFilter__inherit__graph}
+\includegraphics[width=350pt]{classSimpleFilter__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Simple\+Filter\+:\nopagebreak
+Collaboration diagram for Simple\+Filter\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=177pt]{classSimpleFilter__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classSimpleFilter_a66dc06c85d8a38487e3dddc3e1731f37}{Apply}} (std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$ original, std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$ filtered)
+void \hyperlink{classSimpleFilter_a4400a0f97e26e84a33befd537fb4fea8}{Apply} (std\+::vector$<$ \hyperlink{classImage}{Image} $\ast$$>$ original, std\+::vector$<$ \hyperlink{classImage}{Image} $\ast$$>$ filtered)
 \begin{DoxyCompactList}\small\item\em method to apply filter to an image, loops through image and calls apply\+At\+Pixel for every pixel; \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Protected Member Functions}
+\subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual unsigned char $\ast$ \mbox{\hyperlink{classSimpleFilter_a24100e6c29c4bf3bddf2763c22622d75}{apply\+At\+Pixel}} (unsigned char $\ast$pixel)=0
+virtual unsigned char $\ast$ \hyperlink{classSimpleFilter_a24100e6c29c4bf3bddf2763c22622d75}{apply\+At\+Pixel} (unsigned char $\ast$pixel)=0
 \begin{DoxyCompactList}\small\item\em virtual method, subclasses implement this method differently; \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\subsection{Detailed Description}
 a class for creating simple filters; 
 
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classSimpleFilter_a66dc06c85d8a38487e3dddc3e1731f37}\label{classSimpleFilter_a66dc06c85d8a38487e3dddc3e1731f37}} 
-\index{SimpleFilter@{SimpleFilter}!Apply@{Apply}}
-\index{Apply@{Apply}!SimpleFilter@{SimpleFilter}}
-\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
-{\footnotesize\ttfamily void Simple\+Filter\+::\+Apply (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$}]{original,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$}]{filtered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSimpleFilter_a4400a0f97e26e84a33befd537fb4fea8}\label{classSimpleFilter_a4400a0f97e26e84a33befd537fb4fea8}} 
+\index{Simple\+Filter@{Simple\+Filter}!Apply@{Apply}}
+\index{Apply@{Apply}!Simple\+Filter@{Simple\+Filter}}
+\subsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily void Simple\+Filter\+::\+Apply (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{classImage}{Image} $\ast$$>$}]{original,  }\item[{std\+::vector$<$ \hyperlink{classImage}{Image} $\ast$$>$}]{filtered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -60,12 +60,12 @@ nothing;
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classFilter_a7431e1f16621d96f8a63b37b6907bb04}{Filter}}.
+Implements \hyperlink{classFilter_afab0d50af44a19a370ebe46c69b8ff4e}{Filter}.
 
 \mbox{\Hypertarget{classSimpleFilter_a24100e6c29c4bf3bddf2763c22622d75}\label{classSimpleFilter_a24100e6c29c4bf3bddf2763c22622d75}} 
-\index{SimpleFilter@{SimpleFilter}!applyAtPixel@{applyAtPixel}}
-\index{applyAtPixel@{applyAtPixel}!SimpleFilter@{SimpleFilter}}
-\doxysubsubsection{\texorpdfstring{applyAtPixel()}{applyAtPixel()}}
+\index{Simple\+Filter@{Simple\+Filter}!apply\+At\+Pixel@{apply\+At\+Pixel}}
+\index{apply\+At\+Pixel@{apply\+At\+Pixel}!Simple\+Filter@{Simple\+Filter}}
+\subsubsection{\texorpdfstring{apply\+At\+Pixel()}{applyAtPixel()}}
 {\footnotesize\ttfamily virtual unsigned char$\ast$ Simple\+Filter\+::apply\+At\+Pixel (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{pixel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
 
@@ -77,11 +77,11 @@ a length 4 character array;
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classGreyScaleFilter_afac3eb54599341d326d9df20de67f851}{Grey\+Scale\+Filter}}.
+Implemented in \hyperlink{classDoubleThresholdFilter_ab6e5b2d489d32913b8cb1854d4ba6db2}{Double\+Threshold\+Filter}, \hyperlink{classGreyScaleFilter_afac3eb54599341d326d9df20de67f851}{Grey\+Scale\+Filter}, and \hyperlink{classInvertFilter_a440496aa9fb53511c32e451aaefb52a4}{Invert\+Filter}.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/simple\+\_\+filter.\+h\item 
-/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/simple\+\_\+filter.\+cc\end{DoxyCompactItemize}
+/home/user/repo/simple\+\_\+filter.\+h\item 
+/home/user/repo/simple\+\_\+filter.\+cc\end{DoxyCompactItemize}

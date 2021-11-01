@@ -1,4 +1,6 @@
-<map id="/home/ivers743/3081_f21/repo&#45;team&#45;22/kernal.h" name="/home/ivers743/3081_f21/repo&#45;team&#45;22/kernal.h">
-<area shape="rect" id="node1" title=" " alt="" coords="23,5,222,47"/>
-<area shape="rect" id="node2" href="$convolution_8h.html" title=" " alt="" coords="5,95,240,136"/>
+<map id="/home/user/repo/kernal.h" name="/home/user/repo/kernal.h">
+<area shape="rect" id="node2" href="$convolution_8h.html" title="/home/user/repo/convolution.h" alt="" coords="209,80,429,107"/>
+<area shape="rect" id="node3" href="$gaussian__blur_8h.html" title="/home/user/repo/gaussian\l_blur.h" alt="" coords="5,155,196,196"/>
+<area shape="rect" id="node4" href="$hysteresis__filter_8h.html" title="/home/user/repo/hysteresis\l_filter.h" alt="" coords="220,155,419,196"/>
+<area shape="rect" id="node5" href="$sobel__filter_8h.html" title="/home/user/repo/sobel\l_filter.h" alt="" coords="443,155,609,196"/>
 </map>

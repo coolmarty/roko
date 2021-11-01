@@ -10,7 +10,7 @@
  *
  * Julia Schechter
  *
- * Gabriel Subra
+ * Dheva Subramaniam
  *
  *
  * \section how_to_make How to compile/run

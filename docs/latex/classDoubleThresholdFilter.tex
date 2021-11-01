@@ -1,0 +1,67 @@
+\hypertarget{classDoubleThresholdFilter}{}\section{Double\+Threshold\+Filter Class Reference}
+\label{classDoubleThresholdFilter}\index{Double\+Threshold\+Filter@{Double\+Threshold\+Filter}}
+
+
+The main class of \hyperlink{classDoubleThresholdFilter}{Double\+Threshold\+Filter}.  
+
+
+
+
+{\ttfamily \#include $<$doublethreshold.\+h$>$}
+
+
+
+Inheritance diagram for Double\+Threshold\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classDoubleThresholdFilter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Double\+Threshold\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classDoubleThresholdFilter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDoubleThresholdFilter_ae4c841df681b376c611e2bc07a2a0d54}\label{classDoubleThresholdFilter_ae4c841df681b376c611e2bc07a2a0d54}} 
+\hyperlink{classDoubleThresholdFilter_ae4c841df681b376c611e2bc07a2a0d54}{Double\+Threshold\+Filter} ()
+\begin{DoxyCompactList}\small\item\em Generation of a \hyperlink{classDoubleThresholdFilter}{Double\+Threshold\+Filter} with no parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDoubleThresholdFilter_a8c65581e746bc42b627df785de7e4512}\label{classDoubleThresholdFilter_a8c65581e746bc42b627df785de7e4512}} 
+\hyperlink{classDoubleThresholdFilter_a8c65581e746bc42b627df785de7e4512}{Double\+Threshold\+Filter} (float t1, float t2)
+\begin{DoxyCompactList}\small\item\em Generation of a \hyperlink{classDoubleThresholdFilter}{Double\+Threshold\+Filter} with two parameters, the two thresholds to be used in the image calculation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDoubleThresholdFilter_ab6e5b2d489d32913b8cb1854d4ba6db2}\label{classDoubleThresholdFilter_ab6e5b2d489d32913b8cb1854d4ba6db2}} 
+unsigned char $\ast$ \hyperlink{classDoubleThresholdFilter_ab6e5b2d489d32913b8cb1854d4ba6db2}{apply\+At\+Pixel} (unsigned char $\ast$pixel)
+\begin{DoxyCompactList}\small\item\em Application of a \hyperlink{classDoubleThresholdFilter}{Double\+Threshold\+Filter} at a specific pixel in the image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDoubleThresholdFilter_a1881b9f96b709926b6e64a6e67eea44a}\label{classDoubleThresholdFilter_a1881b9f96b709926b6e64a6e67eea44a}} 
+float \hyperlink{classDoubleThresholdFilter_a1881b9f96b709926b6e64a6e67eea44a}{Get\+Luminance} (float red, float green, float blue)
+\begin{DoxyCompactList}\small\item\em Returns the Luminance of a specific pixel with a simple equation in order to determine what threshold it falls in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDoubleThresholdFilter_a7e42f69279e156d747011690456cea20}\label{classDoubleThresholdFilter_a7e42f69279e156d747011690456cea20}} 
+float \hyperlink{classDoubleThresholdFilter_a7e42f69279e156d747011690456cea20}{threshold1}
+\begin{DoxyCompactList}\small\item\em The two thresholds that define the look of the output image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDoubleThresholdFilter_ae4f4aafd4245d8682c7456f7430e4886}\label{classDoubleThresholdFilter_ae4f4aafd4245d8682c7456f7430e4886}} 
+float {\bfseries threshold2}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The main class of \hyperlink{classDoubleThresholdFilter}{Double\+Threshold\+Filter}. 
+
+Derived class of \hyperlink{classSimpleFilter}{Simple\+Filter}, invoked to create and apply a double threshold filter to an \hyperlink{classImage}{Image}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/user/repo/\hyperlink{doublethreshold_8h}{doublethreshold.\+h}\item 
+/home/user/repo/doublethreshold.\+cc\end{DoxyCompactItemize}
