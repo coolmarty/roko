@@ -15,6 +15,7 @@
 #include "doublethreshold.h"
 #include "hysteresis_filter.h"
 #include "invert.h"
+#include "mirror.h"
 
 
 using namespace std;
@@ -56,6 +57,7 @@ int main(int argc, const char* argv[]) {
     filters["double_threshold"] = unique_ptr<Filter>(new DoubleThresholdFilter(200, 100));
     filters["sobel"] = unique_ptr<Filter>(new SobelFilter());
     filters["non_max_suppression"] = unique_ptr<Filter>(new NonMaxSuppression());
+	filters["mirror"] = unique_ptr<Filter>(new MirrorFilter());
 
 
     // Create input and output vectors
