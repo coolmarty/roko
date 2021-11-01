@@ -1,5 +1,5 @@
 /**
- * @file non_max_suppression.h
+ * @file mirror.h
  *
  *
 */
@@ -18,13 +18,13 @@
  * Class Definitions
  ******************************************************************************/
 /**
- * @brief The NonMaxSuppression class used to apply a non-max suppression filter given a photo's intensity and direction
- * each of which must be stored as images of the same size. Works best when used following a sobel filter.
+ * @brief The MirrorFilter class is used to apply a filter to make an input file to look as if it were mirrored
+ * 
 */
 class MirrorFilter : public Filter {
 public:
 /**
-* @brief Applies the filter. Intensity must be at index 0 and direction must be at index 1. Must be memory already allocated at the output.
+* @brief Applies the filter.
 *
 * @return void. Places result in the output vector.
 */
