@@ -1,0 +1,74 @@
+\hypertarget{classConvolution}{}\section{Convolution Class Reference}
+\label{classConvolution}\index{Convolution@{Convolution}}
+
+
+The main class for convolutional filters, purely virtual.  
+
+
+
+
+{\ttfamily \#include $<$convolution.\+h$>$}
+
+
+
+Inheritance diagram for Convolution\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConvolution__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Convolution\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classConvolution__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classConvolution_ad18fa18c52d8156b82b97bcfebbdaf85}{Apply} (std\+::vector$<$ \hyperlink{classImage}{Image} $\ast$$>$ input, std\+::vector$<$ \hyperlink{classImage}{Image} $\ast$$>$ output)=0
+\begin{DoxyCompactList}\small\item\em apply convolutional filter based on image(s) from input vector, store them in output vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConvolution_acd84785d396338662bc860668add539f}\label{classConvolution_acd84785d396338662bc860668add539f}} 
+\hyperlink{classKernal}{Kernal} {\bfseries colonel}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The main class for convolutional filters, purely virtual. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classConvolution_ad18fa18c52d8156b82b97bcfebbdaf85}\label{classConvolution_ad18fa18c52d8156b82b97bcfebbdaf85}} 
+\index{Convolution@{Convolution}!Apply@{Apply}}
+\index{Apply@{Apply}!Convolution@{Convolution}}
+\subsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily virtual void Convolution\+::\+Apply (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{classImage}{Image} $\ast$$>$}]{input,  }\item[{std\+::vector$<$ \hyperlink{classImage}{Image} $\ast$$>$}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+apply convolutional filter based on image(s) from input vector, store them in output vector 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classFilter_afab0d50af44a19a370ebe46c69b8ff4e}{Filter}.
+
+
+
+Implemented in \hyperlink{classGaussian__Blur_aac260e4900fda92755855a6d52d1be0d}{Gaussian\+\_\+\+Blur}, \hyperlink{classHysteresisFilter_af2d6c50bc0cfd609fbf7e90f01b03b1f}{Hysteresis\+Filter}, and \hyperlink{classSobelFilter_a9c8136932e8d9c7cb7dd785cf9dbfefe}{Sobel\+Filter}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/user/repo/\hyperlink{convolution_8h}{convolution.\+h}\end{DoxyCompactItemize}

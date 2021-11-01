@@ -1,0 +1,11 @@
+<map id="Filter" name="Filter">
+<area shape="rect" id="node2" href="$classConvolution.html" title="The main class for convolutional filters, purely virtual. " alt="" coords="273,138,373,215"/>
+<area shape="rect" id="node6" href="$classNonMaxSuppression.html" title="The NonMaxSuppression class used to apply a non&#45;max suppression filter given a photo&#39;s intensity and ..." alt="" coords="403,138,558,215"/>
+<area shape="rect" id="node7" href="$classSimpleFilter.html" title="a class for creating simple filters; " alt="" coords="587,131,716,223"/>
+<area shape="rect" id="node3" href="$classGaussian__Blur.html" title="Gaussian Blur class, allows for the creation of gaussian blur filters. " alt="" coords="5,293,145,385"/>
+<area shape="rect" id="node4" href="$classHysteresisFilter.html" title="Hysteresis Filter class, allows for the creation of hysteresis filters. " alt="" coords="169,293,317,385"/>
+<area shape="rect" id="node5" href="$classSobelFilter.html" title="Sobel Filter class, allows for the creation of Sobel filters. " alt="" coords="342,293,457,385"/>
+<area shape="rect" id="node8" href="$classDoubleThresholdFilter.html" title="The main class of DoubleThresholdFilter. " alt="" coords="481,271,670,407"/>
+<area shape="rect" id="node9" href="$classGreyScaleFilter.html" title="greyscale filter class, applies the greyscale filter to an image " alt="" coords="695,285,840,392"/>
+<area shape="rect" id="node10" href="$classInvertFilter.html" title="The main class of InvertFilter. " alt="" coords="864,293,993,385"/>
+</map>

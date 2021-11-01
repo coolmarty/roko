@@ -1,0 +1,5 @@
+<map id="SobelFilter" name="SobelFilter">
+<area shape="rect" id="node2" href="$classConvolution.html" title="The main class for convolutional filters, purely virtual. " alt="" coords="55,204,155,281"/>
+<area shape="rect" id="node3" href="$classFilter.html" title="The main class for filters, purely virtual. " alt="" coords="5,35,89,112"/>
+<area shape="rect" id="node4" href="$classKernal.html" title="a class for creating kernals to be used with convolutional filters; " alt="" coords="114,5,213,141"/>
+</map>

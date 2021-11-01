@@ -1,0 +1,219 @@
+\hypertarget{classImage}{}\section{Image Class Reference}
+\label{classImage}\index{Image@{Image}}
+
+
+The main class for images, allows for copying, saving, and getting/setting pixels.  
+
+
+
+
+{\ttfamily \#include $<$image.\+h$>$}
+
+
+
+Collaboration diagram for Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{classImage__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classImage_a58edd1c45b4faeb5f789b0d036d02313}{Image} ()
+\begin{DoxyCompactList}\small\item\em default constructor for creating an image; \end{DoxyCompactList}\item 
+\hyperlink{classImage_afb0339b802ed560e69eb07358d30198f}{Image} (int width, int height)
+\begin{DoxyCompactList}\small\item\em a constructor for creating an image; \end{DoxyCompactList}\item 
+\hyperlink{classImage_a5ab2d611b6c128521a51380c25843f49}{Image} (std\+::string fname)
+\begin{DoxyCompactList}\small\item\em a constructor for creating an image; \end{DoxyCompactList}\item 
+\hyperlink{classImage_a34410a36b132ab597a8878d45facc89a}{Image} (const \hyperlink{classImage}{Image} \&image)
+\begin{DoxyCompactList}\small\item\em a copy constructor for creating an image; \end{DoxyCompactList}\item 
+\hyperlink{classImage_a0294f63700543e11c0f0da85601c7ae5}{$\sim$\+Image} ()
+\begin{DoxyCompactList}\small\item\em destructor for an image; \end{DoxyCompactList}\item 
+void \hyperlink{classImage_a7884b109eec6cdc52295011f4e0552fd}{Save\+As} (std\+::string fname)
+\begin{DoxyCompactList}\small\item\em Saves the image to the file fname;. \end{DoxyCompactList}\item 
+void \hyperlink{classImage_ad87aee5af20779f84891b08b23319ce2}{operator=} (\hyperlink{classImage}{Image} image)
+\begin{DoxyCompactList}\small\item\em equals operator for setting an image; \end{DoxyCompactList}\item 
+int \hyperlink{classImage_a4d6de643ee334ff52c85da9a62d9297d}{Get\+Height} ()
+\begin{DoxyCompactList}\small\item\em getter for the width of an image; \end{DoxyCompactList}\item 
+int \hyperlink{classImage_a4ab80d76fd124fd9de9b4fca8ae16186}{Get\+Width} ()
+\begin{DoxyCompactList}\small\item\em getter for the height of the image; \end{DoxyCompactList}\item 
+int \hyperlink{classImage_a34d2edb4e483b17babd5f0026f7c2ab0}{Get\+Component\+Number} ()
+\begin{DoxyCompactList}\small\item\em a function for getting the number of components of an image; \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{classImage_aa0b312879805efe9b0bf50929383026d}{Get\+Pixel} (int x, int y)
+\begin{DoxyCompactList}\small\item\em a getter for the pixel located at (x,y); \end{DoxyCompactList}\item 
+void \hyperlink{classImage_a70147670b58d1b095e5c38b1f8bfb2db}{Set\+Pixel} (int x, int y, unsigned char $\ast$colors)
+\begin{DoxyCompactList}\small\item\em setter for pixel at(x,y) to be set with the unsigned char array colors; \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The main class for images, allows for copying, saving, and getting/setting pixels. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classImage_a58edd1c45b4faeb5f789b0d036d02313}\label{classImage_a58edd1c45b4faeb5f789b0d036d02313}} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default constructor for creating an image; 
+
+\begin{DoxyReturn}{Returns}
+an \hyperlink{classImage}{Image} with width 0 and height 0; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImage_afb0339b802ed560e69eb07358d30198f}\label{classImage_afb0339b802ed560e69eb07358d30198f}} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+a constructor for creating an image; 
+
+\begin{DoxyReturn}{Returns}
+an \hyperlink{classImage}{Image} with a certain width and height; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImage_a5ab2d611b6c128521a51380c25843f49}\label{classImage_a5ab2d611b6c128521a51380c25843f49}} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{std\+::string}]{fname }\end{DoxyParamCaption})}
+
+
+
+a constructor for creating an image; 
+
+\begin{DoxyReturn}{Returns}
+an \hyperlink{classImage}{Image} read in from a file fname; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImage_a34410a36b132ab597a8878d45facc89a}\label{classImage_a34410a36b132ab597a8878d45facc89a}} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{const \hyperlink{classImage}{Image} \&}]{image }\end{DoxyParamCaption})}
+
+
+
+a copy constructor for creating an image; 
+
+\begin{DoxyReturn}{Returns}
+an \hyperlink{classImage}{Image} identical to the one passed in; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImage_a0294f63700543e11c0f0da85601c7ae5}\label{classImage_a0294f63700543e11c0f0da85601c7ae5}} 
+\index{Image@{Image}!````~Image@{$\sim$\+Image}}
+\index{````~Image@{$\sim$\+Image}!Image@{Image}}
+\subsubsection{\texorpdfstring{$\sim$\+Image()}{~Image()}}
+{\footnotesize\ttfamily Image\+::$\sim$\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructor for an image; 
+
+\begin{DoxyReturn}{Returns}
+none; 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classImage_a34d2edb4e483b17babd5f0026f7c2ab0}\label{classImage_a34d2edb4e483b17babd5f0026f7c2ab0}} 
+\index{Image@{Image}!Get\+Component\+Number@{Get\+Component\+Number}}
+\index{Get\+Component\+Number@{Get\+Component\+Number}!Image@{Image}}
+\subsubsection{\texorpdfstring{Get\+Component\+Number()}{GetComponentNumber()}}
+{\footnotesize\ttfamily int Image\+::\+Get\+Component\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a function for getting the number of components of an image; 
+
+\begin{DoxyReturn}{Returns}
+the number of components as an int; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImage_a4d6de643ee334ff52c85da9a62d9297d}\label{classImage_a4d6de643ee334ff52c85da9a62d9297d}} 
+\index{Image@{Image}!Get\+Height@{Get\+Height}}
+\index{Get\+Height@{Get\+Height}!Image@{Image}}
+\subsubsection{\texorpdfstring{Get\+Height()}{GetHeight()}}
+{\footnotesize\ttfamily int Image\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for the width of an image; 
+
+\begin{DoxyReturn}{Returns}
+the width of an image as an int; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImage_aa0b312879805efe9b0bf50929383026d}\label{classImage_aa0b312879805efe9b0bf50929383026d}} 
+\index{Image@{Image}!Get\+Pixel@{Get\+Pixel}}
+\index{Get\+Pixel@{Get\+Pixel}!Image@{Image}}
+\subsubsection{\texorpdfstring{Get\+Pixel()}{GetPixel()}}
+{\footnotesize\ttfamily unsigned char $\ast$ Image\+::\+Get\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+a getter for the pixel located at (x,y); 
+
+\begin{DoxyReturn}{Returns}
+the length 4 unsigned char array of that pixel; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImage_a4ab80d76fd124fd9de9b4fca8ae16186}\label{classImage_a4ab80d76fd124fd9de9b4fca8ae16186}} 
+\index{Image@{Image}!Get\+Width@{Get\+Width}}
+\index{Get\+Width@{Get\+Width}!Image@{Image}}
+\subsubsection{\texorpdfstring{Get\+Width()}{GetWidth()}}
+{\footnotesize\ttfamily int Image\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for the height of the image; 
+
+\begin{DoxyReturn}{Returns}
+the height of an image as an int; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImage_ad87aee5af20779f84891b08b23319ce2}\label{classImage_ad87aee5af20779f84891b08b23319ce2}} 
+\index{Image@{Image}!operator=@{operator=}}
+\index{operator=@{operator=}!Image@{Image}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Image\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classImage}{Image}}]{image }\end{DoxyParamCaption})}
+
+
+
+equals operator for setting an image; 
+
+\begin{DoxyReturn}{Returns}
+none; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImage_a7884b109eec6cdc52295011f4e0552fd}\label{classImage_a7884b109eec6cdc52295011f4e0552fd}} 
+\index{Image@{Image}!Save\+As@{Save\+As}}
+\index{Save\+As@{Save\+As}!Image@{Image}}
+\subsubsection{\texorpdfstring{Save\+As()}{SaveAs()}}
+{\footnotesize\ttfamily void Image\+::\+Save\+As (\begin{DoxyParamCaption}\item[{std\+::string}]{fname }\end{DoxyParamCaption})}
+
+
+
+Saves the image to the file fname;. 
+
+\begin{DoxyReturn}{Returns}
+none; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImage_a70147670b58d1b095e5c38b1f8bfb2db}\label{classImage_a70147670b58d1b095e5c38b1f8bfb2db}} 
+\index{Image@{Image}!Set\+Pixel@{Set\+Pixel}}
+\index{Set\+Pixel@{Set\+Pixel}!Image@{Image}}
+\subsubsection{\texorpdfstring{Set\+Pixel()}{SetPixel()}}
+{\footnotesize\ttfamily void Image\+::\+Set\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{unsigned char $\ast$}]{colors }\end{DoxyParamCaption})}
+
+
+
+setter for pixel at(x,y) to be set with the unsigned char array colors; 
+
+\begin{DoxyReturn}{Returns}
+none; 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/user/repo/\hyperlink{image_8h}{image.\+h}\item 
+/home/user/repo/image.\+cc\end{DoxyCompactItemize}

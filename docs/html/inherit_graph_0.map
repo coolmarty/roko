@@ -1,0 +1,12 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classFilter.html" title="The main class for filters, purely virtual. " alt="" coords="5,120,60,147"/>
+<area shape="rect" id="node2" href="$classConvolution.html" title="The main class for convolutional filters, purely virtual. " alt="" coords="135,63,235,89"/>
+<area shape="rect" id="node6" href="$classNonMaxSuppression.html" title="The NonMaxSuppression class used to apply a non&#45;max suppression filter given a photo&#39;s intensity and ..." alt="" coords="108,120,263,147"/>
+<area shape="rect" id="node7" href="$classSimpleFilter.html" title="a class for creating simple filters; " alt="" coords="136,183,235,209"/>
+<area shape="rect" id="node3" href="$classGaussian__Blur.html" title="Gaussian Blur class, allows for the creation of gaussian blur filters. " alt="" coords="335,5,450,32"/>
+<area shape="rect" id="node4" href="$classHysteresisFilter.html" title="Hysteresis Filter class, allows for the creation of hysteresis filters. " alt="" coords="331,56,454,83"/>
+<area shape="rect" id="node5" href="$classSobelFilter.html" title="Sobel Filter class, allows for the creation of Sobel filters. " alt="" coords="347,107,438,133"/>
+<area shape="rect" id="node8" href="$classDoubleThresholdFilter.html" title="The main class of DoubleThresholdFilter. " alt="" coords="311,157,475,184"/>
+<area shape="rect" id="node9" href="$classGreyScaleFilter.html" title="greyscale filter class, applies the greyscale filter to an image " alt="" coords="333,208,453,235"/>
+<area shape="rect" id="node10" href="$classInvertFilter.html" title="The main class of InvertFilter. " alt="" coords="347,259,439,285"/>
+</map>
