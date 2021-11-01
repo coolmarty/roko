@@ -1,4 +1,3 @@
-
 /**
  * @file sobel_filter.h
  *

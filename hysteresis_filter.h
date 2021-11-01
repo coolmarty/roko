@@ -1,11 +1,11 @@
 /**
- * @file gaussian_blur.h
+ * @file hysteresis_filter.h
  *
  */
 
 
-#ifndef GAUSS_BLUR_H_
-#define GAUSS_BLUR_H_
+#ifndef HYSTERESIS_FILTER_H_
+#define HYSTERESIS_FILTER_H_
 /*******************************************************************************
  * Includes
  ******************************************************************************/
@@ -16,27 +16,23 @@
  * Class Definitions
  ******************************************************************************/
 /**
- * @brief Gaussian Blur class, allows for the creation of gaussian blur filters
+ * @brief Hysteresis Filter class, allows for the creation of hysteresis filters
  *
  */
-class Gaussian_Blur : public Convolution {
+class HysteresisFilter : public Convolution {
 public:
     /**
-     * @brief constructor, sets colonel to the gaussian identity matrix
+     * @brief constructor, sets colonel to a 3x3
      *
      */
-    Gaussian_Blur();
+    HysteresisFilter();
 
     /**
-     * @brief method to apply gaussian blur to an image
+     * @brief method to apply hysteresis to an image
      *
      */
     void Apply(std::vector<Image*> original, std::vector<Image*> filtered);
 };
 
 
-// <<<<<<< HEAD
 #endif
-// =======
-// #endif
-// >>>>>>> fb4696a4e708f875b8c79119e1c8884180b7cf18
