@@ -79,8 +79,8 @@ int main(int argc, const char* argv[]) {
 
     // Apply filter based on filter type
 
-    // using canny_edge runs a full canny edge detection filter
-    if(filterType.compare("canny_edge")==0){ // uses system() to run the filters in order, creating images leading up to the final canny edge detection. Once the canny edge detection image is complete, it deletes the images used in its creation
+    // using canny-edge-detect runs a full canny edge detection filter
+    if(filterType.compare("canny-edge-detect")==0){ // uses system() to run the filters in order, creating images leading up to the final canny edge detection. Once the canny edge detection image is complete, it deletes the images used in its creation
     	std::string openingLine = "./image_processor " + inputFile + " greyscale greyscaleimage.png";
     	std::string closingLine = "./image_processor dtimage.png hysteresis " + outputFile;
     	int openLen = openingLine.length();
