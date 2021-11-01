@@ -1,3 +1,6 @@
+#ifndef NON_MAX_SUPPRESSION_CC_
+#define NON_MAX_SUPPRESSION_CC_
+
 #include "non_max_suppression.h"
 
 void NonMaxSuppression::Apply(std::vector<Image*> input, std::vector<Image*> output) {
@@ -96,3 +99,5 @@ void NonMaxSuppression::Apply(std::vector<Image*> input, std::vector<Image*> out
 		}
 	}
 }
+
+#endif
