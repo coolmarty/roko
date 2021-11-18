@@ -1,4 +1,0 @@
-<map id="Gaussian_Blur" name="Gaussian_Blur">
-<area shape="rect" id="node2" href="$classConvolution.html" title="The main class for convolutional filters, purely virtual. " alt="" coords="25,131,125,208"/>
-<area shape="rect" id="node3" href="$classFilter.html" title="The main class for filters, purely virtual. " alt="" coords="33,5,117,83"/>
-</map>
