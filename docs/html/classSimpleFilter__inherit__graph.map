@@ -1,6 +1,0 @@
-<map id="SimpleFilter" name="SimpleFilter">
-<area shape="rect" id="node3" href="$classDoubleThresholdFilter.html" title="The main class of DoubleThresholdFilter. " alt="" coords="5,271,195,407"/>
-<area shape="rect" id="node4" href="$classGreyScaleFilter.html" title="greyscale filter class, applies the greyscale filter to an image " alt="" coords="219,285,365,392"/>
-<area shape="rect" id="node5" href="$classInvertFilter.html" title="The main class of InvertFilter. " alt="" coords="389,293,518,385"/>
-<area shape="rect" id="node2" href="$classFilter.html" title="The main class for filters, purely virtual. " alt="" coords="250,5,334,83"/>
-</map>
