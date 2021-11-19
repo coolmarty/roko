@@ -91,3 +91,17 @@ void Image::SetPixel(int x, int y, unsigned char* colors){
     pixel[2] = colors[2];
     pixel[3] = colors[3];
 }
+
+float Image::getDistance(int x,int y){
+    unsigned char* pixel = &image[(y*width + x)*4];
+    return (1.0-(pixel[0]/255))*50.0;
+}
+
+std::vector<float> Image::getDirection(int x,int y){
+    unsigned char* pixel = &image[(y*width + x)*4];
+    std::vector<float> direction;
+    direction.push_back(((pixel[1]/255)-.5)*2.0);
+    direction.push_back(((pixel[2]/255)-.5)*2.0);
+    direction.push_back(((pixel[3]/255)-.5)*2.0);
+    return direction;
+}
