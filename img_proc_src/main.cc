@@ -88,7 +88,7 @@ int main(int argc, const char* argv[]) {
 
     // using canny-edge-detect runs a full canny edge detection filter
     if(filterType.compare("blob")==0){ // uses system() to run the filters in order, creating images leading up to the final canny edge detection. Once the canny edge detection image is complete, it deletes the images used in its creation
-      BlobDetect *blobby = new BlobDetect();
+      unique_ptr<BlobDetect> blobby = unique_ptr<BlobDetect>(new BlobDetect());
       if(blobby->check(inputs,outputs)){
         cout<<"ROBOT FOUND!!!"<<endl;
       }

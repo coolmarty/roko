@@ -17,25 +17,34 @@
  * Class Definitions
  ******************************************************************************/
 /**
- * @brief The main class of DoubleThresholdFilter.
+ * @brief The main class of BlobDetect.
  *
- *  Derived class of SimpleFilter, invoked to create and apply a double threshold filter to an Image.
+ *  main purpose is to find robot in an image and give its location
  */
 class BlobDetect {
 public:
      /**
-  * @brief Generation of a DoubleThresholdFilter with no parameters (defaults to orange)
+  * @brief Generation of a BlobDetect
   *
   */
     BlobDetect();
+
     /**
-  * @brief Application of a DoubleThresholdFilter at a specific pixel in the image.
+  * @brief Application of a BlobDetect, returns true if we think there is a robot in the image
   *
   */
     bool check(std::vector<Image*> original, std::vector<Image*> filtered);
 
+    /**
+  * @brief get the distance of the robot in an image
+  *
+  */
     float getDistance(std::vector<Image*> original, std::vector<Image*> filtered);
 
+    /**
+  * @brief get the direction of the robot in an image
+  *
+  */
     std::vector<float> getDirection(std::vector<Image*> original, std::vector<Image*> filtered);
 
   private:

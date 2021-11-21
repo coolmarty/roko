@@ -17,7 +17,7 @@
 /**
  * @brief The main class of ColorThresholdFilter.
  *
- *  Derived class of SimpleFilter, invoked to create and apply a double threshold filter to an Image.
+ *  Derived class of SimpleFilter, invoked to create and apply a color threshold filter to an Image.
  */
 class ColorThresholdFilter : public SimpleFilter {
 public:

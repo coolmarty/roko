@@ -23,19 +23,18 @@
  * Class Definitions
  ******************************************************************************/
 /**
- * @brief The main class of DoubleThresholdFilter.
+ * @brief The main class of CannyEdgeFilter.
  *
- *  Derived class of SimpleFilter, invoked to create and apply a double threshold filter to an Image.
+ *  Derived class of Filter, invoked to create and apply cenny edge detection to an Image.
  */
 class CannyEdgeFilter : public Filter {
 public:
      /**
-  * @brief Generation of a DoubleThresholdFilter with no parameters (defaults to orange)
-  *
+  * @brief Generation of a CannyEdgeFilter
   */
     CannyEdgeFilter();
     /**
-  * @brief Application of a DoubleThresholdFilter at a specific pixel in the image.
+  * @brief Application of a CannyEdgeFilter, applies to whole image
   *
   */
     void Apply(std::vector<Image*> original, std::vector<Image*> filtered);

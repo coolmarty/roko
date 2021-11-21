@@ -9,7 +9,7 @@ ColorThresholdFilter::ColorThresholdFilter(){
   return;
 }
 
-// ColorThresholdFilter::ColorThresholdFilter(unsigned char color[4]){
+// ColorThresholdFilter::ColorThresholdFilter(unsigned char *color){
 //   this->color = color;
 //
 // }

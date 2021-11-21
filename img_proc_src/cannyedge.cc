@@ -26,6 +26,5 @@ void CannyEdgeFilter::Apply(std::vector<Image*> original, std::vector<Image*> fi
   nonMax->Apply(filtered,original);//1 in original
   doubleThresh->Apply(original,filtered);
   hysteresis->Apply(filtered,original);
-  grey->Apply(original,filtered);//greyscale now in filtered
-
+  grey->Apply(original,filtered);//this does nothing but swaps original and filtered, i couldnt get it to work otherwise
 }
