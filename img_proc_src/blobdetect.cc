@@ -35,19 +35,23 @@ bool BlobDetect::check(std::vector<Image*> original, std::vector<Image*> filtere
     }
   }
   cout<<"canny counter: "<<canny_counter<<endl<<"color counter: "<<color_counter<<endl;
-  float threshold = .9;
+  float threshold = .5;
   // cout<<canny_counter*threshold<<endl;
   return (canny_counter*threshold)<color_counter;
 }
 
-float BlobDetect::getDistance(std::vector<Image*> original, std::vector<Image*> filtered){
-  unique_ptr<Filter> canny=unique_ptr<Filter>(new CannyEdgeFilter());
+float BlobDetect::getDistance(std::vector<Image*> color_image_vector, std::vector<Image*> direction){
   unique_ptr<Filter> color=unique_ptr<Filter>(new ColorThresholdFilter());
 
-  Image direction_im = *filtered.at(1);
+  Image colored_image = *color_image_vector.at(0);
+  Image direction_im = *direction.at(0);
+  // cout<<"here"<<endl;
+  Image temp_output;
+  vector<Image *> cthreshed;
+  cthreshed.push_back(&temp_output);
+  color->Apply(color_image_vector,cthreshed);//color now in filtered
+  Image color_image = *cthreshed.at(0);
 
-  color->Apply(original,filtered);//color now in filtered
-  Image color_image = *filtered.at(0);
 
   unsigned char* color_pixel;
   for(int y =0;y<color_image.GetHeight();y++){
@@ -61,14 +65,17 @@ float BlobDetect::getDistance(std::vector<Image*> original, std::vector<Image*> 
   return -1;
 }
 
-std::vector<float> BlobDetect::getDirection(std::vector<Image*> original, std::vector<Image*> filtered){
-  unique_ptr<Filter> canny=unique_ptr<Filter>(new CannyEdgeFilter());
+std::vector<float> BlobDetect::getDirection(std::vector<Image*> color_image_vector, std::vector<Image*> direction){
   unique_ptr<Filter> color=unique_ptr<Filter>(new ColorThresholdFilter());
 
-  Image direction_im = *filtered.at(1);
-
-  color->Apply(original,filtered);//color now in filtered
-  Image color_image = *filtered.at(0);
+  Image colored_image = *color_image_vector.at(0);
+  Image direction_im = *direction.at(0);
+  // cout<<"here"<<endl;
+  Image temp_output;
+  vector<Image *> cthreshed;
+  cthreshed.push_back(&temp_output);
+  color->Apply(color_image_vector,cthreshed);//color now in filtered
+  Image color_image = *cthreshed.at(0);
 
   unsigned char* color_pixel;
   for(int y =0;y<color_image.GetHeight();y++){

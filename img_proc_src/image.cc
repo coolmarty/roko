@@ -100,8 +100,8 @@ float Image::getDistance(int x,int y){
 std::vector<float> Image::getDirection(int x,int y){
     unsigned char* pixel = &image[(y*width + x)*4];
     std::vector<float> direction;
-    direction.push_back(((pixel[1]/255)-.5)*2.0);
-    direction.push_back(((pixel[2]/255)-.5)*2.0);
-    direction.push_back(((pixel[3]/255)-.5)*2.0);
+    direction.push_back(((pixel[1]/255.0)-.5)*2.0);
+    direction.push_back(((pixel[2]/255.0)-.5)*2.0);
+    direction.push_back(((pixel[3]/255.0)-.5)*2.0);
     return direction;
 }

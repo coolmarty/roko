@@ -91,6 +91,18 @@ int main(int argc, const char* argv[]) {
       unique_ptr<BlobDetect> blobby = unique_ptr<BlobDetect>(new BlobDetect());
       if(blobby->check(inputs,outputs)){
         cout<<"ROBOT FOUND!!!"<<endl;
+        Image orig(inputFile);
+        Image color("robit_images/depth.png");
+        std::vector<Image *> ins;
+        std::vector<Image *> outs;
+
+        ins.push_back(&orig);
+        outs.push_back(&color);
+        vector<float> direction=blobby->getDirection(ins,outs);
+        cout<<"x: "<<direction[0]<<endl<<"y: "<<direction[1]<<endl<<"z: "<<direction[2]<<endl;
+        cout<<"Position: "<<blobby->getDistance(ins,outs)<<endl;
+
+        return 1;
       }
 
       return 1;
