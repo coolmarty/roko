@@ -1,6 +1,0 @@
-<map id="Filter" name="Filter">
-<area shape="rect" id="node1" title="The main class for filters, purely virtual." alt="" coords="83,5,167,83"/>
-<area shape="rect" id="node2" href="$classConvolution.html" title="The main class for convolutional filters, purely virtual." alt="" coords="5,138,105,215"/>
-<area shape="rect" id="node3" href="$classSimpleFilter.html" title="a class for creating simple filters;" alt="" coords="129,131,259,223"/>
-<area shape="rect" id="node4" href="$classGreyScaleFilter.html" title="greyscale filter class, applies the greyscale filter to an image" alt="" coords="121,271,267,377"/>
-</map>

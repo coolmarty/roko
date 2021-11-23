@@ -1,5 +1,0 @@
-<map id="SimpleFilter" name="SimpleFilter">
-<area shape="rect" id="node1" title="a class for creating simple filters;" alt="" coords="13,131,143,223"/>
-<area shape="rect" id="node3" href="$classGreyScaleFilter.html" title="greyscale filter class, applies the greyscale filter to an image" alt="" coords="5,271,151,377"/>
-<area shape="rect" id="node2" href="$classFilter.html" title="The main class for filters, purely virtual." alt="" coords="36,5,120,83"/>
-</map>
