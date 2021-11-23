@@ -91,30 +91,24 @@ int main(int argc, const char* argv[]) {
       unique_ptr<BlobDetect> blobby = unique_ptr<BlobDetect>(new BlobDetect());
       if(blobby->check(inputs,outputs)){
         cout<<"ROBOT FOUND!!!"<<endl;
-        Image orig(inputFile);
         Image color("robit_images/depth.png");
-        std::vector<Image *> ins;
         std::vector<Image *> outs;
-
-        ins.push_back(&orig);
         outs.push_back(&color);
-        vector<float> direction=blobby->getDirection(ins,outs);
+        vector<float> direction=blobby->getDirection(inputs,outs);
         cout<<"x: "<<direction[0]<<endl<<"y: "<<direction[1]<<endl<<"z: "<<direction[2]<<endl;
-        cout<<"Position: "<<blobby->getDistance(ins,outs)<<endl;
+        cout<<"Position: "<<blobby->getDistance(inputs,outs)<<endl;
+      }
+    }
+    else{
 
-        return 1;
+      filters[filterType]->Apply(inputs, outputs);
+
+      // Save output image
+      if(filterType.compare("sobel")==0){
+      	output2.SaveAs(outputFile2);
       }
 
-      return 1;
+
+      output.SaveAs(outputFile);
     }
-
-    filters[filterType]->Apply(inputs, outputs);
-
-    // Save output image
-    if(filterType.compare("sobel")==0){
-    	output2.SaveAs(outputFile2);
-    }
-
-
-    output.SaveAs(outputFile);
 }

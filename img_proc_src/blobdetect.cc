@@ -12,10 +12,14 @@ bool BlobDetect::check(std::vector<Image*> original, std::vector<Image*> filtere
   unique_ptr<Filter> canny=unique_ptr<Filter>(new CannyEdgeFilter());
   unique_ptr<Filter> color=unique_ptr<Filter>(new ColorThresholdFilter());
 
-  color->Apply(original,filtered);//color now in filtered
+  Image input_copy = *original.at(0);
+  std::vector<Image *>input;
+  input.push_back(&input_copy);
+
+  color->Apply(input,filtered);//color now in filtered
   Image color_image = *filtered.at(0);
-  canny->Apply(filtered,original);//canny edge of color in original
-  Image *canny_image = original.at(0);//canny
+  canny->Apply(filtered,input);//canny edge of color in original
+  Image *canny_image = input.at(0);//canny
 
   int color_counter=0;
   int canny_counter=0;
