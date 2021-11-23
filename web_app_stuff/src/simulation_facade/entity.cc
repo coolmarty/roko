@@ -1,12 +1,13 @@
+#include "entity.h"
 Point3 Entity::GetPosition(){return position;}
 
 Vector3 Entity::GetVelocity(){return velocity;}
 
 Vector3 Entity::GetAcceleration(){return acceleration;}
 
-Direction Entity::GetDirection(){return direction}
+Direction Entity::GetDirection(){return direction;}
 
-float Entity::GetTime(){return time};
+float Entity::GetTime(){return time;}
 
 void Entity::SetPosition(Point3 p){position=p;}
 
