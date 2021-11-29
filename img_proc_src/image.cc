@@ -91,3 +91,23 @@ void Image::SetPixel(int x, int y, unsigned char* colors){
     pixel[2] = colors[2];
     pixel[3] = colors[3];
 }
+
+float Image::getDistance(int x,int y){
+    unsigned char* pixel = &image[(y*width + x)*4];
+    float stupidFrigginMagnitude=magnitudeVector(getDirection(x,y));
+    return (1.0-(stupidFrigginMagnitude))*50.0;
+}
+
+std::vector<float> Image::getDirection(int x,int y){
+    unsigned char* pixel = &image[(y*width + x)*4];
+    std::vector<float> direction;
+    direction.push_back(((pixel[0]/255.0)-.5)*2.0);
+    direction.push_back(((pixel[1]/255.0)-.5)*2.0);
+    direction.push_back(((pixel[2]/255.0)-.5)*2.0);
+    return direction;
+}
+
+//this violates the single responsibility but fuck it, maybe it'll change again
+float Image::magnitudeVector(std::vector<float> vec){
+  return sqrt(pow(vec[0],2)+pow(vec[1],2)+pow(vec[2],2));
+}

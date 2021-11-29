@@ -15,7 +15,7 @@ void CompositeBattery::AddBattery(Battery batt){
 }
 
 void CompositeBattery::RemoveBattery(){
-  batteries.pop_back();
+  batteries.erase(batteries.begin());
   return;
 }
 
