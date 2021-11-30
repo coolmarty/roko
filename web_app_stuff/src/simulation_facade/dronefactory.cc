@@ -1,11 +1,12 @@
 #include "dronefactory.h"
+
 DroneFactory::DroneFactory(){
   return
 }
 
 Entity DroneFactory::create(picojson::object& entityData){
-  Entity ourDrone = Drone();
   if (entityData["name"].get<std::string>() == "drone") {
+      Entity ourDrone = Drone();
       ourDrone.id = entityData["entityId"].get<double>();
       ourDrone.speed = entityData["speed"].get<double>();
 
@@ -27,5 +28,7 @@ Entity DroneFactory::create(picojson::object& entityData){
           WriteYourOwnCameraClass* camera = new WriteYourOwnCameraClass(cameras[i].get<double>(), &cameraController);
           ourDrone.cameras.push_back(camera);
       }
+      return ourDrone;
   }
+  return NULL;
 }
