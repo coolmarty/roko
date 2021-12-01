@@ -1,5 +1,5 @@
 /**
- * @file dronefactory.h
+ * @file compositeentityfactory.h
  *
  */
 
@@ -8,6 +8,8 @@
  ******************************************************************************/
 #include "entityfactory.h"
 #include "dronefactory.h"
+#include "robotfactory.h"
+#include "hospitalfactory.h"
 
 #ifndef _COMPENTFACT_H_
 #define _COMPENTFACT_H_
@@ -17,7 +19,7 @@
  *
  * inherits from Entity Factory
  */
-class CompositeEntityFactory::public EntityFactory{
+class CompositeEntityFactory:public EntityFactory{
 public:
   /**
    * @brief constructor for CompositeEntityFactory, adds all factories to a vector
@@ -31,9 +33,9 @@ public:
    *
    * @return an Entity
    */
-  Entity create(picojson::object& entityData);
+  Entity *create(picojson::object& entityData);
 private:
-  vector<EntityFactory> factories;
+  std::vector<EntityFactory *> factories;
 };
 
 

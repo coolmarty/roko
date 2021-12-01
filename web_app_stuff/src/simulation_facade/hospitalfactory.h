@@ -17,7 +17,7 @@
  *
  * inherits from Entity Factory
  */
-class HospitalFactory::public EntityFactory{
+class HospitalFactory:public EntityFactory{
 public:
   /**
    * @brief constructor for HospitalFactory
@@ -31,7 +31,7 @@ public:
    *
    * @return a Robot Entity
    */
-  Entity create(picojson::object& entityData);
+  Entity *create(picojson::object& entityData);
 };
 
 

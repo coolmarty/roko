@@ -11,7 +11,10 @@
 #include "entity.h"
 
 class Robot:public Entity{
-  Robot();
+public:
+  Robot(){return;}
+
+  void Update(float dt){return;}
 
 };
 

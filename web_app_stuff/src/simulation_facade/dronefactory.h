@@ -17,7 +17,7 @@
  *
  * inherits from Entity Factory
  */
-class DroneFactory::public EntityFactory{
+class DroneFactory:public EntityFactory{
 public:
   /**
    * @brief constructor for DroneFactory
@@ -31,7 +31,7 @@ public:
    *
    * @return a Drone Entity
    */
-  Entity create(picojson::object& entityData);
+  Entity *create(picojson::object& entityData);
 };
 
 

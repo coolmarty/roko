@@ -17,7 +17,7 @@
  *
  * inherits from Entity Factory
  */
-class RobotFactory::public EntityFactory{
+class RobotFactory:public EntityFactory{
 public:
   /**
    * @brief constructor for RobotFactory
@@ -31,7 +31,7 @@ public:
    *
    * @return a Robot Entity
    */
-  Entity create(picojson::object& entityData);
+  Entity *create(picojson::object& entityData);
 };
 
 

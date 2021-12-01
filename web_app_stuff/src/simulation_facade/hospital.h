@@ -11,7 +11,10 @@
 #include "entity.h"
 
 class Hospital:public Entity{
-  Hospital();
+public:
+  Hospital(){return;}
+
+  void Update(float dt){return;}
 
 };
 
