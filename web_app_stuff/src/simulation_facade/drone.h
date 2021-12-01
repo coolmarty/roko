@@ -30,6 +30,8 @@ public:
 	void TakePicture();
 
 	void Update(float dt);
+private:
+	float speed;
 };
 
 #endif

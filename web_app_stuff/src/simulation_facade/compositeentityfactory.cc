@@ -5,6 +5,15 @@ CompositeEntityFactory::CompositeEntityFactory(){
   factories.push_back(new HospitalFactory());
 }
 
+CompositeEntityFactory::~CompositeEntityFactory(){
+  EntityFactory *f;
+  for(int i=0;i<factories.size();i++){
+    f=factories[0];//get first selement
+    factories.erase(factories.begin());//erase first element
+    delete f;//delete memory we malloc'd (or new'd I guess)
+  }
+}
+
 Entity *CompositeEntityFactory::create(picojson::object& entityData){
   Entity *ent;
   for(int i=0;i<factories.size();i++){

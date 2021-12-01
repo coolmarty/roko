@@ -26,6 +26,8 @@ public:
    */
   CompositeEntityFactory();
 
+  ~CompositeEntityFactory();
+
   /**
    * @brief The function used to generate any entity
    *
