@@ -12,7 +12,6 @@
  ******************************************************************************/
 #include "point3.h"
 #include "vector3.h"
-#include "direction.h"
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
@@ -58,7 +57,7 @@ public:
       *
       * @return Direction direction
       */
-     Direction GetDirection();
+     Vector3 GetDirection();
 
      /**
       * @brief getter for time
@@ -93,19 +92,19 @@ public:
       *
       * @return none
       */
-     void SetDirection(Direction d);
+     void SetDirection(Vector3 d);
 
      /**
       * @brief setter for time
       *
       * @return none
       */
-     void SetTime(float t){time=t};
+     void SetTime(float t);
 protected:
   Point3 position;
   Vector3 velocity;
-  Vector3 acceleraton;
-  Direction direction;
+  Vector3 acceleration;
+  Vector3 direction;
   float time;
 
 };

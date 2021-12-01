@@ -22,7 +22,7 @@ Entity HospitalFactory::create(picojson::object& entityData){
       ourHospital.dir[1] = dir[1].get<double>();
       ourHospital.dir[2] = dir[1].get<double>();
 
-      return ourDrone;
+      return ourHospital;
   }
   return NULL;
 }

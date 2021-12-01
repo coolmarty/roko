@@ -22,7 +22,7 @@ Entity RobotFactory::create(picojson::object& entityData){
       ourBot.dir[1] = dir[1].get<double>();
       ourBot.dir[2] = dir[1].get<double>();
 
-      return ourDrone;
+      return ourBot;
   }
   return NULL;
 }

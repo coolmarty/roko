@@ -9,15 +9,15 @@
 #include "entityfactory.h"
 #include "hospital.h"
 
-#ifndef ROBOTFACTORY_H_
-#define ROBOTFACTORY_H_
+#ifndef HOSPITALFACTORY_H_
+#define HOSPITALFACTORY_H_
 
 /**
  * @brief The main class used to generate hospitals objects in our simulation
  *
  * inherits from Entity Factory
  */
-class RobotFactory::public EntityFactory{
+class HospitalFactory::public EntityFactory{
 public:
   /**
    * @brief constructor for HospitalFactory
