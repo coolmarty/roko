@@ -9,6 +9,7 @@
 #include "entity.h"
 #include <string>
 #include <vector>
+#include "picojson"
 
 #ifndef _ENTITYFACTORY_H_
 #define _ENTITYFACTORY_H_
