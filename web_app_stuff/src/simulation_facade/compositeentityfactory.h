@@ -26,6 +26,9 @@ public:
    */
   CompositeEntityFactory();
 
+  /**
+   * @brief destructor for CompositeEntityFactory, since all factories are new'd
+   */
   ~CompositeEntityFactory();
 
   /**
