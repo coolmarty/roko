@@ -4,15 +4,15 @@ Drone::Drone(){
 	position = Point3();
 	direction = Direction();
 	velocity = Vector3();
-	acceleration = Acceleration(0,9.8,0);
+	// acceleration = Acceleration(0,9.8,0);
 	time = 0;
 }
 
-Drone::Drone(Point3 newPosition, Direction newDirection, Vector3 newVelocity, Vector3 newAcceleration, float newTime){
+Drone::Drone(Point3 newPosition, Direction newDirection, Vector3 newVelocity, /*Vector3 newAcceleration*/, float newTime){
 	position = newPosition;
 	direction = newDirection;
 	velocity = newVelocity;
-	acceleration = newAcceleration;
+	// acceleration = newAcceleration;
 	time = newTime;
 }
 
@@ -20,7 +20,7 @@ Drone::Drone(Drone old){
 	position = old.position;
 	direction = old.direction;
 	velocity = old.velocity;
-	acceleration = old.acceleration;
+	// acceleration = old.acceleration;
 	time = old.time;
 }
 
@@ -65,9 +65,9 @@ Drone::Drone(Drone old){
 // }
 
 void Drone::Move(){
-
+	MovePath(Point3 *position, Direction *direction, Vector3 *velocity, /*Vector3 *acceleration*/, float *dt);
 }
 
 void Drone::Update(float dt){
-
+	
 }

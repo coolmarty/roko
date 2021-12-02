@@ -6,7 +6,7 @@ BeelineMovement::BeelineMovement(Point3 *dest){
 }
 
 
-void BeelineMovement::MovePath(Point3 *position, Direction *direction, Vector3 *velocity, Vector3 *acceleration, float *dt){
+void BeelineMovement::MovePath(Point3 *position, Direction *direction, Vector3 *velocity, /*Vector3 *acceleration*/, float *dt){
 	// Vector from destination to position
 	Vector3 distanceVector = new Vector3(position.GetX() - destination.GetX(), 
 										position.GetY() - destination.GetY(),
@@ -36,8 +36,10 @@ void BeelineMovement::MovePath(Point3 *position, Direction *direction, Vector3 *
 					   pow(velocity.GetZ(),2));
 
 	// ensures speed is non-zero and positive
-	if(speed <= 0){
+	if(speed < 0){
 		speed = abs(speed);
+	}else if(speed == 0){
+		speed = 1;
 	}
 
 	// updates position according to velocity
@@ -45,19 +47,19 @@ void BeelineMovement::MovePath(Point3 *position, Direction *direction, Vector3 *
 	position.SetY(position.GetY() + velocity.GetY());
 	position.SetZ(position.GetZ() + velocity.GetZ());
 
-	// // sets velocity to the normalized vector multiplied by speed
-	// velocity.SetX(normalizedVector.GetX() * speed);
-	// velocity.SetY(normalizedVector.GetY() * speed);
-	// velocity.SetZ(normalizedVector.GetZ() * speed);
+	// sets velocity to the normalized vector multiplied by speed
+	velocity.SetX(normalizedVector.GetX() * speed);
+	velocity.SetY(normalizedVector.GetY() * speed);
+	velocity.SetZ(normalizedVector.GetZ() * speed);
 
-	// // time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
-	// Vector3 timeStep = new Vector(velocity.GetX() * dt,
-	// 							  velocity.GetY() * dt,
-	// 							  velocity.GetZ() * dt);
+	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
+	Vector3 timeStep = new Vector(velocity.GetX() * dt,
+								  velocity.GetY() * dt,
+								  velocity.GetZ() * dt);
 
-	// // changes position by the time step to move it gradually forward to its destination
-	// position.SetX(position.GetX() + timeStep.GetX());
-	// position.SetY(position.GetY() + timeStep.GetY());
-	// position.SetZ(position.GetZ() + timeStep.GetZ());
+	// changes position by the time step to move it gradually forward to its destination
+	position.SetX(position.GetX() + timeStep.GetX());
+	position.SetY(position.GetY() + timeStep.GetY());
+	position.SetZ(position.GetZ() + timeStep.GetZ());
 
 }
