@@ -1,7 +1,8 @@
 #include "patrol.h"
 #include <cmath>
 
-PatrolMovement::PatrolMovement(float newUnitDistance, int* newTravelNode, int newNodesPerRefuel){
+PatrolMovement::PatrolMovement(Point3 newInitialPosition, float newUnitDistance, int* newTravelNode, int newNodesPerRefuel){
+	initialPosition = newInitialPosition;
 	unitDistance = newUnitDistance;
 	travelNode = newTravelNode;
 	nodesPerRefuel = newNodesPerRefuel;
@@ -35,12 +36,15 @@ Point3 PatrolMovement::GetNode(int node, Point3 position){
 	return moveTo;
 }
 
-void PatrolMovement::MovePath(Point3 *position, Direction *direction, Vector3 *velocity, /*Vector3 *acceleration*/, float *dt){
-	Point3 initialPosition = position;
-	BeelineMovement(GetNode(travelNode, initialPosition)); // go to saved position, 0 at start
-	for(int i = 0; i < nodesPerRefuel; i++){
-		BeelineMovement(GetNode(travelNode + i, initialPosition)); // travel to the position of the next node
-		travelNode++;
+void PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt){
+	BeelineMovement(GetNode(travelNode + 1, position));
+	if(position == GetNode(travelNode, position) && travelNode % nodesPerRefuel == 0){
+		BeelineMovement(initialPosition);
 	}
-	BeelineMovement(GetNode(0, initialPosition));
+	// BeelineMovement(GetNode(travelNode, initialPosition)); // go to saved position, 0 at start
+	// for(int i = 0; i < nodesPerRefuel; i++){
+	// 	BeelineMovement(GetNode(travelNode + i, initialPosition)); // travel to the position of the next node
+	// 	travelNode++;
+	// }
+	// BeelineMovement(GetNode(0, initialPosition));
 }

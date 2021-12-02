@@ -5,14 +5,15 @@
 
 class PatrolMovement : public MovementStrategy{
 public:
-	PatrolMovement(float newUnitDistance, int* newTravelNode, int newNodesPerRefuel);
+	PatrolMovement(Point3 newInitialPosition; float newUnitDistance, int* newTravelNode, int newNodesPerRefuel);
 
-	void MovePath(Point3 *position, Direction *direction, Vector3 *velocity, /*Vector3 *acceleration*/, float *dt);
+	void MovePath(Point3 *position, Direction *direction, Vector3 *velocity, float *dt);
 
 private:
 
 	Point3 GetNode(int node);
 
+	Point3 initialPosition;
 	float unitDistance;
 	int travelNode;
 	int nodesPerRefuel;

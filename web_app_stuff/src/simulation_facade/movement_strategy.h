@@ -7,7 +7,7 @@
 
 class MovementStrategy{
 public:
-	virtual void MovePath(Point3 *position, Direction *direction, Vector3 *velocity, /*Vector3 *acceleration*/, float *dt) = 0;
+	virtual void MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt) = 0;
 }
 
 #endif
