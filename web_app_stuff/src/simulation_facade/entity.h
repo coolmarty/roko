@@ -142,6 +142,8 @@ public:
       * @return none
       */
      void SetId(int new_id);
+
+     void SetSpeed(float speed);
 protected:
   Point3 position;
   Vector3 velocity;
@@ -149,6 +151,7 @@ protected:
   Vector3 direction;
   float time;
   int id;
+  float speed=0;
 
 };
 
