@@ -12,7 +12,6 @@
  ******************************************************************************/
 #include "point3.h"
 #include "vector3.h"
-#include "direction.h"
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
@@ -58,7 +57,7 @@ public:
       *
       * @return Direction direction
       */
-     Direction GetDirection();
+     Vector3 GetDirection();
 
      /**
       * @brief getter for time
@@ -68,11 +67,25 @@ public:
      float GetTime();
 
      /**
+      * @brief getter for id
+      *
+      * @return int id
+      */
+     int GetId();
+
+     /**
       * @brief setter for position
       *
       * @return none
       */
      void SetPosition(Point3 p);
+
+     /**
+      * @brief setter for position using floats
+      *
+      * @return none
+      */
+     void SetPosition(float x, float y, float z);
 
      /**
       * @brief setter for velocity
@@ -82,6 +95,13 @@ public:
      void SetVelocity(Vector3 v);
 
      /**
+      * @brief setter for velocity using floats
+      *
+      * @return none
+      */
+     void SetVelocity(float x, float y,float z);
+
+     /**
       * @brief setter for acceleration
       *
       * @return none
@@ -89,24 +109,49 @@ public:
      void SetAcceleration(Vector3 a);
 
      /**
+      * @brief setter for acceleration using floats
+      *
+      * @return none
+      */
+     void SetAcceleration(float x, float y, float z);
+
+     /**
       * @brief setter for direction
       *
       * @return none
       */
-     void SetDirection(Direction d);
+     void SetDirection(Vector3 d);
+
+     /**
+      * @brief setter for direction
+      *
+      * @return none
+      */
+     void SetDirection(float x, float y, float z);
 
      /**
       * @brief setter for time
       *
       * @return none
       */
-     void SetTime(float t){time=t};
+     void SetTime(float t);
+
+     /**
+      * @brief setter for id
+      *
+      * @return none
+      */
+     void SetId(int new_id);
+
+     void SetSpeed(float speed);
 protected:
   Point3 position;
   Vector3 velocity;
-  Vector3 acceleraton;
-  Direction direction;
+  Vector3 acceleration;
+  Vector3 direction;
   float time;
+  int id;
+  float speed=0;
 
 };
 
