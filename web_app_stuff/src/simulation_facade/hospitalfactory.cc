@@ -4,7 +4,7 @@ HospitalFactory::HospitalFactory(){
   return;
 }
 
-Entity *HospitalFactory::create(picojson::object& entityData){
+Entity *HospitalFactory::create(picojson::object& entityData, ICameraController& cameraController){
   if (entityData["name"].get<std::string>() == "hospital") {
       Entity *ourHospital = new Hospital();
 
@@ -13,6 +13,15 @@ Entity *HospitalFactory::create(picojson::object& entityData){
 
       picojson::array position = entityData["position"].get<picojson::array>();
       ourHospital->SetPosition(position[0].get<double>(), position[1].get<double>(), position[2].get<double>());
+
+      picojson::array direction = entityData["direction"].get<picojson::array>();
+      ourHospital->SetPosition(direction[0].get<double>(), direction[1].get<double>(), direction[2].get<double>());
+
+      picojson::array cameras = entityData["cameras"].get<picojson::array>();
+      for (int i = 0; i < cameras.size(); i++) {
+          Camera* camera = new Camera(cameras[i].get<double>(), &cameraController);
+          ourHospital->addCamera(camera);
+      }
 
       return ourHospital;
   }
