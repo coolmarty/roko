@@ -3,7 +3,6 @@
 
 #include "entity.h"
 
-
 class Drone : public Entity{
 public:
 	Drone();
@@ -26,6 +25,7 @@ public:
 	// void SetAcceleration(Vector3 newAcceleration);
 	// void SetTime(float newTime);
 
+	void addCamera(Camera *camera);
 	void Move();
 	void TakePicture();
 

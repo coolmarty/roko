@@ -14,10 +14,10 @@ CompositeEntityFactory::~CompositeEntityFactory(){
   }
 }
 
-Entity *CompositeEntityFactory::create(picojson::object& entityData){
+Entity *CompositeEntityFactory::create(picojson::object& entityData, ICameraController& cameraController){
   Entity *ent;
   for(int i=0;i<factories.size();i++){
-    ent = factories[i]->create(entityData);
+    ent = factories[i]->create(entityData,cameraController);
     if(ent){
       return ent;
     }

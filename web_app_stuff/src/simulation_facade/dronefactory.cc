@@ -1,10 +1,11 @@
 #include "dronefactory.h"
 
+
 DroneFactory::DroneFactory(){
   return;
 }
 
-Entity *DroneFactory::create(picojson::object& entityData){
+Entity *DroneFactory::create(picojson::object& entityData, ICameraController& cameraController){
   if (entityData["name"].get<std::string>() == "drone") {
     Entity *ourDrone = new Drone();
 
@@ -16,6 +17,14 @@ Entity *DroneFactory::create(picojson::object& entityData){
 
     picojson::array direction = entityData["direction"].get<picojson::array>();
     ourDrone->SetPosition(direction[0].get<double>(), direction[1].get<double>(), direction[2].get<double>());
+
+    ourDrone->SetSpeed(entityData["speed"].get<double>());
+
+    picojson::array cameras = entityData["cameras"].get<picojson::array>();
+    for (int i = 0; i < cameras.size(); i++) {
+        Camera* camera = new Camera(cameras[i].get<double>(), &cameraController);
+        ourDrone->addCamera(camera);
+    }
 
     return ourDrone;
   }

@@ -31,7 +31,7 @@ public:
    *
    * @return a Robot Entity
    */
-  Entity *create(picojson::object& entityData);
+  Entity *create(picojson::object& entityData, ICameraController& cameraController);
 };
 
 

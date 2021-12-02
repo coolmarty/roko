@@ -1,5 +1,6 @@
 #include "drone.h"
 
+
 Drone::Drone(){
 	position = Point3();
 	direction = Vector3();
@@ -63,6 +64,7 @@ Drone::Drone(const Drone& old){
 // void Drone::SetTime(float newTime){
 // 	time = newTime;
 // }
+
 
 void Drone::Move(){
 

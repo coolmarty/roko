@@ -12,6 +12,9 @@
  ******************************************************************************/
 #include "point3.h"
 #include "vector3.h"
+#include <vector>
+#include "camera.h"
+
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
@@ -72,6 +75,8 @@ public:
       * @return int id
       */
      int GetId();
+
+     float GetSpeed();
 
      /**
       * @brief setter for position
@@ -144,6 +149,8 @@ public:
      void SetId(int new_id);
 
      void SetSpeed(float speed);
+
+     void addCamera(Camera *camera);
 protected:
   Point3 position;
   Vector3 velocity;
@@ -152,6 +159,7 @@ protected:
   float time;
   int id;
   float speed=0;
+  std::vector<Camera*> cameras;
 
 };
 

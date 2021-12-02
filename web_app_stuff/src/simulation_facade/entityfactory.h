@@ -11,6 +11,7 @@
 #include <vector>
 #include "picojson.h"
 
+
 #ifndef _ENTITYFACTORY_H_
 #define _ENTITYFACTORY_H_
 
@@ -28,7 +29,7 @@ public:
    *
    * @return an Entity
    */
-  virtual Entity *create(picojson::object& entityData)=0;
+  virtual Entity *create(picojson::object& entityData, ICameraController& cameraController)=0;
 
 };
 

@@ -4,7 +4,7 @@ RobotFactory::RobotFactory(){
   return;
 }
 
-Entity *RobotFactory::create(picojson::object& entityData){
+Entity *RobotFactory::create(picojson::object& entityData, ICameraController& cameraController){
   if (entityData["name"].get<std::string>() == "robot") {
       Entity *ourBot = new Robot();
 
@@ -16,6 +16,12 @@ Entity *RobotFactory::create(picojson::object& entityData){
 
       picojson::array direction = entityData["direction"].get<picojson::array>();
       ourBot->SetPosition(direction[0].get<double>(), direction[1].get<double>(), direction[2].get<double>());
+
+      picojson::array cameras = entityData["cameras"].get<picojson::array>();
+      for (int i = 0; i < cameras.size(); i++) {
+          Camera* camera = new Camera(cameras[i].get<double>(), &cameraController);
+          ourBot->addCamera(camera);
+      }
 
       return ourBot;
   }

@@ -35,7 +35,7 @@ public:
    *
    * @return an Entity
    */
-  Entity *create(picojson::object& entityData);
+  Entity *create(picojson::object& entityData, ICameraController& cameraController);
 private:
   std::vector<EntityFactory *> factories;
 };
