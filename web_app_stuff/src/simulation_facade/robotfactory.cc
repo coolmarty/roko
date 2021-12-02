@@ -6,7 +6,7 @@ RobotFactory::RobotFactory(){
 
 Entity *RobotFactory::create(picojson::object& entityData){
   if (entityData["name"].get<std::string>() == "robot") {
-      Entity *ourBot = new Drone();
+      Entity *ourBot = new Robot();
 
       ourBot->SetId(entityData["entityId"].get<double>());
 
