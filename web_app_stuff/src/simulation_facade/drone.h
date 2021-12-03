@@ -9,7 +9,7 @@ class Drone : public Entity{
 public:
 	Drone();
 
-	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime);
+	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode);
 
 	Drone(Drone old);
 
@@ -24,6 +24,8 @@ private:
 	Vector3 velocity;
 	float time;
 	Point3 robotFound;
+	int travelNode;
+	int currentNode;
 }
 
 #endif
