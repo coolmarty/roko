@@ -24,6 +24,11 @@ class CompositeBattery : public Battery{
  */
   std::vector<Battery> batteries;
 /**
+* @brief Generation of a CompositeBattery with no parameters.
+*
+*/
+  CompositeBattery();
+/**
 * @brief Generation of a CompositeBattery with a Battery passed in.
 *
 */
