@@ -6,7 +6,7 @@ Drone::Drone(){
 	velocity = Vector3();
 	acceleration = Vector3(0,9.8,0);
 	time = 0;
-	battery = *(new Battery());
+        battery = *(new Battery());
 }
 
 Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, Vector3 newAcceleration, float newTime){
