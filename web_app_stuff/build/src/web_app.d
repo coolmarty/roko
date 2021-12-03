@@ -77,7 +77,9 @@ build/src/web_app.o: src/web_app.cc src/web_app.h \
  /project/grades/Fall-2021/csci3081/dependencies/include/libwebsockets/lws-settings.h \
  /project/grades/Fall-2021/csci3081/dependencies/include/libwebsockets/lws-netdev.h \
  /project/grades/Fall-2021/csci3081/dependencies/include/picojson.h \
- src/camera_controller.h src/util/base64.h
+ src/camera_controller.h \
+ /project/grades/Fall-2021/csci3081/dependencies/include/picojson.h \
+ src/util/base64.h
 
 src/web_app.h:
 
@@ -238,5 +240,7 @@ src/web_app.h:
 /project/grades/Fall-2021/csci3081/dependencies/include/picojson.h:
 
 src/camera_controller.h:
+
+/project/grades/Fall-2021/csci3081/dependencies/include/picojson.h:
 
 src/util/base64.h:

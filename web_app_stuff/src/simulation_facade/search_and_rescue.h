@@ -11,6 +11,7 @@
  * Includes
  ******************************************************************************/
 #include "point3.h"
+#include "drone.h"
 
 /**
  * @brief Facade into the search and rescue functionality of the Drone
