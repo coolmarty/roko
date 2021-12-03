@@ -57,7 +57,7 @@ class RechargeStation : public Entity{
 */
     bool IsBusy();
     
-    void Update();
+    void Update(float dt);
 };
 
 #endif
