@@ -48,16 +48,18 @@ void RechargeStation::Recharge(Drone drone){
       chargetaken += 0.1;
       usleep(100);
     }
-    powercells.SetFirstBattery(powercells.GetFirstBatteryLife() - chargetaken); 
+    powercells.SetFirstBattery(powercells.GetFirstBatteryLife() - chargetaken);
     std::cout << "Recharging complete." << std::endl;
   }
   return;
   busy = false;
 } //note: this iteration does not have a case in which all batteries are drained. I hope we found the robot within the first 21 charges.
 
+
 bool IsBusy(){
   return busy;
 }
-void RechargeStation::Update(float dt){
   
+void RechargeStation::Update(float dt){
+
 }

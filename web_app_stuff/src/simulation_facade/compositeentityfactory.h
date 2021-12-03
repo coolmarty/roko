@@ -26,6 +26,9 @@ public:
    */
   CompositeEntityFactory();
 
+  /**
+   * @brief destructor for CompositeEntityFactory, since all factories are new'd
+   */
   ~CompositeEntityFactory();
 
   /**
@@ -35,7 +38,7 @@ public:
    *
    * @return an Entity
    */
-  Entity *create(picojson::object& entityData);
+  Entity *create(picojson::object& entityData, ICameraController& cameraController);
 private:
   std::vector<EntityFactory *> factories;
 };

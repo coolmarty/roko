@@ -7,7 +7,7 @@ ROOT_DIR := $(shell git rev-parse --show-toplevel)
 WEB_DIR = /project/grades/Fall-2021/csci3081/dependencies/include/
 ACTUAL_LIB= /project/grades/Fall-2021/csci3081/dependencies/lib/
 BUILD_DIR = build
-INCLUDES = -I.. -I$(DEP_DIR)/include -Isrc -I. -I$(DEP_DIR)/include -Iinclude -I. -I$(WEB_DIR)
+INCLUDES = -I.. -I$(DEP_DIR)/include -Isrc -I. -I$(DEP_DIR)/include -Iinclude -I. -I$(WEB_DIR) -Isrc/simulation_facade
 LIBDIRS = -L$(DEP_DIR)/lib -L$(ACTUAL_LIB)
 LIBS = -lCppWebServer -lwebsockets -lssl -lcrypto -lz -lpthread
 
@@ -16,13 +16,13 @@ OBJFILES = $(addprefix $(BUILD_DIR)/, $(SOURCES:.cc=.o))
 
 EXEFILE = $(BUILD_DIR)/web-app
 
-# TESTFILES = $(shell find tests -name '*.cc')
-# TESTOBJFILES = $(filter-out $(BUILD_DIR)/src/main.o $(BUILD_DIR)/src/web_app.o,$(OBJFILES)) $(addprefix $(BUILD_DIR)/, $(TESTFILES:.cc=.o))
-# TESTEXEFILE = $(BUILD_DIR)/test-app
-#
-# all: $(BUILD_DIR) $(EXEFILE) tests
-#
-# tests: $(BUILD_DIR) $(TESTEXEFILE)
+TESTFILES = $(shell find tests -name '*.cc')
+TESTOBJFILES = $(filter-out $(BUILD_DIR)/src/main.o $(BUILD_DIR)/src/web_app.o,$(OBJFILES)) $(addprefix $(BUILD_DIR)/, $(TESTFILES:.cc=.o))
+TESTEXEFILE = $(BUILD_DIR)/test-app
+
+all: $(BUILD_DIR) $(EXEFILE) tests
+
+tests: $(BUILD_DIR) $(TESTEXEFILE)
 
 # Applicaiton Targets:
 $(EXEFILE): $(OBJFILES)

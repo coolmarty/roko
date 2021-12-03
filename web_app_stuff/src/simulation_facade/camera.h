@@ -1,3 +1,8 @@
+#include "camera_controller.h"
+#include <iostream>
+#include <fstream>
+
+
 class Camera : public ICameraObserver {
 public:
     // Structure the result however you like
@@ -52,7 +57,6 @@ public:
         delete result;
     }
 
-private:
     ICameraController* controller;
     int id;
 };
