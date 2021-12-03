@@ -19,6 +19,12 @@
  */
 class Drone : public Entity{
 public:
+
+	void SetJoystick(double x, double y, double z, double a) {
+		Vector3 dir = Vector3(x,y,z);
+		this->SetDirection(dir);
+	}
+	float lastPictureTime = 0.0;
 	/**
 	 * @brief The default constructer for Drones
 	 *
@@ -58,7 +64,7 @@ public:
 	void TakePicture();
 
 	void Update(float dt);
-        Battery battery;  
+        Battery battery;
 };
 
 #endif
