@@ -24,13 +24,13 @@
  */
 class RechargeStation : public Entity{
   public:
-  
+
 /**
 * @brief Boolean value of whether a drone is currently at the station, initialized to FALSE.
 *
 */
     bool busy;
-    
+
 /**
 * @brief The RechargeStation's source of power - a CompositeBattery to be drained by the drone.
 *
@@ -56,8 +56,8 @@ class RechargeStation : public Entity{
 *
 */
     bool IsBusy();
-    
-    void Update();
+
+    void Update(float dt);
 };
 
 #endif

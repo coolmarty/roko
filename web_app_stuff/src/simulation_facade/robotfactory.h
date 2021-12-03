@@ -32,7 +32,17 @@ public:
    * @return a Robot Entity
    */
   Entity *create(picojson::object& entityData, ICameraController& cameraController);
+
+  /**
+   * @brief The function used to generate a Robot debug only
+   *
+   * Takes in a picojson object containing all the data about an entity
+   *
+   * @return a Robot Entity
+   */
+  Entity *create(picojson::object& entityData);
 };
+
 
 
 #endif

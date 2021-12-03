@@ -57,7 +57,6 @@ public:
         delete result;
     }
 
-private:
     ICameraController* controller;
     int id;
 };

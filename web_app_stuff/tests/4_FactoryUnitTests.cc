@@ -69,9 +69,9 @@ TEST_F(HospitalFactoryTest, CreateHospital) {
     EXPECT_TRUE(false);
     return;
   }
-
-
+  std::cout<<"cout please print"<<std::endl;
   Entity *hosp = hospitalFactory.create(o);
+  std::cout<<"cout please print2"<<std::endl;
 
   Point3 expectedPos = Point3(-40,0,2);
   Point3 actualPos = hosp->GetPosition();
@@ -149,8 +149,10 @@ TEST_F(RechargeFactoryTest, CreateRechargeStation) {
 
   Entity *station = rechargeStationFactory.create(o);
 
+
   Point3 expectedPos = Point3(50,0,20);
   Point3 actualPos = station->GetPosition();
+  std::cout<<"past stuff"<<std::endl;
   EXPECT_EQ(actualPos.GetX(),expectedPos.GetX());
   EXPECT_EQ(actualPos.GetY(),expectedPos.GetY());
   EXPECT_EQ(actualPos.GetZ(),expectedPos.GetZ());
@@ -186,19 +188,19 @@ TEST_F(DroneFactoryTest, CreateDrone) {
 
   Entity *drone = droneFactory.create(o);
 
-  Point3 expectedPos = Point3(50,0,20);
+  Point3 expectedPos = Point3(0,2.5,0);
   Point3 actualPos = drone->GetPosition();
   EXPECT_EQ(actualPos.GetX(),expectedPos.GetX());
   EXPECT_EQ(actualPos.GetY(),expectedPos.GetY());
   EXPECT_EQ(actualPos.GetZ(),expectedPos.GetZ());
 
-  Vector3 expectedDir = Vector3(1,0,0);
+  Vector3 expectedDir = Vector3(0,0,0);
   Vector3 actualDir = drone->GetDirection();
   EXPECT_EQ(actualDir.GetX(),expectedDir.GetX());
   EXPECT_EQ(actualDir.GetY(),expectedDir.GetY());
   EXPECT_EQ(actualDir.GetZ(),expectedDir.GetZ());
 
-  EXPECT_EQ(drone->GetId(),2);
+  EXPECT_EQ(drone->GetId(),0);
 
-  EXPECT_EQ(drone->GetSpeed(),4)
+  EXPECT_EQ(drone->GetSpeed(),4);
 }
