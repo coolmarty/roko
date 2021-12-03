@@ -7,6 +7,7 @@ Drone::Drone(){
 	time = 0;
 	robotFound = Point3(-1,-1,-1);
 	travelNode = 0;
+	currentNode = 0;
 }
 
 Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode){
@@ -27,6 +28,10 @@ Drone::Drone(Drone old){
 	robotFound = old.robotFound;
 	travelNode = old.travelNode;
 	currentNode = old.currentNode;
+}
+
+Point3 Drone::TakePicture(){
+	return Point3(0, 0, 0);
 }
 
 void Drone::Move(){
@@ -61,4 +66,6 @@ void Drone::Update(float dt){
 	position.SetX(position.GetX() + timeStep.GetX());
 	position.SetY(position.GetY() + timeStep.GetY());
 	position.SetZ(position.GetZ() + timeStep.GetZ());
+
+	time += dt;
 }

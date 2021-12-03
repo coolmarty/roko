@@ -19,13 +19,13 @@ public:
 	void Update(float dt);
 
 private:
-	Point3 position;
-	Vector3 direction;
-	Vector3 velocity;
-	float time;
+	// Point3 position;
+	// Vector3 direction;
+	// Vector3 velocity;
+	// float time;
 	Point3 robotFound;
-	int travelNode;
-	int currentNode;
+	int travelNode; // keeps track of the drone's target location along the edge of the map, increments when it's at a recharge station
+	int currentNode; // for the drone's patrol, where it's currently moving to
 }
 
 #endif
