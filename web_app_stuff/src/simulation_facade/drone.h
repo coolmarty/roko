@@ -12,6 +12,7 @@
 #include "entity.h"
 #include "battery.h"
 #include "movement_strategy.h"
+#include "data.h"
 
 /**
  * @brief The main class used for drones

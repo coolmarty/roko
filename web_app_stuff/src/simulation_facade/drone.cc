@@ -4,7 +4,6 @@ Drone::Drone(){
 	position = Point3();
 	direction = Vector3();
 	velocity = Vector3();
-<<<<<<< HEAD
 	time = 0;
 	robotFound = Point3(-1,-1,-1);
 	travelNode = 0;
