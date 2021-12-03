@@ -10,6 +10,7 @@
  * Includes
  ******************************************************************************/
 #include "entity.h"
+#include "battery.h"
 
 /**
  * @brief The main class used for drones
@@ -57,6 +58,7 @@ public:
 	void TakePicture();
 
 	void Update(float dt);
+        Battery battery;  
 };
 
 #endif
