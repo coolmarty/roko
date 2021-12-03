@@ -10,8 +10,6 @@ public:
 
 	Point3(const Point3 &old);
 
-	~Point3();
-
 	float GetX();
 	float GetY();
 	float GetZ();

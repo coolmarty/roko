@@ -18,9 +18,6 @@ Point3::Point3(const Point3 &old){
 	z = old.z;
 }
 
-Point3::~Point3(){
-}
-
 float Point3::GetX(){
 	return x;
 }

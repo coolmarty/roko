@@ -18,9 +18,6 @@ Vector3::Vector3(const Vector3 &old){
 	z = old.z;
 }
 
-Vector3::~Vector3(){
-}
-
 float Vector3::GetX(){
 	return x;
 }

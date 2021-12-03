@@ -10,8 +10,6 @@ public:
 
 	Vector3(const Vector3 &old);
 
-	~Vector3();
-
 	float GetX();
 	float GetY();
 	float GetZ();

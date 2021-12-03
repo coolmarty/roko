@@ -10,6 +10,7 @@
  ******************************************************************************/
 #include <string>
 #include <iostream>
+#include <vector>
 
 /*******************************************************************************
  * Class Definitions
@@ -104,11 +105,20 @@ public:
      * @return none;
      */
     void SetPixel(int x, int y, unsigned char* colors);
+
+
+    float getDistance(int x,int y);
+
+    std::vector<float> getDirection(int x,int y);
+
+
 private:
     unsigned char* image;
     int width;
     int height;
     int components;
+
+    float magnitudeVector(std::vector<float> vec);
 
 
 
