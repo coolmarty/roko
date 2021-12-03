@@ -52,8 +52,14 @@ void RechargeStation::Recharge(Drone drone){
     std::cout << "Recharging complete." << std::endl;
   }
   return;
+  busy = false;
 } //note: this iteration does not have a case in which all batteries are drained. I hope we found the robot within the first 21 charges.
 
+
+bool IsBusy(){
+  return busy;
+}
+  
 void RechargeStation::Update(float dt){
 
 }
