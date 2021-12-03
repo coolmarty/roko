@@ -156,7 +156,7 @@ protected:
   Vector3 velocity;
   Vector3 acceleration;
   Vector3 direction;
-  float time;
+  float time=0;
   int id;
   float speed=0;
   std::vector<Camera*> cameras;
