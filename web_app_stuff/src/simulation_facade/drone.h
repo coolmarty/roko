@@ -11,7 +11,7 @@ public:
 
 	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode);
 
-	Drone(Drone old);
+	Drone(const Drone &old);
 
 	void Move();
 	Point3 TakePicture();
@@ -26,6 +26,6 @@ private:
 	Point3 robotFound;
 	int travelNode; // keeps track of the drone's target location along the edge of the map, increments when it's at a recharge station
 	int currentNode; // for the drone's patrol, where it's currently moving to
-}
+};
 
 #endif

@@ -8,7 +8,7 @@ public:
 
 	Vector3(float a, float b, float c);
 
-	Vector3(Point3 old);
+	Vector3(const Vector3 &old);
 
 	~Vector3();
 
@@ -16,12 +16,12 @@ public:
 	float GetY();
 	float GetZ();
 
-	void SetX(float new);
-	void SetY(float new);
-	void SetZ(float new);
+	void SetX(float newx);
+	void SetY(float newy);
+	void SetZ(float newz);
 
 private:
 	float x, y, z;
-}
+};
 
 #endif

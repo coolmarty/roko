@@ -2,7 +2,7 @@
 #include <cmath>
 
 PatrolMovement::PatrolMovement(int* newNode){
-	node = newNode;
+	node = *newNode;
 }
 
 Point3 PatrolMovement::GetNode(int node){
@@ -32,14 +32,13 @@ Point3 PatrolMovement::GetNode(int node){
 
 void PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt){
 	const Point3 rechargeLocation = Point3(20, 0, 50);
-	if(position.GetX() < -1450 || position.GetX() > 1550){
+	if(position->GetX() < -1450 || position->GetX() > 1550){
 		node = -1;
 	}
-	if(position.GetZ() < -900 || position.GetZ() > 900){
+	if(position->GetZ() < -900 || position->GetZ() > 900){
 		node = -1;
 	}
-	Point3 targetNode = GetNode(node);
-	BeelineMovement(targetNode);
+	BeelineMovement(GetNode(node));
 	// BeelineMovement(GetNode(travelNode, initialPosition)); // go to saved position, 0 at start
 	// for(int i = 0; i < nodesPerRefuel; i++){
 	// 	BeelineMovement(GetNode(travelNode + i, initialPosition)); // travel to the position of the next node

@@ -12,14 +12,13 @@ Point3::Point3(float a, float b, float c){
 	z = c;
 }
 
-Point3::Point3(Point3 old){
+Point3::Point3(const Point3 &old){
 	x = old.x;
 	y = old.y;
 	z = old.z;
 }
 
 Point3::~Point3(){
-	delete x, y, z;
 }
 
 float Point3::GetX(){

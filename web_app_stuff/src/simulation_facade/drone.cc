@@ -2,7 +2,7 @@
 
 Drone::Drone(){
 	position = Point3();
-	direction = Direction();
+	direction = Vector3();
 	velocity = Vector3();
 	time = 0;
 	robotFound = Point3(-1,-1,-1);
@@ -39,8 +39,8 @@ void Drone::Move(){
 }
 
 void Drone::Update(float dt){
-	const Point3 noRobot = Point3(-1, -1, -1);
-	const Point3 rechargeLocation = Point3(20, 0, 50);
+	Point3 noRobot = Point3(-1, -1, -1);
+	Point3 rechargeLocation = Point3(20, 0, 50);
 
 	if(position == rechargeLocation){
 		travelNode++;

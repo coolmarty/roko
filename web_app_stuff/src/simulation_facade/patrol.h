@@ -7,13 +7,13 @@ class PatrolMovement : public MovementStrategy{
 public:
 	PatrolMovement(int* newNode);
 
-	void MovePath(Point3 *position, Direction *direction, Vector3 *velocity, float *dt);
+	void MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt);
 
 private:
 
 	Point3 GetNode(int node);
 
 	int node;
-}
+};
 
 #endif

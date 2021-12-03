@@ -12,14 +12,13 @@ Vector3::Vector3(float a, float b, float c){
 	z = c;
 }
 
-Vector3::Vector3(Vector3 old){
+Vector3::Vector3(const Vector3 &old){
 	x = old.x;
 	y = old.y;
 	z = old.z;
 }
 
 Vector3::~Vector3(){
-	delete x, y, z;
 }
 
 float Vector3::GetX(){

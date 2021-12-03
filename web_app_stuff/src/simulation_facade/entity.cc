@@ -15,6 +15,6 @@ void Entity::SetVelocity(Vector3 v){velocity=v;}
 
 void Entity::SetAcceleration(Vector3 a){acceleration=a;}
 
-void Entity::SetDirection(Direction d){direction=d;}
+void Entity::SetDirection(Vector3 d){direction=d;}
 
 void Entity::SetTime(float t){time=t};

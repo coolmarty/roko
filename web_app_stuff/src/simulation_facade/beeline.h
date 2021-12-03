@@ -5,12 +5,12 @@
 
 class BeelineMovement : public MovementStrategy{
 public:
-	BeelineMovement(Point3 *dest);
+	BeelineMovement(Point3 dest);
 
 	void MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt);
 
 private:
 	Point3 destination;
-}
+};
 
 #endif
