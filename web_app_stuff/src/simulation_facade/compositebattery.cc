@@ -4,6 +4,11 @@
  ******************************************************************************/
 #include "compositebattery.h"
 
+
+CompositeBattery::CompositeBattery(){
+  return;
+}
+
 CompositeBattery::CompositeBattery(Battery batt){
   batteries.push_back(batt);
   return;

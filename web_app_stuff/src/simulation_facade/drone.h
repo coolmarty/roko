@@ -2,6 +2,7 @@
 #define DRONE_H_
 
 #include "entity.h"
+#include "battery.h"
 
 
 class Drone : public Entity{
@@ -30,6 +31,7 @@ public:
 	void TakePicture();
 
 	void Update(float dt);
+        Battery battery;  
 };
 
 #endif

@@ -6,6 +6,7 @@ Drone::Drone(){
 	velocity = Vector3();
 	acceleration = Vector3(0,9.8,0);
 	time = 0;
+	battery = *(new Battery());
 }
 
 Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, Vector3 newAcceleration, float newTime){
@@ -14,6 +15,7 @@ Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, Vect
 	velocity = newVelocity;
 	acceleration = newAcceleration;
 	time = newTime;
+        battery = *(new Battery());
 }
 
 Drone::Drone(const Drone& old){
@@ -22,6 +24,7 @@ Drone::Drone(const Drone& old){
 	velocity = old.velocity;
 	acceleration = old.acceleration;
 	time = old.time;
+	battery = old.battery;
 }
 
 // Drone::~Drone(){
