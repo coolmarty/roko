@@ -45,6 +45,9 @@ void Drone::Update(float dt){
 	Point3 noRobot = Point3(-1, -1, -1);
 	Point3 rechargeLocation = Point3(20, 0, 50);
 
+	Data storage = Data();
+	storage.AddData(position, velocity, acceleration, direction, time, robotFound, travelNode, currentNode);
+
 	if(position == rechargeLocation){
 		travelNode++;
 		currentNode = travelNode;
