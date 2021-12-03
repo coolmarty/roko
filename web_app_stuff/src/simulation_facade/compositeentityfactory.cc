@@ -25,3 +25,15 @@ Entity *CompositeEntityFactory::create(picojson::object& entityData, ICameraCont
   return NULL;
 
 }
+
+Entity *CompositeEntityFactory::create(picojson::object& entityData){
+  Entity *ent;
+  for(int i=0;i<factories.size();i++){
+    ent = factories[i]->create(entityData);
+    if(ent){
+      return ent;
+    }
+  }
+  return NULL;
+
+}
