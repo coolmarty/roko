@@ -1,0 +1,7 @@
+<map id="Convolution" name="Convolution">
+<area shape="rect" id="node1" title="The main class for convolutional filters, purely virtual." alt="" coords="193,131,293,208"/>
+<area shape="rect" id="node3" href="$classGaussian__Blur.html" title="Gaussian Blur class, allows for the creation of gaussian blur filters." alt="" coords="5,256,145,348"/>
+<area shape="rect" id="node4" href="$classHysteresisFilter.html" title="Hysteresis Filter class, allows for the creation of hysteresis filters." alt="" coords="169,256,317,348"/>
+<area shape="rect" id="node5" href="$classSobelFilter.html" title="Sobel Filter class, allows for the creation of Sobel filters." alt="" coords="342,256,457,348"/>
+<area shape="rect" id="node2" href="$classFilter.html" title="The main class for filters, purely virtual." alt="" coords="201,5,285,83"/>
+</map>

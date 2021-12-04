@@ -1,0 +1,4 @@
+<map id="CompositeEntityFactory" name="CompositeEntityFactory">
+<area shape="rect" id="node1" title="The main class used to generate any entity objects in our simulation." alt="" coords="5,145,220,267"/>
+<area shape="rect" id="node2" href="$classEntityFactory.html" title="The main class of all EntityFactories." alt="" coords="59,5,167,97"/>
+</map>

@@ -1,0 +1,91 @@
+\hypertarget{classDroneFactory}{}\doxysection{Drone\+Factory Class Reference}
+\label{classDroneFactory}\index{DroneFactory@{DroneFactory}}
+
+
+The main class used to generate drone objects in our simulation.  
+
+
+
+
+{\ttfamily \#include $<$dronefactory.\+h$>$}
+
+
+
+Inheritance diagram for Drone\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classDroneFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Drone\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classDroneFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDroneFactory_a254b4563aa4b23a6f7315fa9dc030adc}\label{classDroneFactory_a254b4563aa4b23a6f7315fa9dc030adc}} 
+\mbox{\hyperlink{classDroneFactory_a254b4563aa4b23a6f7315fa9dc030adc}{Drone\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em constructor for \mbox{\hyperlink{classDroneFactory}{Drone\+Factory}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity}{Entity}} $\ast$ \mbox{\hyperlink{classDroneFactory_afee80f074b4ae48b9c42234e5772aaa4}{create}} (picojson\+::object \&entity\+Data, \mbox{\hyperlink{classICameraController}{I\+Camera\+Controller}} \&camera\+Controller)
+\begin{DoxyCompactList}\small\item\em The function used to generate a \mbox{\hyperlink{classDrone}{Drone}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity}{Entity}} $\ast$ \mbox{\hyperlink{classDroneFactory_acb7570f2a162c1f7bf5f0c3ed92eef4f}{create}} (picojson\+::object \&entity\+Data)
+\begin{DoxyCompactList}\small\item\em The function used to generate a \mbox{\hyperlink{classDrone}{Drone}} debug only. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main class used to generate drone objects in our simulation. 
+
+inherits from \mbox{\hyperlink{classEntity}{Entity}} Factory 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDroneFactory_acb7570f2a162c1f7bf5f0c3ed92eef4f}\label{classDroneFactory_acb7570f2a162c1f7bf5f0c3ed92eef4f}} 
+\index{DroneFactory@{DroneFactory}!create@{create}}
+\index{create@{create}!DroneFactory@{DroneFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEntity}{Entity}} $\ast$ Drone\+Factory\+::create (\begin{DoxyParamCaption}\item[{picojson\+::object \&}]{entity\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The function used to generate a \mbox{\hyperlink{classDrone}{Drone}} debug only. 
+
+Takes in a picojson object containing all the data about an entity
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classDrone}{Drone}} \mbox{\hyperlink{classEntity}{Entity}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEntityFactory_a5c7df07aca8a872d217aa6762e1e9b33}{Entity\+Factory}}.
+
+\mbox{\Hypertarget{classDroneFactory_afee80f074b4ae48b9c42234e5772aaa4}\label{classDroneFactory_afee80f074b4ae48b9c42234e5772aaa4}} 
+\index{DroneFactory@{DroneFactory}!create@{create}}
+\index{create@{create}!DroneFactory@{DroneFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEntity}{Entity}} $\ast$ Drone\+Factory\+::create (\begin{DoxyParamCaption}\item[{picojson\+::object \&}]{entity\+Data,  }\item[{\mbox{\hyperlink{classICameraController}{I\+Camera\+Controller}} \&}]{camera\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The function used to generate a \mbox{\hyperlink{classDrone}{Drone}}. 
+
+Takes in a picojson object containing all the data about an entity
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classDrone}{Drone}} \mbox{\hyperlink{classEntity}{Entity}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEntityFactory_a4b138bb7209e34c579eb0d237bb35a95}{Entity\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/\mbox{\hyperlink{dronefactory_8h}{dronefactory.\+h}}\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/dronefactory.\+cc\end{DoxyCompactItemize}

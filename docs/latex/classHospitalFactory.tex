@@ -1,0 +1,91 @@
+\hypertarget{classHospitalFactory}{}\doxysection{Hospital\+Factory Class Reference}
+\label{classHospitalFactory}\index{HospitalFactory@{HospitalFactory}}
+
+
+The main class used to generate hospitals objects in our simulation.  
+
+
+
+
+{\ttfamily \#include $<$hospitalfactory.\+h$>$}
+
+
+
+Inheritance diagram for Hospital\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classHospitalFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hospital\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classHospitalFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHospitalFactory_ad27b71c768cf4d34ad8d745cc1c2861d}\label{classHospitalFactory_ad27b71c768cf4d34ad8d745cc1c2861d}} 
+\mbox{\hyperlink{classHospitalFactory_ad27b71c768cf4d34ad8d745cc1c2861d}{Hospital\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em constructor for \mbox{\hyperlink{classHospitalFactory}{Hospital\+Factory}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity}{Entity}} $\ast$ \mbox{\hyperlink{classHospitalFactory_a73609b00b2c2fb13cc16d7170c04ce49}{create}} (picojson\+::object \&entity\+Data, \mbox{\hyperlink{classICameraController}{I\+Camera\+Controller}} \&camera\+Controller)
+\begin{DoxyCompactList}\small\item\em The function used to generate a \mbox{\hyperlink{classHospital}{Hospital}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity}{Entity}} $\ast$ \mbox{\hyperlink{classHospitalFactory_add3564378f9b47c9b542696533aeaf14}{create}} (picojson\+::object \&entity\+Data)
+\begin{DoxyCompactList}\small\item\em Debug function since we dont have a camera controller in test app. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main class used to generate hospitals objects in our simulation. 
+
+inherits from \mbox{\hyperlink{classEntity}{Entity}} Factory 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHospitalFactory_add3564378f9b47c9b542696533aeaf14}\label{classHospitalFactory_add3564378f9b47c9b542696533aeaf14}} 
+\index{HospitalFactory@{HospitalFactory}!create@{create}}
+\index{create@{create}!HospitalFactory@{HospitalFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEntity}{Entity}} $\ast$ Hospital\+Factory\+::create (\begin{DoxyParamCaption}\item[{picojson\+::object \&}]{entity\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Debug function since we dont have a camera controller in test app. 
+
+Takes in a picojson object containing all the data about an entity
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classHospital}{Hospital}} \mbox{\hyperlink{classEntity}{Entity}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEntityFactory_a5c7df07aca8a872d217aa6762e1e9b33}{Entity\+Factory}}.
+
+\mbox{\Hypertarget{classHospitalFactory_a73609b00b2c2fb13cc16d7170c04ce49}\label{classHospitalFactory_a73609b00b2c2fb13cc16d7170c04ce49}} 
+\index{HospitalFactory@{HospitalFactory}!create@{create}}
+\index{create@{create}!HospitalFactory@{HospitalFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEntity}{Entity}} $\ast$ Hospital\+Factory\+::create (\begin{DoxyParamCaption}\item[{picojson\+::object \&}]{entity\+Data,  }\item[{\mbox{\hyperlink{classICameraController}{I\+Camera\+Controller}} \&}]{camera\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The function used to generate a \mbox{\hyperlink{classHospital}{Hospital}}. 
+
+Takes in a picojson object containing all the data about an entity
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classHospital}{Hospital}} \mbox{\hyperlink{classEntity}{Entity}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEntityFactory_a4b138bb7209e34c579eb0d237bb35a95}{Entity\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/\mbox{\hyperlink{hospitalfactory_8h}{hospitalfactory.\+h}}\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/hospitalfactory.\+cc\end{DoxyCompactItemize}
