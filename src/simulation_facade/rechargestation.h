@@ -46,6 +46,8 @@ class RechargeStation : public Entity{
 *
 */
     RechargeStation(Point3 pos, CompositeBattery compbatt);
+
+    ~RechargeStation();
 /**
 * @brief Function to recharge a drone object passed in as a parameter, will drain power cells of the Recharge Station. If the power cell gets drained, it will discard it and take charge off the next one in line.
 *

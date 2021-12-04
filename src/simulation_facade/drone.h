@@ -40,7 +40,7 @@ public:
 	 */
 	Drone(const Drone& old);
 
-	// ~Drone();
+	~Drone();
 
 	// Point3 GetPosition();
 	// Direction GetDirection();
@@ -58,7 +58,7 @@ public:
 	void TakePicture();
 
 	void Update(float dt);
-        Battery battery;  
+        Battery battery;
 };
 
 #endif

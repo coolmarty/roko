@@ -36,9 +36,8 @@ float CompositeBattery::GetTotalBatteryLife(){
   std::cout << "Total charge: " << total << std::endl;
   return total;
 }
-  
+
 void CompositeBattery::SetFirstBattery(float NBL){
   batteries.front().SetBatteryLife(NBL);
   return;
 }
-

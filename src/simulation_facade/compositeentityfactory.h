@@ -10,6 +10,7 @@
 #include "dronefactory.h"
 #include "robotfactory.h"
 #include "hospitalfactory.h"
+#include "rechargestationfactory.h"
 
 #ifndef _COMPENTFACT_H_
 #define _COMPENTFACT_H_
