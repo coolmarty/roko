@@ -1,0 +1,4 @@
+<map id="Robot" name="Robot">
+<area shape="rect" id="node1" title="Robot class, used to keep track of any and all Robot entities." alt="" coords="33,380,128,472"/>
+<area shape="rect" id="node2" href="$classEntity.html" title="The main class for convolutional filters, purely virtual." alt="" coords="5,5,156,332"/>
+</map>

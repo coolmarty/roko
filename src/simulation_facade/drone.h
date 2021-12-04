@@ -11,6 +11,9 @@
  ******************************************************************************/
 #include "entity.h"
 #include "battery.h"
+/*******************************************************************************
+ * Class Definitions
+ ******************************************************************************/
 
 /**
  * @brief The main class used for drones
@@ -58,7 +61,7 @@ public:
 	void TakePicture();
 
 	void Update(float dt);
-        Battery battery;  
+        Battery battery;
 };
 
 #endif
