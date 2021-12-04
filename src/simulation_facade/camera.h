@@ -1,27 +1,54 @@
+/**
+ * @file camera.h
+ *
+ */
+ #ifndef CAMERA_H_
+ #define CAMERA_H_
+ /*******************************************************************************
+  * Includes
+  ******************************************************************************/
 #include "camera_controller.h"
 #include <iostream>
 #include <fstream>
-
-
+/*******************************************************************************
+ * Class Definitions
+ ******************************************************************************/
+/**
+ * @brief The main class of Camera
+ *
+ *
+ */
 class Camera : public ICameraObserver {
 public:
-    // Structure the result however you like
+    // results of blob detection
     struct CameraResult : public ICameraResult {
         bool found;
         double pos[3];
     };
 
-    // Constructor
+    /**
+     * @brief The main constructor of Camera, takes in an id and controller
+     *
+     *
+     */
     Camera(int cameraId, ICameraController* controller) : id(id), controller(controller){
         controller->AddObserver(*this);
     };
 
-    // Takes a picture using the specified camera id
+    /**
+     * @brief Takes a picture of a camera with a certain id
+     *
+     *
+     */
     void TakePicture() {
         controller->TakePicture(id);
     }
 
-    // Processes images asynchonously.  The returned camera result will be passed into the ImageProcessingComplete(...) method
+    /**
+     * @brief async image processing call
+     *
+     *
+     */
     ICameraResult* ProcessImages(int cameraId, double xPos, double yPos, double zPos, const std::vector<RawCameraImage>& images, picojson::object& details) const {
         if (cameraId == id || cameraId < 0) {
             // These will output the image to files.  Ultimately this is just for debugging:
@@ -48,7 +75,11 @@ public:
         }
     }
 
-    // After the asynchronous image processing, this method will be synchronized with the update loop.
+    /**
+     * @brief result of image processing
+     *
+     *
+     */
     void ImageProcessingComplete(ICameraResult* result) {
         CameraResult& res = *static_cast<CameraResult*>(result);
         if (res.found) {
@@ -60,3 +91,5 @@ public:
     ICameraController* controller;
     int id;
 };
+
+#endif

@@ -11,8 +11,14 @@
  ******************************************************************************/
 #include "entity.h"
 #include "battery.h"
+<<<<<<< HEAD
 #include "movement_strategy.h"
 #include "data.h"
+=======
+/*******************************************************************************
+ * Class Definitions
+ ******************************************************************************/
+>>>>>>> dev
 
 /**
  * @brief The main class used for drones
@@ -21,6 +27,12 @@
  */
 class Drone : public Entity{
 public:
+
+	void SetJoystick(double x, double y, double z, double a) {
+		Vector3 dir = Vector3(x,y,z);
+		this->SetDirection(dir);
+	}
+	float lastPictureTime = 0.0;
 	/**
 	 * @brief The default constructer for Drones
 	 *
@@ -60,12 +72,14 @@ public:
 	void TakePicture();
 
 	void Update(float dt);
+
     Battery battery;
 
 private:
 	Point3 robotFound;
 	int travelNode; // keeps track of the drone's target location along the edge of the map, increments when it's at a recharge station
 	int currentNode; // for the drone's patrol, where it's currently moving to
+
 };
 
 #endif

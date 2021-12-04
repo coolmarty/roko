@@ -1,0 +1,88 @@
+\hypertarget{classSimulationFacade}{}\doxysection{Simulation\+Facade Class Reference}
+\label{classSimulationFacade}\index{SimulationFacade@{SimulationFacade}}
+
+
+our main class for running a simulation of a drone rescuing a robot  
+
+
+
+
+{\ttfamily \#include $<$Simulation\+Facade.\+h$>$}
+
+
+
+Collaboration diagram for Simulation\+Facade\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classSimulationFacade__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSimulationFacade_aeecad83c3d8ad32ebf60c9f49fda030f}{Simulation\+Facade}} ()
+\begin{DoxyCompactList}\small\item\em constructor, sets up our simulation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimulationFacade_ab3102ce15939624a42466f459d2f322c}{Create\+Entity}} (picojson\+::object \&entity\+Data, \mbox{\hyperlink{classICameraController}{I\+Camera\+Controller}} \&camera\+Controller)
+\begin{DoxyCompactList}\small\item\em creates entities and adds them to its entity vector; \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimulationFacade_afd57e2e7aa58a7c13e37bcd6baead1fc}{Update}} (double dt)
+\begin{DoxyCompactList}\small\item\em calls the update method for each entity in its vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimulationFacade_a983a2d39a1918644f2cc97155e9d5e46}{Finish\+Update}} (picojson\+::object \&return\+Value)
+\begin{DoxyCompactList}\small\item\em creates a json object with updated data for all entities to send to the server \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+our main class for running a simulation of a drone rescuing a robot 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSimulationFacade_aeecad83c3d8ad32ebf60c9f49fda030f}\label{classSimulationFacade_aeecad83c3d8ad32ebf60c9f49fda030f}} 
+\index{SimulationFacade@{SimulationFacade}!SimulationFacade@{SimulationFacade}}
+\index{SimulationFacade@{SimulationFacade}!SimulationFacade@{SimulationFacade}}
+\doxysubsubsection{\texorpdfstring{SimulationFacade()}{SimulationFacade()}}
+{\footnotesize\ttfamily Simulation\+Facade\+::\+Simulation\+Facade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor, sets up our simulation 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSimulationFacade_ab3102ce15939624a42466f459d2f322c}\label{classSimulationFacade_ab3102ce15939624a42466f459d2f322c}} 
+\index{SimulationFacade@{SimulationFacade}!CreateEntity@{CreateEntity}}
+\index{CreateEntity@{CreateEntity}!SimulationFacade@{SimulationFacade}}
+\doxysubsubsection{\texorpdfstring{CreateEntity()}{CreateEntity()}}
+{\footnotesize\ttfamily void Simulation\+Facade\+::\+Create\+Entity (\begin{DoxyParamCaption}\item[{picojson\+::object \&}]{entity\+Data,  }\item[{\mbox{\hyperlink{classICameraController}{I\+Camera\+Controller}} \&}]{camera\+Controller }\end{DoxyParamCaption})}
+
+
+
+creates entities and adds them to its entity vector; 
+
+calls the abstract composite entity factory \mbox{\Hypertarget{classSimulationFacade_a983a2d39a1918644f2cc97155e9d5e46}\label{classSimulationFacade_a983a2d39a1918644f2cc97155e9d5e46}} 
+\index{SimulationFacade@{SimulationFacade}!FinishUpdate@{FinishUpdate}}
+\index{FinishUpdate@{FinishUpdate}!SimulationFacade@{SimulationFacade}}
+\doxysubsubsection{\texorpdfstring{FinishUpdate()}{FinishUpdate()}}
+{\footnotesize\ttfamily void Simulation\+Facade\+::\+Finish\+Update (\begin{DoxyParamCaption}\item[{picojson\+::object \&}]{return\+Value }\end{DoxyParamCaption})}
+
+
+
+creates a json object with updated data for all entities to send to the server 
+
+\mbox{\Hypertarget{classSimulationFacade_afd57e2e7aa58a7c13e37bcd6baead1fc}\label{classSimulationFacade_afd57e2e7aa58a7c13e37bcd6baead1fc}} 
+\index{SimulationFacade@{SimulationFacade}!Update@{Update}}
+\index{Update@{Update}!SimulationFacade@{SimulationFacade}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Simulation\+Facade\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{dt }\end{DoxyParamCaption})}
+
+
+
+calls the update method for each entity in its vector 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/Simulation\+Facade.\+h\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/Simulation\+Facade.\+cc\end{DoxyCompactItemize}

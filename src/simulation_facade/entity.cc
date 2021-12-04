@@ -38,3 +38,7 @@ void Entity::SetSpeed(float s){speed=s;}
 void Entity::addCamera(Camera * camera){
 	cameras.push_back(camera);
 }
+
+Camera *Entity::GetCamera(int index){
+	return cameras.at(index);
+}

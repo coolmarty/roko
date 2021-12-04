@@ -1,0 +1,5 @@
+<map id="HysteresisFilter" name="HysteresisFilter">
+<area shape="rect" id="node1" title="Hysteresis Filter class, allows for the creation of hysteresis filters." alt="" coords="5,256,153,348"/>
+<area shape="rect" id="node2" href="$classConvolution.html" title="The main class for convolutional filters, purely virtual." alt="" coords="29,131,129,208"/>
+<area shape="rect" id="node3" href="$classFilter.html" title="The main class for filters, purely virtual." alt="" coords="37,5,121,83"/>
+</map>

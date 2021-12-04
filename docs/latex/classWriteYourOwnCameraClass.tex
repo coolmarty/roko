@@ -1,0 +1,57 @@
+\hypertarget{classWriteYourOwnCameraClass}{}\doxysection{Write\+Your\+Own\+Camera\+Class Class Reference}
+\label{classWriteYourOwnCameraClass}\index{WriteYourOwnCameraClass@{WriteYourOwnCameraClass}}
+
+
+Inheritance diagram for Write\+Your\+Own\+Camera\+Class\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classWriteYourOwnCameraClass__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Write\+Your\+Own\+Camera\+Class\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classWriteYourOwnCameraClass__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structWriteYourOwnCameraClass_1_1CameraResult}{Camera\+Result}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWriteYourOwnCameraClass_a42cc50e686b35a33273e7d181a86b014}\label{classWriteYourOwnCameraClass_a42cc50e686b35a33273e7d181a86b014}} 
+{\bfseries Write\+Your\+Own\+Camera\+Class} (int camera\+Id, \mbox{\hyperlink{classICameraController}{I\+Camera\+Controller}} $\ast$controller)
+\item 
+\mbox{\Hypertarget{classWriteYourOwnCameraClass_a4dceba09b99926623aeecc35697d1327}\label{classWriteYourOwnCameraClass_a4dceba09b99926623aeecc35697d1327}} 
+void {\bfseries Take\+Picture} ()
+\item 
+\mbox{\hyperlink{classICameraResult}{I\+Camera\+Result}} $\ast$ \mbox{\hyperlink{classWriteYourOwnCameraClass_a17b0fc80f1af6adb82b9d6dbedc26ed3}{Process\+Images}} (int camera\+Id, double x\+Pos, double y\+Pos, double z\+Pos, const std\+::vector$<$ \mbox{\hyperlink{structRawCameraImage}{Raw\+Camera\+Image}} $>$ \&images, picojson\+::object \&details) const
+\item 
+\mbox{\Hypertarget{classWriteYourOwnCameraClass_a55453008da26f7f5ac95174044543d2e}\label{classWriteYourOwnCameraClass_a55453008da26f7f5ac95174044543d2e}} 
+void \mbox{\hyperlink{classWriteYourOwnCameraClass_a55453008da26f7f5ac95174044543d2e}{Image\+Processing\+Complete}} (\mbox{\hyperlink{classICameraResult}{I\+Camera\+Result}} $\ast$result)
+\begin{DoxyCompactList}\small\item\em After the asynchronous image processing is done, this method is called to synchronize the results with the simulation update loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWriteYourOwnCameraClass_a17b0fc80f1af6adb82b9d6dbedc26ed3}\label{classWriteYourOwnCameraClass_a17b0fc80f1af6adb82b9d6dbedc26ed3}} 
+\index{WriteYourOwnCameraClass@{WriteYourOwnCameraClass}!ProcessImages@{ProcessImages}}
+\index{ProcessImages@{ProcessImages}!WriteYourOwnCameraClass@{WriteYourOwnCameraClass}}
+\doxysubsubsection{\texorpdfstring{ProcessImages()}{ProcessImages()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classICameraResult}{I\+Camera\+Result}}$\ast$ Write\+Your\+Own\+Camera\+Class\+::\+Process\+Images (\begin{DoxyParamCaption}\item[{int}]{camera\+Id,  }\item[{double}]{x\+Pos,  }\item[{double}]{y\+Pos,  }\item[{double}]{z\+Pos,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structRawCameraImage}{Raw\+Camera\+Image}} $>$ \&}]{images,  }\item[{picojson\+::object \&}]{details }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Processes images asynchronously after a picture has been taken. This method will pass in the camera position and the raw images stored in jpg format. Do all your image processing here so that it does not slow down your simulation. The result will be passed to the Image\+Processing\+Complete(...) method. 
+
+Implements \mbox{\hyperlink{classICameraObserver_aec871459f2c429b4334769021b72ec34}{I\+Camera\+Observer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/web\+\_\+app.\+cc\end{DoxyCompactItemize}

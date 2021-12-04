@@ -1,0 +1,88 @@
+\hypertarget{classBlobDetect}{}\doxysection{Blob\+Detect Class Reference}
+\label{classBlobDetect}\index{BlobDetect@{BlobDetect}}
+
+
+The main class of \mbox{\hyperlink{classBlobDetect}{Blob\+Detect}}.  
+
+
+
+
+{\ttfamily \#include $<$blobdetect.\+h$>$}
+
+
+
+Collaboration diagram for Blob\+Detect\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classBlobDetect__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBlobDetect_a97434d30d934cef75a65cc532ece381a}{Blob\+Detect}} ()
+\begin{DoxyCompactList}\small\item\em Generation of a \mbox{\hyperlink{classBlobDetect}{Blob\+Detect}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBlobDetect_aa21c36529584543b73ffb2030164e996}{check}} (std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$ original, std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$ filtered)
+\begin{DoxyCompactList}\small\item\em Application of a \mbox{\hyperlink{classBlobDetect}{Blob\+Detect}}, returns true if we think there is a robot in the image. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classBlobDetect_a17d373b2db48080552660e77653cc5d1}{get\+Distance}} (std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$ original, std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$ filtered)
+\begin{DoxyCompactList}\small\item\em get the distance of the robot in an image \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classBlobDetect_af7b499669d0f0946083767e8c228d246}{get\+Direction}} (std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$ original, std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$ filtered)
+\begin{DoxyCompactList}\small\item\em get the direction of the robot in an image \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main class of \mbox{\hyperlink{classBlobDetect}{Blob\+Detect}}. 
+
+main purpose is to find robot in an image and give its location 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBlobDetect_a97434d30d934cef75a65cc532ece381a}\label{classBlobDetect_a97434d30d934cef75a65cc532ece381a}} 
+\index{BlobDetect@{BlobDetect}!BlobDetect@{BlobDetect}}
+\index{BlobDetect@{BlobDetect}!BlobDetect@{BlobDetect}}
+\doxysubsubsection{\texorpdfstring{BlobDetect()}{BlobDetect()}}
+{\footnotesize\ttfamily Blob\+Detect\+::\+Blob\+Detect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generation of a \mbox{\hyperlink{classBlobDetect}{Blob\+Detect}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlobDetect_aa21c36529584543b73ffb2030164e996}\label{classBlobDetect_aa21c36529584543b73ffb2030164e996}} 
+\index{BlobDetect@{BlobDetect}!check@{check}}
+\index{check@{check}!BlobDetect@{BlobDetect}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily bool Blob\+Detect\+::check (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$}]{original,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$}]{filtered }\end{DoxyParamCaption})}
+
+
+
+Application of a \mbox{\hyperlink{classBlobDetect}{Blob\+Detect}}, returns true if we think there is a robot in the image. 
+
+\mbox{\Hypertarget{classBlobDetect_af7b499669d0f0946083767e8c228d246}\label{classBlobDetect_af7b499669d0f0946083767e8c228d246}} 
+\index{BlobDetect@{BlobDetect}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!BlobDetect@{BlobDetect}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily std\+::vector$<$ float $>$ Blob\+Detect\+::get\+Direction (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$}]{original,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$}]{filtered }\end{DoxyParamCaption})}
+
+
+
+get the direction of the robot in an image 
+
+\mbox{\Hypertarget{classBlobDetect_a17d373b2db48080552660e77653cc5d1}\label{classBlobDetect_a17d373b2db48080552660e77653cc5d1}} 
+\index{BlobDetect@{BlobDetect}!getDistance@{getDistance}}
+\index{getDistance@{getDistance}!BlobDetect@{BlobDetect}}
+\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
+{\footnotesize\ttfamily float Blob\+Detect\+::get\+Distance (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$}]{original,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classImage}{Image}} $\ast$ $>$}]{filtered }\end{DoxyParamCaption})}
+
+
+
+get the distance of the robot in an image 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/img\+\_\+proc\+\_\+src/\mbox{\hyperlink{blobdetect_8h}{blobdetect.\+h}}\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/img\+\_\+proc\+\_\+src/blobdetect.\+cc\end{DoxyCompactItemize}

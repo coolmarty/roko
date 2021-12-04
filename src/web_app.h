@@ -9,10 +9,12 @@
 #include <thread>
 #include <mutex>
 #include <condition_variable>
+#include "SimulationFacade.h"
 
 /// A Web Application Sever that communicates with a web page through web sockets.
 class WebApp : public JSONSession, public ICameraController {
 public:
+
     /// Initializes server
     WebApp();
     /// Destructor
@@ -52,7 +54,7 @@ public:
     void RemoveObserver(ICameraObserver& observer);
     /// Method that handles asynchronous image processing that runs on a separate thread
     void ProcessImageQueue();
-    
+
 
 private:
     // Used for tracking time since last update
@@ -75,6 +77,8 @@ private:
     std::condition_variable imageProcessCond;
     // Stores whether the application is running or not.
     bool running;
+
+    SimulationFacade sim;
 };
 
 
