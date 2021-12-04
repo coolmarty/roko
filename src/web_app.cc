@@ -1,7 +1,7 @@
 #include "web_app.h"
 #include <fstream>
 #include "util/base64.h"
-    
+
 // ============================== TODO: DELETE! ==============================
 
 // A simple camera class that can take pictures and process images assynchronously.
@@ -150,8 +150,8 @@ void WebApp::Update(double dt) {
         IsKeyDown("ArrowUp") ? -1 : (IsKeyDown("ArrowDown") ? 1 : 0),
         IsKeyDown("a") ? 1 : (IsKeyDown("d") ? -1 : 0)
     );
-    
-    // Below is an example of how to update an entity.  
+
+    // Below is an example of how to update an entity.
     // This code should be in the simulation facade, not here!
     deleteThisDrone.Update(dt);
 }
@@ -159,12 +159,12 @@ void WebApp::Update(double dt) {
 void WebApp::FinishUpdate(picojson::object& returnValue) {
     // Called after all updating is done.
 
-    // Below is an example of how to send the position and direction to the UI.  
+    // Below is an example of how to send the position and direction to the UI.
     // In general you will want to loop through entities that have changed to update
     // their position and direction:
     picojson::object entity;
     entity["entityId"] = picojson::value((double)0);
-    
+
     // Save the position as an array
     picojson::array pos;
     pos.push_back(picojson::value(deleteThisDrone.pos[0]));
@@ -190,7 +190,7 @@ void WebApp::FinishUpdate(picojson::object& returnValue) {
 
 
 //*****************************************************************************************
-// The code below you probably will not need to touch.  These are the functions 
+// The code below you probably will not need to touch.  These are the functions
 // that will talk to the UI over web sockets.
 //*****************************************************************************************
 
@@ -227,7 +227,7 @@ void WebApp::ReceiveCommand(const std::string& cmd, picojson::object& data, pico
     std::unique_lock<std::mutex> updateLock(updateMutex);
     if (cmd == "createEntity") {
         CreateEntity(data, *this);
-    } 
+    }
     else if (cmd == "update") {
         std::chrono::time_point<std::chrono::system_clock> end = std::chrono::system_clock::now();
         std::chrono::duration<double> diff = end - start;
@@ -270,7 +270,7 @@ bool WebApp::IsKeyDown(const std::string& key) {
     std::map<std::string,int>::iterator it = keyValue.find(key);
     if (it != keyValue.end()) {
         return it->second;
-    } 
+    }
 
     return false;
 }
@@ -290,10 +290,10 @@ void WebApp::ProcessImageQueue() {
             picojson::object data = imageQueue.front();
             imageQueue.pop();
             lock.unlock();
-            
+
             std::vector<std::string> decodedImages;
             std::vector<RawCameraImage> imageData;
-            
+
             const picojson::array& images = data["images"].get<picojson::array>();
 
             for (int i = 0; i < images.size(); i++) {
@@ -334,5 +334,5 @@ void WebApp::AddObserver(ICameraObserver& observer) {
 }
 
 void WebApp::RemoveObserver(ICameraObserver& observer) {
-    cameraObservers.erase(std::remove(cameraObservers.begin(), cameraObservers.end(), &observer), cameraObservers.end()); 
+    cameraObservers.erase(std::remove(cameraObservers.begin(), cameraObservers.end(), &observer), cameraObservers.end());
 }
