@@ -47,6 +47,8 @@ The convolution class has the virtual method Apply to apply a convolutional filt
 The kernal class is for getting values from a kernel
 
 (unintentional misspelling, found too late)\hypertarget{index_extending}{}\doxysection{How to extend the system}\label{index_extending}
-To add a new filter simply make it inherit from convolution or simple filter
+To add a new \mbox{\hyperlink{classEntity}{Entity}} just make its class, make a factory for it, and add its factory to the composite factory\textquotesingle{}s vector
 
-if its a simple filter the entire apply function must be made, if its only a simple filter only the apply at pixel method must be implemented 
+To add new behavior to an \mbox{\hyperlink{classEntity}{Entity}} just change its update function
+
+To add new ways to find the robot just change the \mbox{\hyperlink{classImage}{Image}} Processing facade and add in any filters wanted 

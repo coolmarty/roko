@@ -97,9 +97,11 @@
  *
  * \section extending How to extend the system
  *
- *To add a new filter simply make it inherit from convolution or simple filter
+ * To add a new Entity just make its class, make a factory for it, and add its factory to the composite factory's vector
  *
- *if its a simple filter the entire apply function must be made, if its only a simple filter only the apply at pixel method must be implemented
+ * To add new behavior to an Entity just change its update function
+ *
+ * To add new ways to find the robot just change the Image Processing facade and add in any filters wanted
  *
  *
  */

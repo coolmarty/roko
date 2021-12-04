@@ -127,8 +127,9 @@ Kernal</h3>
 <p>(unintentional misspelling, found too late)</p>
 <h1><a class="anchor" id="extending"></a>
 How to extend the system</h1>
-<p>To add a new filter simply make it inherit from convolution or simple filter</p>
-<p>if its a simple filter the entire apply function must be made, if its only a simple filter only the apply at pixel method must be implemented </p>
+<p>To add a new <a class="el" href="classEntity.html" title="The main class for convolutional filters, purely virtual.">Entity</a> just make its class, make a factory for it, and add its factory to the composite factory's vector</p>
+<p>To add new behavior to an <a class="el" href="classEntity.html" title="The main class for convolutional filters, purely virtual.">Entity</a> just change its update function</p>
+<p>To add new ways to find the robot just change the <a class="el" href="classImage.html" title="The main class for images, allows for copying, saving, and getting/setting pixels.">Image</a> Processing facade and add in any filters wanted </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
