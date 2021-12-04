@@ -151,6 +151,8 @@ public:
      void SetSpeed(float speed);
 
      void addCamera(Camera *camera);
+
+     Camera *GetCamera(int index);
 protected:
   Point3 position;
   Vector3 velocity;

@@ -1,0 +1,41 @@
+\hypertarget{classImageProcessing}{}\doxysection{Image\+Processing Class Reference}
+\label{classImageProcessing}\index{ImageProcessing@{ImageProcessing}}
+
+
+Facade into the image processing functionality of the \mbox{\hyperlink{classDrone}{Drone}}.  
+
+
+
+
+{\ttfamily \#include $<$image\+\_\+processing.\+h$>$}
+
+
+
+Collaboration diagram for Image\+Processing\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classImageProcessing__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classImageProcessing_a9e387501e50bafcb75a20a74b05586a8}\label{classImageProcessing_a9e387501e50bafcb75a20a74b05586a8}} 
+bool \mbox{\hyperlink{classImageProcessing_a9e387501e50bafcb75a20a74b05586a8}{Blob\+Check}} (\mbox{\hyperlink{classImage}{Image}} $\ast$in\+\_\+img)
+\begin{DoxyCompactList}\small\item\em Uses image processor to determine whether the robot was detected in an R\+GB image via blob detect. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageProcessing_ac7f607428892585dfcbb1a716912b575}\label{classImageProcessing_ac7f607428892585dfcbb1a716912b575}} 
+float \mbox{\hyperlink{classImageProcessing_ac7f607428892585dfcbb1a716912b575}{Blob\+Get\+Distance}} (\mbox{\hyperlink{classImage}{Image}} $\ast$in\+\_\+img)
+\begin{DoxyCompactList}\small\item\em Uses image processor to determine the distance away from the drone the robot is given a depth image. Typically run after Blobl\+Check returns true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageProcessing_aed2aa8bd464748537f8eb018a9a51061}\label{classImageProcessing_aed2aa8bd464748537f8eb018a9a51061}} 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classImageProcessing_aed2aa8bd464748537f8eb018a9a51061}{Blob\+Get\+Direction}} (\mbox{\hyperlink{classImage}{Image}} $\ast$in\+\_\+img)
+\begin{DoxyCompactList}\small\item\em Gets the direction of the robot relative to the front of the drone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Facade into the image processing functionality of the \mbox{\hyperlink{classDrone}{Drone}}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/\mbox{\hyperlink{image__processing_8h}{image\+\_\+processing.\+h}}\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/image\+\_\+processing.\+cc\end{DoxyCompactItemize}

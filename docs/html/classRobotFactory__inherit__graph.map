@@ -1,0 +1,4 @@
+<map id="RobotFactory" name="RobotFactory">
+<area shape="rect" id="node1" title="The main class used to generate robot objects in our simulation." alt="" coords="5,145,139,252"/>
+<area shape="rect" id="node2" href="$classEntityFactory.html" title="The main class of all EntityFactories." alt="" coords="18,5,126,97"/>
+</map>

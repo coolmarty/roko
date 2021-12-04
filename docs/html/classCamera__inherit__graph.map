@@ -1,0 +1,4 @@
+<map id="Camera" name="Camera">
+<area shape="rect" id="node1" title="The main class of Camera." alt="" coords="5,160,227,296"/>
+<area shape="rect" id="node2" href="$classICameraObserver.html" title="A Camera Observer monitors results from all cameras. It will process the pictures returned asynchrono..." alt="" coords="5,5,227,112"/>
+</map>

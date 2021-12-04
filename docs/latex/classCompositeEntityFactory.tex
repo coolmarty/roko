@@ -1,0 +1,94 @@
+\hypertarget{classCompositeEntityFactory}{}\doxysection{Composite\+Entity\+Factory Class Reference}
+\label{classCompositeEntityFactory}\index{CompositeEntityFactory@{CompositeEntityFactory}}
+
+
+The main class used to generate any entity objects in our simulation.  
+
+
+
+
+{\ttfamily \#include $<$compositeentityfactory.\+h$>$}
+
+
+
+Inheritance diagram for Composite\+Entity\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classCompositeEntityFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Composite\+Entity\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classCompositeEntityFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCompositeEntityFactory_a703746f2b94fc98640de097afdbe1bc9}\label{classCompositeEntityFactory_a703746f2b94fc98640de097afdbe1bc9}} 
+\mbox{\hyperlink{classCompositeEntityFactory_a703746f2b94fc98640de097afdbe1bc9}{Composite\+Entity\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em constructor for \mbox{\hyperlink{classCompositeEntityFactory}{Composite\+Entity\+Factory}}, adds all factories to a vector \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCompositeEntityFactory_a62ec6ba774e3b397fc799c5e972dba45}\label{classCompositeEntityFactory_a62ec6ba774e3b397fc799c5e972dba45}} 
+\mbox{\hyperlink{classCompositeEntityFactory_a62ec6ba774e3b397fc799c5e972dba45}{$\sim$\+Composite\+Entity\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em destructor for \mbox{\hyperlink{classCompositeEntityFactory}{Composite\+Entity\+Factory}}, since all factories are new\textquotesingle{}d \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity}{Entity}} $\ast$ \mbox{\hyperlink{classCompositeEntityFactory_ac0c37133da981261775afb686ce73807}{create}} (picojson\+::object \&entity\+Data, \mbox{\hyperlink{classICameraController}{I\+Camera\+Controller}} \&camera\+Controller)
+\begin{DoxyCompactList}\small\item\em The function used to generate any entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity}{Entity}} $\ast$ \mbox{\hyperlink{classCompositeEntityFactory_a5633f79f3cd104108c56e1d1a311ea7a}{create}} (picojson\+::object \&entity\+Data)
+\begin{DoxyCompactList}\small\item\em The function used to generate an entity, debug only since I couldn\textquotesingle{}t get it to work without camera\+Controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main class used to generate any entity objects in our simulation. 
+
+inherits from \mbox{\hyperlink{classEntity}{Entity}} Factory 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCompositeEntityFactory_a5633f79f3cd104108c56e1d1a311ea7a}\label{classCompositeEntityFactory_a5633f79f3cd104108c56e1d1a311ea7a}} 
+\index{CompositeEntityFactory@{CompositeEntityFactory}!create@{create}}
+\index{create@{create}!CompositeEntityFactory@{CompositeEntityFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEntity}{Entity}} $\ast$ Composite\+Entity\+Factory\+::create (\begin{DoxyParamCaption}\item[{picojson\+::object \&}]{entity\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The function used to generate an entity, debug only since I couldn\textquotesingle{}t get it to work without camera\+Controller. 
+
+Takes in a picojson object containing all the data about an entity
+
+\begin{DoxyReturn}{Returns}
+an \mbox{\hyperlink{classEntity}{Entity}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEntityFactory_a5c7df07aca8a872d217aa6762e1e9b33}{Entity\+Factory}}.
+
+\mbox{\Hypertarget{classCompositeEntityFactory_ac0c37133da981261775afb686ce73807}\label{classCompositeEntityFactory_ac0c37133da981261775afb686ce73807}} 
+\index{CompositeEntityFactory@{CompositeEntityFactory}!create@{create}}
+\index{create@{create}!CompositeEntityFactory@{CompositeEntityFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEntity}{Entity}} $\ast$ Composite\+Entity\+Factory\+::create (\begin{DoxyParamCaption}\item[{picojson\+::object \&}]{entity\+Data,  }\item[{\mbox{\hyperlink{classICameraController}{I\+Camera\+Controller}} \&}]{camera\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The function used to generate any entity. 
+
+Takes in a picojson object containing all the data about an entity
+
+\begin{DoxyReturn}{Returns}
+an \mbox{\hyperlink{classEntity}{Entity}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEntityFactory_a4b138bb7209e34c579eb0d237bb35a95}{Entity\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/\mbox{\hyperlink{compositeentityfactory_8h}{compositeentityfactory.\+h}}\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/compositeentityfactory.\+cc\end{DoxyCompactItemize}

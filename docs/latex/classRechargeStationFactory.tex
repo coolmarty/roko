@@ -1,0 +1,91 @@
+\hypertarget{classRechargeStationFactory}{}\doxysection{Recharge\+Station\+Factory Class Reference}
+\label{classRechargeStationFactory}\index{RechargeStationFactory@{RechargeStationFactory}}
+
+
+The main class used to generate charge stations objects in our simulation.  
+
+
+
+
+{\ttfamily \#include $<$rechargestationfactory.\+h$>$}
+
+
+
+Inheritance diagram for Recharge\+Station\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classRechargeStationFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Recharge\+Station\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classRechargeStationFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRechargeStationFactory_af46efe7a8f9e62fd7457f9b758681dbf}\label{classRechargeStationFactory_af46efe7a8f9e62fd7457f9b758681dbf}} 
+\mbox{\hyperlink{classRechargeStationFactory_af46efe7a8f9e62fd7457f9b758681dbf}{Recharge\+Station\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em constructor for \mbox{\hyperlink{classRechargeStationFactory}{Recharge\+Station\+Factory}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity}{Entity}} $\ast$ \mbox{\hyperlink{classRechargeStationFactory_a88e171cc253b1362b28c87e05723991c}{create}} (picojson\+::object \&entity\+Data, \mbox{\hyperlink{classICameraController}{I\+Camera\+Controller}} \&camera\+Controller)
+\begin{DoxyCompactList}\small\item\em The function used to generate a recharge station. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEntity}{Entity}} $\ast$ \mbox{\hyperlink{classRechargeStationFactory_a02ba127543cb95ae9a30486eef84470c}{create}} (picojson\+::object \&entity\+Data)
+\begin{DoxyCompactList}\small\item\em The function used to generate a recharge station debug only. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main class used to generate charge stations objects in our simulation. 
+
+inherits from \mbox{\hyperlink{classEntity}{Entity}} Factory 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRechargeStationFactory_a02ba127543cb95ae9a30486eef84470c}\label{classRechargeStationFactory_a02ba127543cb95ae9a30486eef84470c}} 
+\index{RechargeStationFactory@{RechargeStationFactory}!create@{create}}
+\index{create@{create}!RechargeStationFactory@{RechargeStationFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEntity}{Entity}} $\ast$ Recharge\+Station\+Factory\+::create (\begin{DoxyParamCaption}\item[{picojson\+::object \&}]{entity\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The function used to generate a recharge station debug only. 
+
+Takes in a picojson object containing all the data about an entity
+
+\begin{DoxyReturn}{Returns}
+a Recharge Station \mbox{\hyperlink{classEntity}{Entity}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEntityFactory_a5c7df07aca8a872d217aa6762e1e9b33}{Entity\+Factory}}.
+
+\mbox{\Hypertarget{classRechargeStationFactory_a88e171cc253b1362b28c87e05723991c}\label{classRechargeStationFactory_a88e171cc253b1362b28c87e05723991c}} 
+\index{RechargeStationFactory@{RechargeStationFactory}!create@{create}}
+\index{create@{create}!RechargeStationFactory@{RechargeStationFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEntity}{Entity}} $\ast$ Recharge\+Station\+Factory\+::create (\begin{DoxyParamCaption}\item[{picojson\+::object \&}]{entity\+Data,  }\item[{\mbox{\hyperlink{classICameraController}{I\+Camera\+Controller}} \&}]{camera\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The function used to generate a recharge station. 
+
+Takes in a picojson object containing all the data about an entity
+
+\begin{DoxyReturn}{Returns}
+a Recharge Station \mbox{\hyperlink{classEntity}{Entity}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEntityFactory_a4b138bb7209e34c579eb0d237bb35a95}{Entity\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/\mbox{\hyperlink{rechargestationfactory_8h}{rechargestationfactory.\+h}}\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/rechargestationfactory.\+cc\end{DoxyCompactItemize}
