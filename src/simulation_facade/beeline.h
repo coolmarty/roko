@@ -7,7 +7,7 @@ class BeelineMovement : public MovementStrategy{
 public:
 	BeelineMovement(Point3 dest);
 
-	void MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt);
+	void MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity);
 
 private:
 	Point3 destination;

@@ -1,41 +1,47 @@
 #include "search_and_rescue.h"
 
 SearchAndRescue::SearchAndRescue() : found(false), travelNode(0), currentNode(0), rechargeLocation(Point3(20, 0, 50)) {
-	currentStrat = Patrol(0);
+	currentStrat = new PatrolMovement(0);
 }
 
-void SearchAndRescue::Search(Point3* position, Vector3* direction, Vector3* velocity, float dt) {
+SearchAndRescue::~SearchAndRescue() {
+	delete currentStrat;
+}
+
+void SearchAndRescue::Search(Point3* position, Vector3* direction, Vector3* velocity) {
 	/*MovementStrategy *initialize_pattern = new SearchPattern();
 
 	roko.SetMovementPattern(initialize_pattern);
 	roko.movement_pattern->MovePath(Point3 *pos); */
 	
-	if (position == rechargeLocation) {
+	if (*position == rechargeLocation) {
 		travelNode++;
 		currentNode = travelNode;
 	}
 	
-	currentStrat->SetNode(currentNode);
-	currentStrat->MovePath(position, direction, velocity, dt);
+	PatrolMovement* strat = static_cast<PatrolMovement*>(currentStrat); 
+	strat->SetNode(currentNode);
+	currentStrat->MovePath(position, direction, velocity);
 }
 
-void SearchAndRescue::Rescue(Point3* position, Vector3* direction, Vector3* velocity, float dt) {
+void SearchAndRescue::Rescue(Point3* position, Vector3* direction, Vector3* velocity, const Point3& dest) {
 	/* MovementStrategy *goto_entity = new Beeline(dest);
 
 	roko.SetMovementPattern(goto_entity);
 	roko.movement_pattern->MovePath(Point3 &pos); */
 	if (!found) {
-		currentStrat = Beeline(dest);
+		delete currentStrat;
+		currentStrat = new BeelineMovement(dest);
 		found = true;
 	}
 	
-	currentStrat->MovePath(position, direction, velocity, dt);
+	currentStrat->MovePath(position, direction, velocity);
 }
 
 void SearchAndRescue::SetTNode(int newNode) { travelNode = newNode; }
 
 void SearchAndRescue::SetCNode(int newNode) { currentNode = newNode; }
 	
-int SearchAndRescue::travelNode() { return travelNode; }
+int SearchAndRescue::GetTravel() { return travelNode; }
 
-int SearchAndRescue::currentNode() { return currentNode; }
+int SearchAndRescue::GetCurrent() { return currentNode; }

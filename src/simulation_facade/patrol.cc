@@ -34,7 +34,7 @@ Point3 PatrolMovement::GetNode(int node){
 	return target;
 }
 
-void PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt){
+void PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity){
 	const Point3 rechargeLocation = Point3(20, 0, 50);
 	if(position->GetX() < -1450 || position->GetX() > 1550){
 		node = -1;

@@ -51,10 +51,10 @@ void Drone::Update(float dt){
 	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelNode, currentNode);
 	
 	if (!manual) {
-		if (robotFound != noRobot) {
-			movementAccessor.Search(position);
+		if (!(robotFound == noRobot)) {
+			movementAccessor.Search(&position, &direction, &velocity);
 		} else {
-			movementAccessor.Rescue(robotFound);
+			movementAccessor.Rescue(&position, &direction, &velocity, robotFound);
 		}
 	} else {
 		// TODO

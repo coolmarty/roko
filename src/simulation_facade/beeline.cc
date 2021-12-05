@@ -6,7 +6,7 @@ BeelineMovement::BeelineMovement(Point3 dest){
 }
 
 
-void BeelineMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt){
+void BeelineMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity){
 	// Vector from destination to position
 	Vector3 distanceVector = Vector3(position->GetX() - destination.GetX(), 
 										 position->GetY() - destination.GetY(),

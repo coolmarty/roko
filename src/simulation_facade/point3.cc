@@ -37,3 +37,7 @@ void Point3::SetY(float newy){
 void Point3::SetZ(float newz){
 	z = newz;
 }
+
+bool Point3::operator==(const Point3 other) {
+	return ((x == other.x) && (y == other.y) && (z == other.z));
+}
