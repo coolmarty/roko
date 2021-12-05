@@ -30,10 +30,10 @@ float CompositeBattery::GetFirstBatteryLife(){
 float CompositeBattery::GetTotalBatteryLife(){
   float total = 0.0;
   for (int i = 0; i < batteries.size(); i++){
-    std::cout << "Battery: " << i << " Percentage: " << batteries[i].GetBatteryLife() << std::endl;
+    // std::cout << "Battery: " << i << " Percentage: " << batteries[i].GetBatteryLife() << std::endl;
     total += batteries[i].GetBatteryLife();
   }
-  std::cout << "Total charge: " << total << std::endl;
+  // std::cout << "Total charge: " << total << std::endl;
   return total;
 }
 
