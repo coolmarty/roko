@@ -1,9 +1,19 @@
 #include "vector3.h"
+#include <math.h>
 
 Vector3::Vector3(){
 	x = 0;
 	y = 0;
 	z = 0;
+}
+
+float Vector3::Magnitude() {
+	return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
+}
+
+Vector3 Vector3::Normalize() {
+	float mag = this->Magnitude();
+	return Vector3(x / mag, y / mag, z / mag);
 }
 
 Vector3::Vector3(float a, float b, float c){
@@ -36,4 +46,8 @@ void Vector3::SetY(float newy){
 }
 void Vector3::SetZ(float newz){
 	z = newz;
+}
+
+Vector3 Vector3::operator*(float scalar) {
+	return Vector3(x * scalar, y * scalar, z * scalar);
 }

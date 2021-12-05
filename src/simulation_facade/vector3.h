@@ -64,6 +64,12 @@ public:
 	 *
 	 */
 	void SetZ(float newz);
+	
+	float Magnitude();
+
+	Vector3 Normalize();
+
+	Vector3 operator*(float scalar);
 
 private:
 	float x, y, z;
