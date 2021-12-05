@@ -1,101 +1,94 @@
 #include "drone.h"
 
-
 Drone::Drone(){
 	position = Point3();
 	direction = Vector3();
 	velocity = Vector3();
-	acceleration = Vector3(0,9.8,0);
 	time = 0;
-        battery = *(new Battery());
+	robotFound = Point3(-1,-1,-1);
+/*
+	travelNode = 0;
+	currentNode = 0;
+*/
+	movementAccessor = SearchAndRescue();
+	manual = false;
+	battery = *(new Battery());
 }
 
-Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, Vector3 newAcceleration, float newTime){
+Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode){
 	position = newPosition;
 	direction = newDirection;
 	velocity = newVelocity;
-	acceleration = newAcceleration;
 	time = newTime;
-        battery = *(new Battery());
+	robotFound = Point3(-1,-1,-1);
+	travelNode = newTravelNode;
+	currentNode = newCurrentNode;
+	battery = *(new Battery());
 }
 
 Drone::Drone(const Drone& old){
 	position = old.position;
 	direction = old.direction;
 	velocity = old.velocity;
-	acceleration = old.acceleration;
 	time = old.time;
+	robotFound = old.robotFound;
+	travelNode = old.travelNode;
+	currentNode = old.currentNode;
 	battery = old.battery;
 }
 
-// Drone::~Drone(){
-// 	delete position;
-// 	delete direction;
-// 	delete velocity;
-// 	delete acceleration;
-// 	delete time;
-// }
-
-// Point3 Drone::GetPosition(){
-// 	return position;
-// }
-// Direction Drone::GetDirection(){
-// 	return direction;
-// }
-// Vector3 Drone::GetVelocity(){
-// 	return velocity;
-// }
-// Vector3 Drone::GetAcceleration(){
-// 	return acceleration;
-// }
-// float Drone::GetTime(){
-// 	return time;
-// }
-
-// void Drone::SetPosition(Point3 newPosition){
-// 	position = newPosition;
-// }
-// void Drone::SetDirection(Direction newDirection){
-// 	direction = newDirection;
-// }
-// void Drone::SetVelocity(Vector3 newVelocity){
-// 	velocity = newVelocity;
-// }
-// void Drone::SetAcceleration(Vector3 newAcceleration){
-// 	acceleration = newAcceleration;
-// }
-// void Drone::SetTime(float newTime){
-// 	time = newTime;
-// }
-
+void Drone::TakePicture(){
+}
 
 void Drone::Move(){
-
+	//MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt);
 }
 
 void Drone::Update(float dt){
-		this->SetJoystick(
-        0,
-        0,
-        0,
-        0
-    );
+	Point3 noRobot = Point3(-1, -1, -1);
 
-		Point3 position=this->GetPosition();
-		Vector3 direction = this->GetDirection();
-		position.SetX(position.GetX()+speed*direction.GetX()*dt);
-		position.SetY(position.GetY()+speed*direction.GetY()*dt);
-		position.SetZ(position.GetZ()+speed*direction.GetZ()*dt);
+	Data storage = Data();
+	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelNode, currentNode);
+	
+	if (!manual) {
+		if (robotFound != noRobot) {
+			movementAccessor.Search(position);
+		} else {
+			movementAccessor.Rescue(robotFound);
+		}
+	} else {
+		// TODO
+	}
 
-		this->SetPosition(position);
-		this->SetDirection(direction);
+/*
+	if(position == rechargeLocation){
+		travelNode++;
+		currentNode = travelNode;
+	}
 
-		 // Take a picture every 5 seconds with front camera
-		 this->SetTime(this->GetTime()+dt);
+	if(robotFound != noRobot){
+	// BeelineMovement(robotFound);
 
-		 if (this->GetTime()-lastPictureTime > 5.0) {
-			 	 std::cout<<"taking photo"<<std::endl;
-				 this->GetCamera(0)->TakePicture();
-				 lastPictureTime = this->GetTime();
-		 }
+	}
+	else{
+	PatrolMovement(currentNode);
+	}
+*/
+
+
+
+	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
+	Vector3 timeStep = Vector3(velocity.GetX() * dt,
+								  velocity.GetY() * dt,
+								  velocity.GetZ() * dt);
+
+	// takes picture (duh)
+	TakePicture();
+
+	// changes position by the time step to move it gradually forward to its destination
+	position.SetX(position.GetX() + timeStep.GetX());
+	position.SetY(position.GetY() + timeStep.GetY());
+	position.SetZ(position.GetZ() + timeStep.GetZ());
+
+	time += dt;
 }

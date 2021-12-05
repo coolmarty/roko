@@ -1,15 +1,41 @@
 #include "search_and_rescue.h"
 
-void SearchAndRescue::Search(Drone& roko) {
+SearchAndRescue::SearchAndRescue() : found(false), travelNode(0), currentNode(0), rechargeLocation(Point3(20, 0, 50)) {
+	currentStrat = Patrol(0);
+}
+
+void SearchAndRescue::Search(Point3* position, Vector3* direction, Vector3* velocity, float dt) {
 	/*MovementStrategy *initialize_pattern = new SearchPattern();
 
 	roko.SetMovementPattern(initialize_pattern);
 	roko.movement_pattern->MovePath(Point3 *pos); */
+	
+	if (position == rechargeLocation) {
+		travelNode++;
+		currentNode = travelNode;
+	}
+	
+	currentStrat->SetNode(currentNode);
+	currentStrat->MovePath(position, direction, velocity, dt);
 }
 
-void SearchAndRescue::Rescue(Drone& roko, const Point3& dest) {
+void SearchAndRescue::Rescue(Point3* position, Vector3* direction, Vector3* velocity, float dt) {
 	/* MovementStrategy *goto_entity = new Beeline(dest);
 
 	roko.SetMovementPattern(goto_entity);
 	roko.movement_pattern->MovePath(Point3 &pos); */
+	if (!found) {
+		currentStrat = Beeline(dest);
+		found = true;
+	}
+	
+	currentStrat->MovePath(position, direction, velocity, dt);
 }
+
+void SearchAndRescue::SetTNode(int newNode) { travelNode = newNode; }
+
+void SearchAndRescue::SetCNode(int newNode) { currentNode = newNode; }
+	
+int SearchAndRescue::travelNode() { return travelNode; }
+
+int SearchAndRescue::currentNode() { return currentNode; }
