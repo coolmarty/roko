@@ -1,15 +1,17 @@
-#ifndef POINT3_H_
-#define POINT3_H_
+#ifndef DATA_H_
+#define DATA_H_
 
 #include <cstring>
-#include <fstring>
+#include <string>
 #include <iostream>
+#include "vector3.h"
+#include "point3.h"
 
 class Data{
 public:
 	Data();
 
-	Data(string newFilename);
+	Data(std::string newFilename);
 
 	void openFile();
 
@@ -19,14 +21,14 @@ public:
   				 Vector3 velocity,
 				 Vector3 acceleration,
 				 Vector3 direction,
-				 float time=0,
+				 float time,
 				 Point3 robotFound,
 				 int travelNode,
 				 int currentNode);
 
 private:
-	string filename;
-	ofstream file;
+	std::string filename;
+	// ofstream file;
 };
 
 #endif

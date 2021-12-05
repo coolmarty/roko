@@ -11,14 +11,13 @@
  ******************************************************************************/
 #include "entity.h"
 #include "battery.h"
-<<<<<<< HEAD
 #include "movement_strategy.h"
 #include "data.h"
-=======
+#include "beeline.h"
+#include "patrol.h"
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
->>>>>>> dev
 
 /**
  * @brief The main class used for drones
@@ -45,7 +44,7 @@ public:
 	 *
 	 * @return a drone object
 	 */
-	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, Vector3 newAcceleration, float newTime, int newTravelNode, int newCurrentNode);
+	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode);
 
 	/**
 	 * @brief copy constructor for drone

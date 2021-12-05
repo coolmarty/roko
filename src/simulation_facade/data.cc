@@ -4,16 +4,16 @@ Data::Data(){
 	filename = "basilisk-data-collection";
 }
 
-Dat::Data(string newFilename){
+Data::Data(std::string newFilename){
 	filename = newFilename;
 }
 
 void Data::openFile(){
-	file.open(filename+".csv");
+	// file.open(filename+".csv");
 }
 
 void Data::closeFile(){
-	file.close();
+	// file.close();
 }
 
 void Data::addData(Point3 position,
@@ -24,22 +24,22 @@ void Data::addData(Point3 position,
 				   Point3 robotFound,
 				   int travelNode,
 				   int currentNode){
-	file << time << ", " << 
-			position.GetX() << ", " << 
-			position.GetY() << ", " << 
-			position.GetZ() << ", " << 
-			velocity.GetX() << ", " << 
-			velocity.GetY() << ", " << 
-			velocity.GetZ() << ", " << 
-			acceleration.GetX() << ", " << 
-			acceleration.GetY() << ", " << 
-			acceleration.GetZ() << ", " << 
-			direction.GetX() << ", " << 
-			direction.GetY() << ", " << 
-			direction.GetZ() << ", " << 
-			travelNode << ", " << 
-			currentNode << ", " << 
-			robotFound.GetX() << ", " << 
-			robotFound.GetY() << ", " << 
-			robotFound.GetZ() << "\n";
+	// file << time << ", " << 
+	// 		position.GetX() << ", " << 
+	// 		position.GetY() << ", " << 
+	// 		position.GetZ() << ", " << 
+	// 		velocity.GetX() << ", " << 
+	// 		velocity.GetY() << ", " << 
+	// 		velocity.GetZ() << ", " << 
+	// 		acceleration.GetX() << ", " << 
+	// 		acceleration.GetY() << ", " << 
+	// 		acceleration.GetZ() << ", " << 
+	// 		direction.GetX() << ", " << 
+	// 		direction.GetY() << ", " << 
+	// 		direction.GetZ() << ", " << 
+	// 		travelNode << ", " << 
+	// 		currentNode << ", " << 
+	// 		robotFound.GetX() << ", " << 
+	// 		robotFound.GetY() << ", " << 
+	// 		robotFound.GetZ() << "\n";
 }
