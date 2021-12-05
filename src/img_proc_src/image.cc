@@ -107,7 +107,7 @@ std::vector<float> Image::getDirection(int x,int y){
     return direction;
 }
 
-//this violates the single responsibility but fuck it, maybe it'll change again
+//this violates the single responsibility but kinda need it
 float Image::magnitudeVector(std::vector<float> vec){
   return sqrt(pow(vec[0],2)+pow(vec[1],2)+pow(vec[2],2));
 }
