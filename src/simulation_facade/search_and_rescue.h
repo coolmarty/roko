@@ -13,7 +13,6 @@
 #include "patrol.h"
 #include "beeline.h"
 #include "point3.h"
-#include "drone.h"
 #include "vector3.h"
 /**
  * @brief Facade into the search and rescue functionality of the Drone

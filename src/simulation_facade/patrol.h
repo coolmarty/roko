@@ -14,7 +14,7 @@ public:
 
 	int node;
 private:
-	
+
 };
 
 #endif
