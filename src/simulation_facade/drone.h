@@ -28,6 +28,11 @@
 class Drone : public Entity{
 public:
 
+	/**
+	 * @brief Manual Movement
+	 *
+	 * 
+	 */
 	void SetJoystick(double x, double y, double z, double a) {
 		Vector3 dir = Vector3(x,y,z);
 		this->SetDirection(dir);
@@ -79,6 +84,7 @@ public:
 	 */
 	void Update(float dt);
 
+    Battery battery;
 
 private:
 	Point3 robotFound;
@@ -86,7 +92,6 @@ private:
 	int travelNode; // keeps track of the drone's target location along the edge of the map, increments when it's at a recharge station
 	int currentNode; // for the drone's patrol, where it's currently moving to
 	bool manual;
-    Battery battery;
 };
 
 #endif
