@@ -1,4 +1,0 @@
-<map id="RechargeStationFactory" name="RechargeStationFactory">
-<area shape="rect" id="node1" title="The main class used to generate charge stations objects in our simulation." alt="" coords="5,145,208,252"/>
-<area shape="rect" id="node2" href="$classEntityFactory.html" title="The main class of all EntityFactories." alt="" coords="53,5,161,97"/>
-</map>
