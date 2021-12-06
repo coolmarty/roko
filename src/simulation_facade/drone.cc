@@ -72,5 +72,28 @@ void Drone::Move(){
 }
 
 void Drone::Update(float dt){
+		this->SetJoystick(
+        0,
+        0,
+        0,
+        0
+    );
 
+		Point3 position=this->GetPosition();
+		Vector3 direction = this->GetDirection();
+		position.SetX(position.GetX()+speed*direction.GetX()*dt);
+		position.SetY(position.GetY()+speed*direction.GetY()*dt);
+		position.SetZ(position.GetZ()+speed*direction.GetZ()*dt);
+
+		this->SetPosition(position);
+		this->SetDirection(direction);
+
+		 // Take a picture every 5 seconds with front camera
+		 this->SetTime(this->GetTime()+dt);
+
+		 if (this->GetTime()-lastPictureTime > 5.0) {
+			 	 std::cout<<"taking photo"<<std::endl;
+				 this->GetCamera(0)->TakePicture();
+				 lastPictureTime = this->GetTime();
+		 }
 }

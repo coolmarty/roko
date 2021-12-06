@@ -11,6 +11,9 @@
  ******************************************************************************/
 #include "entity.h"
 #include "battery.h"
+/*******************************************************************************
+ * Class Definitions
+ ******************************************************************************/
 
 /**
  * @brief The main class used for drones
@@ -19,6 +22,12 @@
  */
 class Drone : public Entity{
 public:
+
+	void SetJoystick(double x, double y, double z, double a) {
+		Vector3 dir = Vector3(x,y,z);
+		this->SetDirection(dir);
+	}
+	float lastPictureTime = 0.0;
 	/**
 	 * @brief The default constructer for Drones
 	 *

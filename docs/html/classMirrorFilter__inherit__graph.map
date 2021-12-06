@@ -1,0 +1,4 @@
+<map id="MirrorFilter" name="MirrorFilter">
+<area shape="rect" id="node1" title="The MirrorFilter class is used to apply a filter to make an input file to look as if it were mirrored..." alt="" coords="5,131,99,208"/>
+<area shape="rect" id="node2" href="$classFilter.html" title="The main class for filters, purely virtual." alt="" coords="10,5,94,83"/>
+</map>

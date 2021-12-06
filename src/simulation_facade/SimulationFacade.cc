@@ -6,7 +6,9 @@ SimulationFacade::SimulationFacade(){
 
 void SimulationFacade::CreateEntity(picojson::object& entityData, ICameraController& cameraController){
   Entity *entity = entityFactory.create(entityData,cameraController);
-  entities.push_back(entity);
+  if(entity){
+    entities.push_back(entity);
+  }
   return;
 }
 void SimulationFacade::Update(double dt){

@@ -1,0 +1,4 @@
+<map id="ICameraController" name="ICameraController">
+<area shape="rect" id="node1" title="The Camera Controller class controls and allows for monitoring of all cameras." alt="" coords="7,5,184,127"/>
+<area shape="rect" id="node2" href="$classWebApp.html" title="A Web Application Sever that communicates with a web page through web sockets." alt="" coords="5,175,185,443"/>
+</map>

@@ -1,0 +1,126 @@
+\hypertarget{classDrone}{}\doxysection{Drone Class Reference}
+\label{classDrone}\index{Drone@{Drone}}
+
+
+The main class used for drones.  
+
+
+
+
+{\ttfamily \#include $<$drone.\+h$>$}
+
+
+
+Inheritance diagram for Drone\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classDrone__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Drone\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDrone__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDrone_ab692baa4be5c43b72990ce1b01bdc805}{Drone}} ()
+\begin{DoxyCompactList}\small\item\em The default constructer for Drones. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDrone_a7d824a43820b5e8d38746cef5d45c687}{Drone}} (\mbox{\hyperlink{classPoint3}{Point3}} new\+Position, \mbox{\hyperlink{classVector3}{Vector3}} new\+Direction, \mbox{\hyperlink{classVector3}{Vector3}} new\+Velocity, \mbox{\hyperlink{classVector3}{Vector3}} new\+Acceleration, float new\+Time)
+\begin{DoxyCompactList}\small\item\em an overloaded constructer for Drones \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDrone_a14fe031a49fc5f36c425075ba6115350}{Drone}} (const \mbox{\hyperlink{classDrone}{Drone}} \&old)
+\begin{DoxyCompactList}\small\item\em copy constructor for drone \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDrone_aea02d951f8645dc364130564a0aa65cc}\label{classDrone_aea02d951f8645dc364130564a0aa65cc}} 
+void {\bfseries Move} ()
+\item 
+\mbox{\Hypertarget{classDrone_a43e9f846012bb321b5f11957856a56cf}\label{classDrone_a43e9f846012bb321b5f11957856a56cf}} 
+void {\bfseries Take\+Picture} ()
+\item 
+void \mbox{\hyperlink{classDrone_a73028a068840866883ccb7555997996e}{Update}} (float dt)
+\begin{DoxyCompactList}\small\item\em Base class for all entities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDrone_a98f6de76c46e6d73c5e9835e1ed8fd53}\label{classDrone_a98f6de76c46e6d73c5e9835e1ed8fd53}} 
+\mbox{\hyperlink{classBattery}{Battery}} {\bfseries battery}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The main class used for drones. 
+
+inherits from \mbox{\hyperlink{classEntity}{Entity}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDrone_ab692baa4be5c43b72990ce1b01bdc805}\label{classDrone_ab692baa4be5c43b72990ce1b01bdc805}} 
+\index{Drone@{Drone}!Drone@{Drone}}
+\index{Drone@{Drone}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Drone()}{Drone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Drone\+::\+Drone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The default constructer for Drones. 
+
+\begin{DoxyReturn}{Returns}
+a drone object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDrone_a7d824a43820b5e8d38746cef5d45c687}\label{classDrone_a7d824a43820b5e8d38746cef5d45c687}} 
+\index{Drone@{Drone}!Drone@{Drone}}
+\index{Drone@{Drone}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Drone()}{Drone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Drone\+::\+Drone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPoint3}{Point3}}}]{new\+Position,  }\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{new\+Direction,  }\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{new\+Velocity,  }\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{new\+Acceleration,  }\item[{float}]{new\+Time }\end{DoxyParamCaption})}
+
+
+
+an overloaded constructer for Drones 
+
+\begin{DoxyReturn}{Returns}
+a drone object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDrone_a14fe031a49fc5f36c425075ba6115350}\label{classDrone_a14fe031a49fc5f36c425075ba6115350}} 
+\index{Drone@{Drone}!Drone@{Drone}}
+\index{Drone@{Drone}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Drone()}{Drone()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Drone\+::\+Drone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDrone}{Drone}} \&}]{old }\end{DoxyParamCaption})}
+
+
+
+copy constructor for drone 
+
+\begin{DoxyReturn}{Returns}
+a drone object 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDrone_a73028a068840866883ccb7555997996e}\label{classDrone_a73028a068840866883ccb7555997996e}} 
+\index{Drone@{Drone}!Update@{Update}}
+\index{Update@{Update}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Drone\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Base class for all entities. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEntity_a0d49e15aa5e391a1f7ddec7d7c28eb46}{Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/\mbox{\hyperlink{drone_8h}{drone.\+h}}\item 
+/home/ivers743/3081\+\_\+f21/repo-\/team-\/22/src/simulation\+\_\+facade/drone.\+cc\end{DoxyCompactItemize}

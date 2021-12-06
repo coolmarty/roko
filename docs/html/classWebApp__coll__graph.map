@@ -1,0 +1,5 @@
+<map id="WebApp" name="WebApp">
+<area shape="rect" id="node1" title="A Web Application Sever that communicates with a web page through web sockets." alt="" coords="50,175,230,443"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,27,109,105"/>
+<area shape="rect" id="node3" href="$classICameraController.html" title="The Camera Controller class controls and allows for monitoring of all cameras." alt="" coords="134,5,311,127"/>
+</map>
