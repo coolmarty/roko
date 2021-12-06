@@ -1,4 +1,4 @@
-/*! \mainpage Canny Edge Detection for iteration one
+/*! \mainpage Roko's Search and Rescue
  *
  * \section intro_sec Introduction
  *

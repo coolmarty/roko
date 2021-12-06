@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classEntity.html" title="The main class for convolutional filters, purely virtual." alt="" coords="5,81,65,108"/>
-<area shape="rect" id="node2" href="$classDrone.html" title="The main class used for drones." alt="" coords="147,5,209,32"/>
-<area shape="rect" id="node3" href="$classHospital.html" title="Hospital class, used to keep track of all Hospital entities." alt="" coords="140,56,216,83"/>
-<area shape="rect" id="node4" href="$classRechargeStation.html" title="The main class of RechargeStation." alt="" coords="113,107,243,133"/>
-<area shape="rect" id="node5" href="$classRobot.html" title="Robot class, used to keep track of any and all Robot entities." alt="" coords="148,157,208,184"/>
-</map>

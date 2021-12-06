@@ -1,5 +1,0 @@
-<map id="ColorThresholdFilter" name="ColorThresholdFilter">
-<area shape="rect" id="node1" title="The main class of ColorThresholdFilter." alt="" coords="5,271,183,363"/>
-<area shape="rect" id="node2" href="$classSimpleFilter.html" title="a class for creating simple filters;" alt="" coords="29,131,159,223"/>
-<area shape="rect" id="node3" href="$classFilter.html" title="The main class for filters, purely virtual." alt="" coords="52,5,136,83"/>
-</map>

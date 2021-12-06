@@ -8,7 +8,7 @@ Drone::Drone(){
 	robotFound = Point3(-1,-1,-1);
 	travelNode = 0;
 	currentNode = 0;
-	battery = *(new Battery());
+  	battery = (Battery());
 }
 
 Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode){
@@ -19,7 +19,7 @@ Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, floa
 	robotFound = Point3(-1,-1,-1);
 	travelNode = newTravelNode;
 	currentNode = newCurrentNode;
-	battery = *(new Battery());
+  	battery = Battery();
 }
 
 Drone::Drone(const Drone& old){
@@ -34,6 +34,12 @@ Drone::Drone(const Drone& old){
 }
 
 void Drone::TakePicture(){
+}
+
+Drone::~Drone(){
+	for (int i = 0; i < cameras.size(); i++) {
+			delete cameras[i];
+	}
 }
 
 void Drone::Move(){

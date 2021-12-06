@@ -1,7 +1,0 @@
-<map id="Drone" name="Drone">
-<area shape="rect" id="node1" title="The main class used for drones." alt="" coords="133,623,254,773"/>
-<area shape="rect" id="node2" href="$classEntity.html" title="The main class for convolutional filters, purely virtual." alt="" coords="33,292,183,560"/>
-<area shape="rect" id="node3" href="$classPoint3.html" title="The main class for keeping track entity&#39;s of xyz positions." alt="" coords="5,5,93,200"/>
-<area shape="rect" id="node4" href="$classVector3.html" title="The main class for keeping track entity&#39;s of xyz vectors." alt="" coords="118,5,215,200"/>
-<area shape="rect" id="node5" href="$classBattery.html" title="The main class of Battery." alt="" coords="207,365,350,487"/>
-</map>
