@@ -1,8 +1,0 @@
-<map id="EntityFactory" name="EntityFactory">
-<area shape="rect" id="node1" title="The main class of all EntityFactories." alt="" coords="424,5,532,97"/>
-<area shape="rect" id="node2" href="$classCompositeEntityFactory.html" title="The main class used to generate any entity objects in our simulation." alt="" coords="5,145,220,267"/>
-<area shape="rect" id="node3" href="$classDroneFactory.html" title="The main class used to generate drone objects in our simulation." alt="" coords="244,153,379,259"/>
-<area shape="rect" id="node4" href="$classHospitalFactory.html" title="The main class used to generate hospitals objects in our simulation." alt="" coords="403,153,553,259"/>
-<area shape="rect" id="node5" href="$classRechargeStationFactory.html" title="The main class used to generate charge stations objects in our simulation." alt="" coords="577,153,779,259"/>
-<area shape="rect" id="node6" href="$classRobotFactory.html" title="The main class used to generate robot objects in our simulation." alt="" coords="803,153,937,259"/>
-</map>

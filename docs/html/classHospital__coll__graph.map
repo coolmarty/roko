@@ -1,6 +1,0 @@
-<map id="Hospital" name="Hospital">
-<area shape="rect" id="node1" title="Hospital class, used to keep track of all Hospital entities." alt="" coords="57,609,159,701"/>
-<area shape="rect" id="node2" href="$classEntity.html" title="The main class for convolutional filters, purely virtual." alt="" coords="33,292,183,560"/>
-<area shape="rect" id="node3" href="$classPoint3.html" title="The main class for keeping track entity&#39;s of xyz positions." alt="" coords="5,5,93,200"/>
-<area shape="rect" id="node4" href="$classVector3.html" title="The main class for keeping track entity&#39;s of xyz vectors." alt="" coords="118,5,215,200"/>
-</map>
