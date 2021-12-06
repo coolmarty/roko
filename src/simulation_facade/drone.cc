@@ -12,6 +12,7 @@ Drone::Drone(){
 */
 	movementAccessor = SearchAndRescue();
 	manual = false;
+	manualMove = ManualMovement();
 	battery = *(new Battery());
 }
 
@@ -44,6 +45,10 @@ void Drone::Move(){
 	//MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt);
 }
 
+void Drone::SetKeys(char* arr) {
+	this->manualMove.ChangeKeys(arr);
+}
+
 void Drone::Update(float dt){
 	
 	Point3 noRobot = Point3(-1, -1, -1);
@@ -51,14 +56,14 @@ void Drone::Update(float dt){
 	Data storage = Data();
 	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelNode, currentNode);
 	
-	if (true) {
+	if (false) {
 		if (robotFound == noRobot) {
 			movementAccessor.Search(&position, &direction, &velocity);
 		} else {
 			movementAccessor.Rescue(&position, &direction, &velocity, robotFound);
 		}
 	} else {
-		// TODO
+		manualMove.AlterVelocity(direction, velocity);
 	}
 
 /*

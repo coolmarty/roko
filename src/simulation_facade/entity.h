@@ -153,6 +153,8 @@ public:
      void addCamera(Camera *camera);
 
      Camera *GetCamera(int index);
+	 
+	 void SetKeys(char* arr) { };
 protected:
   Point3 position;
   Vector3 velocity;

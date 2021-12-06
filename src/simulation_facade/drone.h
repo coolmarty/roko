@@ -13,8 +13,7 @@
 #include "battery.h"
 #include "movement_strategy.h"
 #include "data.h"
-#include "beeline.h"
-#include "patrol.h"
+#include "manual_movement.h"
 #include "search_and_rescue.h"
 /*******************************************************************************
  * Class Definitions
@@ -81,6 +80,7 @@ private:
 	int travelNode; // keeps track of the drone's target location along the edge of the map, increments when it's at a recharge station
 	int currentNode; // for the drone's patrol, where it's currently moving to
 	bool manual;
+	ManualMovement manualMove;
 };
 
 #endif
