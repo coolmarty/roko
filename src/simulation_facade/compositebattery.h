@@ -2,7 +2,7 @@
  * @file compositebattery.h
  *
  */
- 
+
 /*******************************************************************************
  * Includes
  ******************************************************************************/
@@ -20,7 +20,7 @@ class CompositeBattery : public Battery{
 /**
  * @brief The battery vector of the composite battery.
  *
- * 
+ *
  */
   std::vector<Battery> batteries;
 /**
@@ -58,7 +58,7 @@ class CompositeBattery : public Battery{
 *
 */
   void SetFirstBattery(float NBL);
-  
-    
+
+
 };
 #endif

@@ -7,7 +7,7 @@ Drone::Drone(){
 	velocity = Vector3();
 	acceleration = Vector3(0,9.8,0);
 	time = 0;
-        battery = *(new Battery());
+  battery = (Battery());
 }
 
 Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, Vector3 newAcceleration, float newTime){
@@ -16,7 +16,7 @@ Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, Vect
 	velocity = newVelocity;
 	acceleration = newAcceleration;
 	time = newTime;
-        battery = *(new Battery());
+  battery = Battery();
 }
 
 Drone::Drone(const Drone& old){
@@ -28,13 +28,11 @@ Drone::Drone(const Drone& old){
 	battery = old.battery;
 }
 
-// Drone::~Drone(){
-// 	delete position;
-// 	delete direction;
-// 	delete velocity;
-// 	delete acceleration;
-// 	delete time;
-// }
+Drone::~Drone(){
+	for (int i = 0; i < cameras.size(); i++) {
+			delete cameras[i];
+	}
+}
 
 // Point3 Drone::GetPosition(){
 // 	return position;

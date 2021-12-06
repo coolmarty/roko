@@ -74,7 +74,6 @@ std::vector<float> BlobDetect::getDirection(std::vector<Image*> color_image_vect
 
   Image colored_image = *color_image_vector.at(0);
   Image direction_im = *direction.at(0);
-  // cout<<"here"<<endl;
   Image temp_output;
   vector<Image *> cthreshed;
   cthreshed.push_back(&temp_output);
@@ -86,7 +85,12 @@ std::vector<float> BlobDetect::getDirection(std::vector<Image*> color_image_vect
     for(int x =0;x<color_image.GetWidth();x++){
       color_pixel=color_image.GetPixel(x,y);
       if(isWhite(color_pixel)){
-        return direction_im.getDirection(x,y);
+        std::vector<float> vec = direction_im.getDirection(x,y);
+        float magnitude = sqrt(pow(vec[0],2)+pow(vec[1],2)+pow(vec[2],2));
+        for(int i =0;i<vec.size();i++){
+          vec[i]=vec[i]/magnitude;
+        }
+        return vec;
       }
     }
   }

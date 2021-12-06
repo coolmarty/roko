@@ -22,6 +22,14 @@ public:
    */
   Hospital(){return;}
 
+
+  ~Hospital(){
+    for (int i = 0; i < cameras.size(); i++) {
+        delete cameras[i];
+    }
+  }
+
+
   /**
    * @brief update function for hospital (doesn't do anything right now)
    *
