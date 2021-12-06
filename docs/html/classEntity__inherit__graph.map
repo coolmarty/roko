@@ -1,7 +1,0 @@
-<map id="Entity" name="Entity">
-<area shape="rect" id="node1" title="The main class for convolutional filters, purely virtual." alt="" coords="203,5,353,332"/>
-<area shape="rect" id="node2" href="$classDrone.html" title="The main class used for drones." alt="" coords="5,380,127,531"/>
-<area shape="rect" id="node3" href="$classHospital.html" title="Hospital class, used to keep track of all Hospital entities." alt="" coords="151,409,253,501"/>
-<area shape="rect" id="node4" href="$classRechargeStation.html" title="The main class of RechargeStation." alt="" coords="277,380,431,531"/>
-<area shape="rect" id="node5" href="$classRobot.html" title="Robot class, used to keep track of any and all Robot entities." alt="" coords="456,409,551,501"/>
-</map>

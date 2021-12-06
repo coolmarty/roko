@@ -1,8 +1,0 @@
-<map id="RechargeStation" name="RechargeStation">
-<area shape="rect" id="node1" title="The main class of RechargeStation." alt="" coords="160,623,315,759"/>
-<area shape="rect" id="node2" href="$classEntity.html" title="The main class for convolutional filters, purely virtual." alt="" coords="70,292,221,560"/>
-<area shape="rect" id="node3" href="$classPoint3.html" title="The main class for keeping track entity&#39;s of xyz positions." alt="" coords="5,5,93,200"/>
-<area shape="rect" id="node4" href="$classVector3.html" title="The main class for keeping track entity&#39;s of xyz vectors." alt="" coords="118,5,215,200"/>
-<area shape="rect" id="node5" href="$classCompositeBattery.html" title="The main class of CompositeBattery." alt="" coords="245,343,419,509"/>
-<area shape="rect" id="node6" href="$classBattery.html" title="The main class of Battery." alt="" coords="261,42,403,163"/>
-</map>
