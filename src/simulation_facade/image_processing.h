@@ -19,17 +19,17 @@ public:
 	/**
 	 * @brief Uses image processor to determine whether the robot was detected in an RGB image via blob detect
 	 */
-	bool BlobCheck(Image *in_img);
+	bool BlobCheck(std::string fname);
 
 	/**
 	 * @brief Uses image processor to determine the distance away from the drone the robot is given a depth image. Typically run after BloblCheck returns true.
 	 */
-	float BlobGetDistance(Image *in_img);
+	float BlobGetDistance(std::string color_name, std::string depth_name);
 
 	/**
 	 * @brief Gets the direction of the robot relative to the front of the drone
 	 */
-	std::vector<float> BlobGetDirection(Image *in_img);
+	std::vector<float> BlobGetDirection(std::string color_name, std::string depth_name);
 };
 
 #endif
