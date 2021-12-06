@@ -15,6 +15,12 @@ Drone::Drone(){
 	battery = *(new Battery());
 }
 
+Drone::~Drone(){
+    for (int i = 0; i < cameras.size(); i++) {
+            delete cameras[i];
+    }
+}
+
 Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode){
 	position = newPosition;
 	direction = newDirection;
@@ -51,7 +57,7 @@ void Drone::Update(float dt){
 	Data storage = Data();
 	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelNode, currentNode);
 	
-	if (true) {
+	if (!manual) {
 		if (robotFound == noRobot) {
 			movementAccessor.Search(&position, &direction, &velocity);
 		} else {

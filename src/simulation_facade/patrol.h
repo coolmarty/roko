@@ -10,9 +10,9 @@ public:
 	void MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity);
 
 	Point3 GetNode(int node);
-	void SetNode(int node);
+	void SetNode(int nodey);
 
-	int node;
+	int node = -1;
 private:
 
 	
