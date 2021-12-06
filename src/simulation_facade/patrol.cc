@@ -2,8 +2,8 @@
 #include <cmath>
 #include <iostream>
 
-PatrolMovement::PatrolMovement(int *newNode){
-	node = *newNode;
+PatrolMovement::PatrolMovement(int newNode){
+	node = newNode;
 }
 
 void PatrolMovement::SetNode(int node) {
@@ -35,7 +35,7 @@ Point3 PatrolMovement::GetNode(int nodey){
 	return target;
 }
 
-int PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity){	
+void PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity){	
 	const Point3 rechargeLocation = Point3(20, 0, 50);
 	//-1450, 1550
 	//-900, 900
