@@ -22,7 +22,7 @@ TEST_F(CompositeBatteryIntegrationTest, MessAroundAbunch) {
   for(int i=0;i<100;i++){
     for(int j =0;j<1000;j++){
       cbatt.SetFirstBattery(cbatt.GetFirstBatteryLife()-.1);
-      
+
     }
     cbatt.RemoveBattery();
   }
