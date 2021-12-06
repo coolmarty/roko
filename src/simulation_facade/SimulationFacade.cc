@@ -14,23 +14,23 @@ void SimulationFacade::CreateEntity(picojson::object& entityData, ICameraControl
 void SimulationFacade::Update(double dt, const std::map<std::string,int>& keyStatus){
   char keyArr[5];
   
-  if (keyStatus.find("ArrowRight") != keyStatus.end() && keyStatus.find("ArrowRight") == 1) {
+  if (keyStatus.find("ArrowRight") != keyStatus.end() && keyStatus.find("ArrowRight")->second == 1) {
 	keyArr[1] = 1;
-  } else if (keyStatus.find("ArrowLeft") != keyStatus.end() && keyStatus.find("ArrowRight") == 1) {
+  } else if (keyStatus.find("ArrowLeft") != keyStatus.end() && keyStatus.find("ArrowRight")->second == 1) {
 	keyArr[1] = -1;
   } else {
 	keyArr[1] = 0;
   }
-  if (keyStatus.find("ArrowUp") != keyStatus.end() && keyStatus.find("ArrowRight") == 1) {
+  if (keyStatus.find("ArrowUp") != keyStatus.end() && keyStatus.find("ArrowRight")->second == 1) {
 	keyArr[2] = 1;
-  } else if (keyStatus.find("ArrowDown") != keyStatus.end() && keyStatus.find("ArrowRight") == 1) {
+  } else if (keyStatus.find("ArrowDown") != keyStatus.end() && keyStatus.find("ArrowRight")->second == 1) {
 	keyArr[2] = -1;
   } else {
 	keyArr[2] = 0;
   }
-  if (keyStatus.find("w") != keyStatus.end() && keyStatus.find("ArrowRight") == 1) {
+  if (keyStatus.find("w") != keyStatus.end() && keyStatus.find("ArrowRight")->second == 1) {
 	keyArr[0] = 1;
-  } else if (keyStatus.find("s") != keyStatus.end() && keyStatus.find("ArrowRight") == 1) {
+  } else if (keyStatus.find("s") != keyStatus.end() && keyStatus.find("ArrowRight")->second == 1) {
 	keyArr[0] = -1;  
   } else {
 	keyArr[0] = 0;  
@@ -46,6 +46,7 @@ void SimulationFacade::Update(double dt, const std::map<std::string,int>& keySta
   */
   for(int i=0;i<entities.size();i++){
     entities[i]->Update(dt);
+	entities[i]->SetKeys(keyArr);
   }
 }
 

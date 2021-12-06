@@ -10,7 +10,7 @@ ManualMovement::ManualMovement() {
 
 void ManualMovement::ChangeKeys(char* arr) {
 	for (int i = 0; i < 5; i++) {
-		
+		keys[i] = arr[i];
 	}
 }
 
