@@ -1,5 +1,6 @@
 #include "beeline.h"
 #include <cmath>
+#include <iostream>
 
 BeelineMovement::BeelineMovement(Point3 dest){
 	destination = dest;
@@ -43,5 +44,4 @@ void BeelineMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *ve
 	velocity->SetX(normalizedVector.GetX() * speed);
 	velocity->SetY(normalizedVector.GetY() * speed);
 	velocity->SetZ(normalizedVector.GetZ() * speed);
-
 }

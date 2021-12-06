@@ -1,7 +1,7 @@
 #include "search_and_rescue.h"
 
-SearchAndRescue::SearchAndRescue() : found(false), travelNode(0), currentNode(0), rechargeLocation(Point3(20, 0, 50)) {
-	currentStrat = new PatrolMovement(0);
+SearchAndRescue::SearchAndRescue() : found(false), travelNode(0), currentNode(-1), rechargeLocation(Point3(20, 0, 50)) {
+	currentStrat = new PatrolMovement(currentNode);
 }
 
 SearchAndRescue::~SearchAndRescue() {

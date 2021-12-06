@@ -65,7 +65,7 @@ public:
 	 */
 	void SetZ(float newz);
 	
-	bool operator==(const Point3 other);
+	bool operator==(const Point3& other);
 
 private:
 	float x, y, z;

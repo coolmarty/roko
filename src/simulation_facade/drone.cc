@@ -45,13 +45,14 @@ void Drone::Move(){
 }
 
 void Drone::Update(float dt){
+	
 	Point3 noRobot = Point3(-1, -1, -1);
 
 	Data storage = Data();
 	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelNode, currentNode);
 	
-	if (!manual) {
-		if (!(robotFound == noRobot)) {
+	if (true) {
+		if (robotFound == noRobot) {
 			movementAccessor.Search(&position, &direction, &velocity);
 		} else {
 			movementAccessor.Rescue(&position, &direction, &velocity, robotFound);
@@ -89,6 +90,10 @@ void Drone::Update(float dt){
 	position.SetX(position.GetX() + timeStep.GetX());
 	position.SetY(position.GetY() + timeStep.GetY());
 	position.SetZ(position.GetZ() + timeStep.GetZ());
-
+/*
+	velocity.SetX(0);
+	velocity.SetY(0);
+	velocity.SetZ(0);
+*/
 	time += dt;
 }

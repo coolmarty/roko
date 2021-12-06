@@ -5,16 +5,17 @@
 
 class PatrolMovement : public MovementStrategy{
 public:
-	PatrolMovement(int* newNode);
+	PatrolMovement(int newNode);
 
 	void MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity);
 
 	Point3 GetNode(int node);
-	Point3 SetNode(int node);
-
-private:
+	void SetNode(int node);
 
 	int node;
+private:
+
+	
 };
 
 #endif
