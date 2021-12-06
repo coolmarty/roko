@@ -5,7 +5,6 @@ Drone::Drone(){
 	direction = Vector3();
 	velocity = Vector3();
 	time = 0;
-
 	robotFound = Point3(-1,-1,-1);
 /*
 	travelNode = 0;
@@ -27,12 +26,10 @@ Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, floa
 	direction = newDirection;
 	velocity = newVelocity;
 	time = newTime;
-
 	robotFound = Point3(-1,-1,-1);
 	travelNode = newTravelNode;
 	currentNode = newCurrentNode;
 	battery = *(new Battery());
-
 }
 
 Drone::Drone(const Drone& old){
@@ -48,11 +45,6 @@ Drone::Drone(const Drone& old){
 
 void Drone::TakePicture(){
 }
-Drone::~Drone(){
-	for (int i = 0; i < cameras.size(); i++) {
-			delete cameras[i];
-	}
-}
 
 void Drone::Move(){
 	//MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt);
@@ -65,7 +57,7 @@ void Drone::Update(float dt){
 	Data storage = Data();
 	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelNode, currentNode);
 	
-	if (!manual) {
+	if (true) {
 		if (robotFound == noRobot) {
 			movementAccessor.Search(&position, &direction, &velocity);
 		} else {

@@ -40,8 +40,6 @@ public:
 	 */
 	Drone();
 	
-	~Drone();
-
 	/**
 	 * @brief an overloaded constructer for Drones
 	 *
