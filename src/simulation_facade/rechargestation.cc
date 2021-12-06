@@ -1,6 +1,3 @@
-/*******************************************************************************
- * Includes
- ******************************************************************************/
 #include "rechargestation.h"
 
 
@@ -8,9 +5,6 @@
 
 RechargeStation::RechargeStation(Point3 pos){
   busy = false;
-  for(int i = 0; i < 4000; i++){
-    powercells.AddBattery(*(new Battery()));
-  }
   this->SetPosition(pos);
   this->SetVelocity(Vector3());
   this->SetAcceleration(Vector3());
@@ -22,6 +16,12 @@ RechargeStation::RechargeStation(Point3 pos, CompositeBattery compbatt){
   this->SetPosition(pos);
   this->SetVelocity(Vector3());
   this->SetAcceleration(Vector3());
+}
+
+RechargeStation::~RechargeStation(){
+  for (int i = 0; i < cameras.size(); i++) {
+      delete cameras[i];
+  }
 }
 
 void RechargeStation::Recharge(Drone drone){

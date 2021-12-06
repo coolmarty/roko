@@ -3,14 +3,14 @@ CompositeEntityFactory::CompositeEntityFactory(){
   factories.push_back(new DroneFactory());
   factories.push_back(new RobotFactory());
   factories.push_back(new HospitalFactory());
+  factories.push_back(new RechargeStationFactory());
 }
 
 CompositeEntityFactory::~CompositeEntityFactory(){
+  std::cout<<"deleting myself"<<std::endl;
   EntityFactory *f;
   for(int i=0;i<factories.size();i++){
-    f=factories[0];//get first selement
-    factories.erase(factories.begin());//erase first element
-    delete f;//delete memory we malloc'd (or new'd I guess)
+    delete factories[i];
   }
 }
 
@@ -23,7 +23,6 @@ Entity *CompositeEntityFactory::create(picojson::object& entityData, ICameraCont
     }
   }
   return NULL;
-
 }
 
 Entity *CompositeEntityFactory::create(picojson::object& entityData){
