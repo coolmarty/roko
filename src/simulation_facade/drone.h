@@ -54,26 +54,31 @@ public:
 	 */
 	Drone(const Drone &old);
 
+	/**
+	 * @brief destructor for drone
+	 *
+	 * 
+	 */
 	~Drone();
 
-	// Point3 GetPosition();
-	// Direction GetDirection();
-	// Vector3 GetVelocity();
-	// Vector3 GetAcceleration();
-	// float GetTime();
-
-	// void SetPosition(Point3 newPosition);
-	// void SetDirection(Direction newDirection);
-	// void SetVelocity(Vector3 newVelocity);
-	// void SetAcceleration(Vector3 newAcceleration);
-	// void SetTime(float newTime);
-
+	/**
+	 * @brief calls to MovePath, defunct due to SearchAndRescue
+	 *
+	 */
 	void Move();
+
+	/**
+	 * @brief Takes a picture using camera
+	 *
+	 */
 	void TakePicture();
 
+	/**
+	 * @brief Updates in line with the simulation
+	 *
+	 */
 	void Update(float dt);
 
-    Battery battery;
 
 private:
 	Point3 robotFound;
@@ -81,6 +86,7 @@ private:
 	int travelNode; // keeps track of the drone's target location along the edge of the map, increments when it's at a recharge station
 	int currentNode; // for the drone's patrol, where it's currently moving to
 	bool manual;
+    Battery battery;
 };
 
 #endif

@@ -35,16 +35,15 @@ Point3 PatrolMovement::GetNode(int nodey){
 	return target;
 }
 
-void PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity){	
-	const Point3 rechargeLocation = Point3(20, 0, 50);
+void PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity){
 	//-1450, 1550
 	//-900, 900
-	if(position->GetX() < -10 || position->GetX() > 10){
+	if(position->GetX() < -1450 || position->GetX() > 1550){
 		node = -1;
 	} else {
 		std::cout << position->GetX() << std::endl;
 	}
-	if(position->GetZ() < -8 || position->GetZ() > 8){
+	if(position->GetZ() < -900 || position->GetZ() > 900){
 		std::cout << node << std::endl;
 		node = -1;
 	}

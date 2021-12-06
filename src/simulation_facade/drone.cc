@@ -65,23 +65,6 @@ void Drone::Update(float dt){
 		// TODO
 	}
 
-/*
-	if(position == rechargeLocation){
-		travelNode++;
-		currentNode = travelNode;
-	}
-
-	if(robotFound != noRobot){
-	// BeelineMovement(robotFound);
-
-	}
-	else{
-	PatrolMovement(currentNode);
-	}
-*/
-
-
-
 	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
 	Vector3 timeStep = Vector3(velocity.GetX() * dt,
 								  velocity.GetY() * dt,
@@ -94,10 +77,6 @@ void Drone::Update(float dt){
 	position.SetX(position.GetX() + timeStep.GetX());
 	position.SetY(position.GetY() + timeStep.GetY());
 	position.SetZ(position.GetZ() + timeStep.GetZ());
-/*
-	velocity.SetX(0);
-	velocity.SetY(0);
-	velocity.SetZ(0);
-*/
+
 	time += dt;
 }
