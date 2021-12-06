@@ -64,6 +64,8 @@ public:
 	 *
 	 */
 	void SetZ(float newz);
+	
+	bool operator==(const Point3& other);
 
 	bool operator==(const Point3& p){
 		return p.x == this->x && p.y == this->y && this->z == p.z;

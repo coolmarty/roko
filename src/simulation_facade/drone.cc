@@ -9,6 +9,8 @@ Drone::Drone(){
 	travelNode = 0;
 	currentNode = 0;
   	battery = (Battery());
+  	movementAccessor = SearchAndRescue();
+	manual = false;
 }
 
 Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode){
@@ -47,24 +49,38 @@ void Drone::Move(){
 }
 
 void Drone::Update(float dt){
+	
 	Point3 noRobot = Point3(-1, -1, -1);
-	Point3 rechargeLocation = Point3(20, 0, 50);
 
 	Data storage = Data();
 	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelNode, currentNode);
+	
+	if (true) {
+		if (robotFound == noRobot) {
+			movementAccessor.Search(&position, &direction, &velocity);
+		} else {
+			movementAccessor.Rescue(&position, &direction, &velocity, robotFound);
+		}
+	} else {
+		// TODO
+	}
 
+/*
 	if(position == rechargeLocation){
 		travelNode++;
 		currentNode = travelNode;
 	}
 
-	// if(robotFound != noRobot){
-	// 	// BeelineMovement(robotFound);
+	if(robotFound != noRobot){
+	// BeelineMovement(robotFound);
 
-	// }
-	// else{
-	// 	PatrolMovement(currentNode);
-	// }
+	}
+	else{
+	PatrolMovement(currentNode);
+	}
+*/
+
+
 
 	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
 	Vector3 timeStep = Vector3(velocity.GetX() * dt,
@@ -78,6 +94,10 @@ void Drone::Update(float dt){
 	position.SetX(position.GetX() + timeStep.GetX());
 	position.SetY(position.GetY() + timeStep.GetY());
 	position.SetZ(position.GetZ() + timeStep.GetZ());
-
+/*
+	velocity.SetX(0);
+	velocity.SetY(0);
+	velocity.SetZ(0);
+*/
 	time += dt;
 }
