@@ -23,11 +23,18 @@ public:
    */
   Robot(){return;}
 
+
+  ~Robot(){
+    for (int i = 0; i < cameras.size(); i++) {
+        delete cameras[i];
+    }
+  }
+
   /**
    * @brief update function for robot (doesn't do anything right now)
    *
    */
-  void Update(float dt){return;}
+   void Update(float dt){return;}
 
 };
 

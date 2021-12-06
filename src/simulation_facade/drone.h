@@ -56,7 +56,7 @@ public:
 	 */
 	Drone(const Drone &old);
 
-	// ~Drone();
+	~Drone();
 
 	// Point3 GetPosition();
 	// Direction GetDirection();
