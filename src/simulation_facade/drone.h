@@ -11,6 +11,11 @@
  ******************************************************************************/
 #include "entity.h"
 #include "battery.h"
+#include "movement_strategy.h"
+#include "data.h"
+#include "beeline.h"
+#include "patrol.h"
+#include "search_and_rescue.h"
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
@@ -34,20 +39,20 @@ public:
 	 * @return a drone object
 	 */
 	Drone();
-
+	
 	/**
 	 * @brief an overloaded constructer for Drones
 	 *
 	 * @return a drone object
 	 */
-	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, Vector3 newAcceleration, float newTime);
+	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode);
 
 	/**
 	 * @brief copy constructor for drone
 	 *
 	 * @return a drone object
 	 */
-	Drone(const Drone& old);
+	Drone(const Drone &old);
 
 	~Drone();
 
@@ -67,7 +72,15 @@ public:
 	void TakePicture();
 
 	void Update(float dt);
-        Battery battery;
+
+    Battery battery;
+
+private:
+	Point3 robotFound;
+	SearchAndRescue movementAccessor;
+	int travelNode; // keeps track of the drone's target location along the edge of the map, increments when it's at a recharge station
+	int currentNode; // for the drone's patrol, where it's currently moving to
+	bool manual;
 };
 
 #endif
