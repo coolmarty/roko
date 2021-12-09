@@ -3,7 +3,6 @@
 #include "dronefactory.h"
 #include "rechargestationfactory.h"
 #include "robotfactory.h"
-#include "compositeentityfactory.h"
 
 
 class HospitalFactoryTest : public ::testing::Test {
@@ -69,9 +68,7 @@ TEST_F(HospitalFactoryTest, CreateHospital) {
     EXPECT_TRUE(false);
     return;
   }
-  std::cout<<"cout please print"<<std::endl;
   Entity *hosp = hospitalFactory.create(o);
-  std::cout<<"cout please print2"<<std::endl;
 
   Point3 expectedPos = Point3(-40,0,2);
   Point3 actualPos = hosp->GetPosition();
@@ -86,6 +83,8 @@ TEST_F(HospitalFactoryTest, CreateHospital) {
   EXPECT_EQ(actualDir.GetZ(),expectedDir.GetZ());
 
   EXPECT_EQ(hosp->GetId(),1);
+
+  delete hosp;
 }
 
 TEST_F(RobotFactoryTest, CreateRobot) {
@@ -125,6 +124,8 @@ TEST_F(RobotFactoryTest, CreateRobot) {
   EXPECT_EQ(actualDir.GetZ(),expectedDir.GetZ());
 
   EXPECT_EQ(robot->GetId(),3);
+
+  delete robot;
 }
 
 TEST_F(RechargeFactoryTest, CreateRechargeStation) {
@@ -164,6 +165,8 @@ TEST_F(RechargeFactoryTest, CreateRechargeStation) {
   EXPECT_EQ(actualDir.GetZ(),expectedDir.GetZ());
 
   EXPECT_EQ(station->GetId(),2);
+
+  delete station;
 }
 
 TEST_F(DroneFactoryTest, CreateDrone) {
@@ -203,4 +206,6 @@ TEST_F(DroneFactoryTest, CreateDrone) {
   EXPECT_EQ(drone->GetId(),0);
 
   EXPECT_EQ(drone->GetSpeed(),4);
+
+  delete drone;
 }

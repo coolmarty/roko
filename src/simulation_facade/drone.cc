@@ -16,6 +16,12 @@ Drone::Drone(){
 	battery = *(new Battery());
 }
 
+Drone::~Drone(){
+    for (int i = 0; i < cameras.size(); i++) {
+            delete cameras[i];
+    }
+}
+
 Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode){
 	position = newPosition;
 	direction = newDirection;

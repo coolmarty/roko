@@ -6,8 +6,8 @@ PatrolMovement::PatrolMovement(int newNode){
 	node = newNode;
 }
 
-void PatrolMovement::SetNode(int node) {
-	this->node = node;
+void PatrolMovement::SetNode(int nodey) {
+	node = nodey;
 }
 
 Point3 PatrolMovement::GetNode(int nodey){
@@ -39,13 +39,10 @@ void PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *vel
 	const Point3 rechargeLocation = Point3(20, 0, 50);
 	//-1450, 1550
 	//-900, 900
-	if(position->GetX() < -10 || position->GetX() > 10){
+	if(position->GetX() < -1450 || position->GetX() > 1550){
 		node = -1;
-	} else {
-		std::cout << position->GetX() << std::endl;
 	}
-	if(position->GetZ() < -8 || position->GetZ() > 8){
-		std::cout << node << std::endl;
+	if(position->GetZ() < -90 || position->GetZ() > 90){
 		node = -1;
 	}
 	BeelineMovement(GetNode(node)).MovePath(position, direction, velocity);

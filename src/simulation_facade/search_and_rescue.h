@@ -46,7 +46,6 @@ private:
 	int travelNode;
 	int currentNode;
 	Point3 rechargeLocation;
-	MovementStrategy* currentStrat;
 	bool found;
 };
 

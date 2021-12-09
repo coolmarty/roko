@@ -61,48 +61,16 @@ TEST_F(DroneTest, CreateDefaultDrone) {
   EXPECT_EQ(actualVelo.GetY(),expectedVelo.GetY());
   EXPECT_EQ(actualVelo.GetZ(),expectedVelo.GetZ());
 
+/*
   Vector3 expectedaccel=Vector3(0,9.8,0);
   Vector3 actualAccel=drone.GetAcceleration();
   EXPECT_EQ(actualAccel.GetX(),expectedaccel.GetX());
   EXPECT_EQ(actualAccel.GetY(),expectedaccel.GetY());
   EXPECT_EQ(actualAccel.GetZ(),expectedaccel.GetZ());
-
+*/
   EXPECT_EQ(drone.GetTime(),0);
 }
 
-TEST_F(DroneTest, CreateDroneOverload) {
-  Point3 expectedPos = Point3(2,4,6);
-  Vector3 expectedDir = Vector3(3,7,9);
-  Vector3 expectedVelo=Vector3(-1,-2,-3);
-  Vector3 expectedaccel=Vector3(11,22,33);
-  drone = Drone(expectedPos,expectedDir,expectedVelo,expectedaccel,4);
-
-
-  Point3 actualPos = drone.GetPosition();
-  EXPECT_EQ(actualPos.GetX(),expectedPos.GetX());
-  EXPECT_EQ(actualPos.GetY(),expectedPos.GetY());
-  EXPECT_EQ(actualPos.GetZ(),expectedPos.GetZ());
-
-
-  Vector3 actualDir = drone.GetDirection();
-  EXPECT_EQ(actualDir.GetX(),expectedDir.GetX());
-  EXPECT_EQ(actualDir.GetY(),expectedDir.GetY());
-  EXPECT_EQ(actualDir.GetZ(),expectedDir.GetZ());
-
-
-  Vector3 actualVelo=drone.GetVelocity();
-  EXPECT_EQ(actualVelo.GetX(),expectedVelo.GetX());
-  EXPECT_EQ(actualVelo.GetY(),expectedVelo.GetY());
-  EXPECT_EQ(actualVelo.GetZ(),expectedVelo.GetZ());
-
-
-  Vector3 actualAccel=drone.GetAcceleration();
-  EXPECT_EQ(actualAccel.GetX(),expectedaccel.GetX());
-  EXPECT_EQ(actualAccel.GetY(),expectedaccel.GetY());
-  EXPECT_EQ(actualAccel.GetZ(),expectedaccel.GetZ());
-
-  EXPECT_EQ(drone.GetTime(),4);
-}
 
 TEST_F(RobotTest, CreateDefaultRobot) {
   robot = Robot();
