@@ -6,11 +6,11 @@ PatrolMovement::PatrolMovement(int newNode){
 	node = newNode;
 }
 
-void PatrolMovement::SetNode(int node) {
-	this->node = node;
+void PatrolMovement::SetNode(int nodey) {
+	node = nodey;
 }
 
-Point3 PatrolMovement::GetNode(int nodey){
+Point3 PatrolMovement::GetNode(int node){
 	Point3 target = Point3(-1450, 0, -900); // southwest corner of map
 	if(node > 96){
 		node = 96; // will have gone out of bounds, sets to bottom left
@@ -35,16 +35,14 @@ Point3 PatrolMovement::GetNode(int nodey){
 	return target;
 }
 
-void PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity){
+void PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity){	
+	const Point3 rechargeLocation = Point3(20, 0, 50);
 	//-1450, 1550
 	//-900, 900
 	if(position->GetX() < -1450 || position->GetX() > 1550){
 		node = -1;
-	} else {
-		std::cout << position->GetX() << std::endl;
 	}
 	if(position->GetZ() < -900 || position->GetZ() > 900){
-		std::cout << node << std::endl;
 		node = -1;
 	}
 	BeelineMovement(GetNode(node)).MovePath(position, direction, velocity);

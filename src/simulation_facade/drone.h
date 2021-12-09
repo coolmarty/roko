@@ -44,7 +44,7 @@ public:
 	 * @return a drone object
 	 */
 	Drone();
-
+	
 	/**
 	 * @brief an overloaded constructer for Drones
 	 *

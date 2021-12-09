@@ -11,6 +11,13 @@ Drone::Drone(){
   	battery = (Battery());
   	movementAccessor = SearchAndRescue();
 	manual = false;
+	battery = *(new Battery());
+}
+
+Drone::~Drone(){
+    for (int i = 0; i < cameras.size(); i++) {
+            delete cameras[i];
+    }
 }
 
 Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode){
@@ -21,7 +28,7 @@ Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, floa
 	robotFound = Point3(-1,-1,-1);
 	travelNode = newTravelNode;
 	currentNode = newCurrentNode;
-  	battery = Battery();
+	battery = *(new Battery());
 }
 
 Drone::Drone(const Drone& old){
@@ -36,12 +43,6 @@ Drone::Drone(const Drone& old){
 }
 
 void Drone::TakePicture(){
-}
-
-Drone::~Drone(){
-	for (int i = 0; i < cameras.size(); i++) {
-			delete cameras[i];
-	}
 }
 
 void Drone::Move(){

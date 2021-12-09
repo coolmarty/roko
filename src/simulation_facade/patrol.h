@@ -29,13 +29,13 @@ public:
 	 *
 	 */
 	Point3 GetNode(int node);
-
 	/**
 	 * @brief Sets the node held by the class
 	 *
 	 */
 	void SetNode(int node);
 
+	int node = -1;
 private:
 
 	int node;
