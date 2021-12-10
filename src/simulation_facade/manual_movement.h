@@ -6,11 +6,11 @@ class ManualMovement {
 public:
 	ManualMovement();
 	// Inherited MovePath ??
-	void AlterVelocity(Vector3& dir, Vector3& vec);
+	void AlterVelocity(Vector3& dir, Vector3& vel);
 	void ChangeKeys(char* arr);
 	
 
-private:
+
 	char keys[4];
 };
 

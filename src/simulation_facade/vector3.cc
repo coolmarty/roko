@@ -1,5 +1,6 @@
 #include "vector3.h"
 #include <math.h>
+#include <iostream>
 
 Vector3::Vector3(){
 	x = 0;
@@ -13,6 +14,7 @@ float Vector3::Magnitude() {
 
 Vector3 Vector3::Normalize() {
 	float mag = this->Magnitude();
+	std::cout << mag << std::endl;
 	return Vector3(x / mag, y / mag, z / mag);
 }
 

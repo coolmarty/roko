@@ -9,15 +9,14 @@ ManualMovement::ManualMovement() {
 }
 
 void ManualMovement::ChangeKeys(char* arr) {
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 4; i++) {
 		keys[i] = arr[i];
 	}
 }
 
-void ManualMovement::AlterVelocity(Vector3& dir, Vector3& vec) {
+void ManualMovement::AlterVelocity(Vector3& dir, Vector3& vel) {
 	//Vector3 dir = roko.GetDirection();
-	std::cout << "commit cry" << std::endl;
-	float speed = vec.Magnitude();
+	float speed = vel.Magnitude();
 	float angle = 0;
 	
 	// Pitch
@@ -36,7 +35,7 @@ void ManualMovement::AlterVelocity(Vector3& dir, Vector3& vec) {
 			dir.SetZ(dir.GetZ() + 0.01);
 		}
 	}
-	
+/*	
 	// Yaw
 	if (keys[1] == 1) {
 		dir.SetY(dir.GetY() + 0.01);
@@ -77,7 +76,16 @@ void ManualMovement::AlterVelocity(Vector3& dir, Vector3& vec) {
 	//roko.SetDirection(dir.Normalize());
 	//dir.SetY(1 - dir.GetY());
 	//roko.SetVelocity(dir.Normalize() * speed);
-	vec.SetX(dir.Normalize().GetX() * speed);
-	vec.SetY(dir.Normalize().GetY() * speed);
-	vec.SetZ(dir.Normalize().GetZ() * speed);
+*/
+	// std::cout << speed << std::endl;
+	// std::cout << vel.GetX() << " " << vel.GetY() << " " << vel.GetZ() << std::endl;
+	// std::cout << dir.GetX() << std::endl;
+	
+	Vector3 temp = dir.Normalize();
+	std::cout << temp.GetX() << " " << temp.GetY() << " " << temp.GetZ() << std::endl;
+	
+	// vel.SetX(temp.GetX() * speed);
+	// vel.SetY(temp.GetY() * speed);
+	// vel.SetZ(temp.GetZ() * speed);
+
 }
