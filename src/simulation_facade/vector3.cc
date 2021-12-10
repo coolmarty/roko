@@ -14,7 +14,7 @@ float Vector3::Magnitude() {
 
 Vector3 Vector3::Normalize() {
 	float mag = this->Magnitude();
-	std::cout << mag << std::endl;
+	//std::cout << mag << std::endl;
 	return Vector3(x / mag, y / mag, z / mag);
 }
 
@@ -48,6 +48,10 @@ void Vector3::SetY(float newy){
 }
 void Vector3::SetZ(float newz){
 	z = newz;
+}
+
+float Vector3::Dot(const Vector3& other) {
+	return (x*other.x + y*other.y + z*other.z);
 }
 
 Vector3 Vector3::operator*(float scalar) {

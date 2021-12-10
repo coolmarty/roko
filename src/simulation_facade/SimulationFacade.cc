@@ -12,7 +12,7 @@ void SimulationFacade::CreateEntity(picojson::object& entityData, ICameraControl
   return;
 }
 void SimulationFacade::Update(double dt, const std::map<std::string,int>& keyStatus){
-  char keyArr[4] = {0, 0, 0, 0};
+  int keyArr[4] = {0, 0, 0, 0};
   
   if (keyStatus.find("ArrowRight") != keyStatus.end() && keyStatus.find("ArrowRight")->second == 1) { // Yaw
 	std::cout << "pressed" << std::endl;  

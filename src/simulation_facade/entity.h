@@ -154,7 +154,7 @@ public:
 
      Camera *GetCamera(int index);
 	 
-	 void SetKeys(char* arr) { };
+	 virtual void SetKeys(int* arr) { };
 protected:
   Point3 position;
   Vector3 velocity;

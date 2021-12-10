@@ -67,6 +67,8 @@ public:
 	
 	float Magnitude();
 
+	float Dot(const Vector3& other);
+
 	Vector3 Normalize();
 
 	Vector3 operator*(float scalar);

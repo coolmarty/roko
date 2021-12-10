@@ -22,7 +22,7 @@ TESTEXEFILE = $(BUILD_DIR)/test-app
 
 all: $(BUILD_DIR) $(EXEFILE) tests
 
-tests: $(BUILD_DIR) $(TESTEXEFILE)
+# tests: $(BUILD_DIR) $(TESTEXEFILE)
 
 # Applicaiton Targets:
 $(EXEFILE): $(OBJFILES)
@@ -41,8 +41,8 @@ make-depend-cxx=$(CXX) -MM -MF $3 -MP -MT $2 $(CXXFLAGS) $(INCLUDES) $1
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
-$(TESTEXEFILE): $(TESTOBJFILES)
-	$(CXX) $(CXXFLAGS) $(LIBDIRS) $(TESTOBJFILES) -lgtest_main -lgtest -lgmock $(LIBS) -o $@
+# $(TESTEXEFILE): $(TESTOBJFILES)
+#	$(CXX) $(CXXFLAGS) $(LIBDIRS) $(TESTOBJFILES) -lgtest_main -lgtest -lgmock $(LIBS) -o $@
 
 clean:
 	rm -rf build

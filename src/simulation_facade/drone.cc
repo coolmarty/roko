@@ -24,7 +24,7 @@ Drone::~Drone(){
 
 Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode){
 	position = newPosition;
-	direction = Vector3(0,0,1);//newDirection;
+	direction = newDirection;
 	velocity = newVelocity;
 	time = newTime;
 	robotFound = Point3(-1,-1,-1);
@@ -51,7 +51,7 @@ void Drone::Move(){
 	//MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt);
 }
 
-void Drone::SetKeys(char* arr) {
+void Drone::SetKeys(int* arr) {
 	this->manualMove.ChangeKeys(arr);
 }
 
@@ -69,13 +69,10 @@ void Drone::Update(float dt){
 			movementAccessor.Rescue(&position, &direction, &velocity, robotFound);
 		}
 		
-		if (manualMove.keys[1] == 1) {
-			std::cout << "registered" << std::endl;
-		}
 		// std::cout << manualMove.keys[0] << std::endl;
 	} else {
-		//std::cout << velocity.GetX() << " " << velocity.GetY() << " " << velocity.GetZ() << std::endl;
-		 manualMove.AlterVelocity(direction, velocity);
+		//std::cout << direction.GetX() << " " << direction.GetY() << " " << direction.GetZ() << std::endl;
+		manualMove.AlterVelocity(direction, velocity);
 	}
 
 /*

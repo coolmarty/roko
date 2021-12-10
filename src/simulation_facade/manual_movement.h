@@ -7,11 +7,12 @@ public:
 	ManualMovement();
 	// Inherited MovePath ??
 	void AlterVelocity(Vector3& dir, Vector3& vel);
-	void ChangeKeys(char* arr);
+	void ChangeKeys(int* arr);
 	
 
-
-	char keys[4];
+private:
+	int keys[4];
+	Vector3 move_dir = Vector3(0, 1, 0);
 };
 
 #endif

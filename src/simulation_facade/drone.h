@@ -74,7 +74,7 @@ public:
 
     Battery battery;
 
-	void SetKeys(char* arr);
+	void SetKeys(int* arr);
 private:
 	Point3 robotFound;
 	SearchAndRescue movementAccessor;
