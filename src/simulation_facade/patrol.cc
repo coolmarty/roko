@@ -11,13 +11,13 @@ void PatrolMovement::SetNode(Point3 nodey) {
 }
 
 void PatrolMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity){	
-	const Point3 rechargeLocation = Point3(20, 0, 50);
+	const Point3 rechargeLocation = Point3(50, 0, 20);
 	//-1450, 1550
 	//-900, 900
-	if(position->GetX() < -1450 || position->GetX() > 1550){
+	if(position->GetZ() < -1450 || position->GetZ() > 1550){
 		node = rechargeLocation;
 	}
-	if(position->GetZ() < -900 || position->GetZ() > 900){
+	if(position->GetX() < -900 || position->GetX() > 900){
 		node = rechargeLocation;
 	}
 	BeelineMovement(node).MovePath(position, direction, velocity);
