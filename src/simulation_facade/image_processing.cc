@@ -4,9 +4,11 @@
 
 bool ImageProcessing::BlobCheck(std::string fname) {
 	Image in_img = Image(fname);
+	Image out_img = Image(in_img.GetWidth(), in_img.GetHeight());
 	std::vector<Image *> input;
 	std::vector<Image *> output;
 	input.push_back(&in_img);
+	output.push_back(&out_img);
 
 	BlobDetect filter;
 	return filter.check(input, output);
