@@ -50,7 +50,7 @@ public:
 	 *
 	 * @return a drone object
 	 */
-	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode);
+	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, Point3 newDestination, int newDestDirection);
 
 	/**
 	 * @brief copy constructor for drone
@@ -89,8 +89,8 @@ public:
 private:
 	Point3 robotFound;
 	SearchAndRescue movementAccessor;
-	int travelNode; // keeps track of the drone's target location along the edge of the map, increments when it's at a recharge station
-	int currentNode; // for the drone's patrol, where it's currently moving to
+	Point3 travelDestination; // the point which the Drone will move to
+	int travelDirection; // the direction the Drone's destination will change
 	bool manual;
 };
 

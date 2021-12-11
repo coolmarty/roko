@@ -13,10 +13,10 @@
 class PatrolMovement : public MovementStrategy{
 public:
 	/**
-	 * @brief Constructor for patrol, takes in the node for drone to move to
+	 * @brief Constructor for patrol, takes in the node and direction for drone to move to
 	 *
 	 */
-	PatrolMovement(int newNode);
+	PatrolMovement(Point3 newNode);
 
 	/**
 	 * @brief Calls to the movement strategy's abstract method
@@ -25,20 +25,13 @@ public:
 	void MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity);
 
 	/**
-	 * @brief Gets the node held by the class
-	 *
-	 */
-	Point3 GetNode(int node);
-	/**
 	 * @brief Sets the node held by the class
 	 *
 	 */
-	void SetNode(int node);
-
-	int node = -1;
+	void SetNode(Point3 nodey);
 private:
 
-	int node;
+	Point3 node;
 };
 
 #endif

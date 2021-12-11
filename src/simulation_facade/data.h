@@ -50,8 +50,8 @@ public:
 				 Vector3 direction,
 				 float time,
 				 Point3 robotFound,
-				 int travelNode,
-				 int currentNode);
+				 Point3 travelDestination,
+				 int travelDirection);
 
 private:
 	std::string filename;

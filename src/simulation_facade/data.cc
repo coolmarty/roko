@@ -22,8 +22,8 @@ void Data::addData(Point3 position,
 				   Vector3 direction,
 				   float time,
 				   Point3 robotFound,
-				   int travelNode,
-				   int currentNode){
+				   Point3 travelDestination,
+				   int travelDirection){
 	// file << time << ", " << 
 	// 		position.GetX() << ", " << 
 	// 		position.GetY() << ", " << 

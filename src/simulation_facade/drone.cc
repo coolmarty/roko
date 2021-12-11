@@ -6,8 +6,8 @@ Drone::Drone(){
 	velocity = Vector3();
 	time = 0;
 	robotFound = Point3(-1,-1,-1);
-	travelNode = 0;
-	currentNode = 0;
+	travelDestination = Point3(-1450, 0, 1550); //initial travelDestination is the southwest corner
+	travelDirection = 0;
   	battery = (Battery());
   	movementAccessor = SearchAndRescue();
 	manual = false;
@@ -20,14 +20,14 @@ Drone::~Drone(){
     }
 }
 
-Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode){
+Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, Point3 newDestination, int newDestDirection){
 	position = newPosition;
 	direction = newDirection;
 	velocity = newVelocity;
 	time = newTime;
 	robotFound = Point3(-1,-1,-1);
-	travelNode = newTravelNode;
-	currentNode = newCurrentNode;
+	travelDestination = newDestination;
+	travelDirection = newDestDirection;
 	battery = *(new Battery());
 }
 
@@ -37,8 +37,8 @@ Drone::Drone(const Drone& old){
 	velocity = old.velocity;
 	time = old.time;
 	robotFound = old.robotFound;
-	travelNode = old.travelNode;
-	currentNode = old.currentNode;
+	travelDestination = old.travelDestination;
+	travelDirection = old.travelDirection;
 	battery = old.battery;
 }
 
@@ -54,7 +54,7 @@ void Drone::Update(float dt){
 	Point3 noRobot = Point3(-1, -1, -1);
 
 	Data storage = Data();
-	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelNode, currentNode);
+	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination, travelDirection);
 	
 	if (true) {
 		if (robotFound == noRobot) {

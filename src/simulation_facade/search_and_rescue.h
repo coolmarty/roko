@@ -34,16 +34,14 @@ public:
 	 * @brief Enter done into rescue mode by setting movement pattern to beeline
 	 */
 	void Rescue(Point3* position, Vector3* direction, Vector3* velocity, const Point3& dest);
+
 	
-	void SetTNode(int node);
-	void SetCNode(int node);
-	
-	int GetTravel();
-	int GetCurrent();	
+	void NextNode(Point3* position);
 
 private:
-	int travelNode;
-	int currentNode;
+	Point3 node;
+	Point3 savedNode;
+	int nodeDirection;
 	Point3 rechargeLocation;
 	bool found;
 };
