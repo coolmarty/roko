@@ -15,7 +15,6 @@ void SimulationFacade::Update(double dt, const std::map<std::string,int>& keySta
   int keyArr[4] = {0, 0, 0, 0};
   
   if (keyStatus.find("ArrowRight") != keyStatus.end() && keyStatus.find("ArrowRight")->second == 1) { // Yaw
-	std::cout << "pressed" << std::endl;  
 	keyArr[1] = 1;
   } else if (keyStatus.find("ArrowLeft") != keyStatus.end() && keyStatus.find("ArrowLeft")->second == 1) {
 	keyArr[1] = -1;

@@ -1,6 +1,7 @@
 #ifndef MANUAL_MOVEMENT_H_
 #define MANUAL_MOVEMENT_H_
- #include "vector3.h"
+#include "vector3.h"
+#include "matrix3.h"
 
 class ManualMovement {
 public:
@@ -12,7 +13,15 @@ public:
 
 private:
 	int keys[4];
-	Vector3 move_dir = Vector3(0, 1, 0);
+	
+	Matrix3 xPosRot;
+	Matrix3 yPosRot;
+	Matrix3 zPosRot;
+	Matrix3 xNegRot;
+	Matrix3 yNegRot;
+	Matrix3 zNegRot;
+	
+	Matrix3 toWorld;
 };
 
 #endif
