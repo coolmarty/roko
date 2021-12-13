@@ -16,6 +16,7 @@ public:
 	void SetIJ(int i, int j, float newVal);
 	
 	Vector3 operator*(Vector3& oth);
+	Matrix3 operator*(const Matrix3& oth);
 };
 
 #endif

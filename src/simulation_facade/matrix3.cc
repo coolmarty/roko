@@ -40,3 +40,14 @@ Vector3 Matrix3::operator*(Vector3& oth) {
 					(oth.GetX() * arr[6] + oth.GetY() * arr[7] + oth.GetZ() * arr[8]))
 	;
 }
+
+Matrix3 Matrix3::operator*(const Matrix3& oth) {
+	float retArr[] = {
+		((arr[0] * oth.arr[0]) + (arr[1] * oth.arr[3]) + (arr[2] * oth.arr[6])), ((arr[0] * oth.arr[1]) + (arr[1] * oth.arr[4]) + (arr[2] * oth.arr[7])), ((arr[0] * oth.arr[2]) + (arr[1] * oth.arr[5]) + (arr[2] * oth.arr[8])),
+				
+		((arr[3] * oth.arr[0]) + (arr[4] * oth.arr[3]) + (arr[5] * oth.arr[6])), ((arr[3] * oth.arr[1]) + (arr[4] * oth.arr[4]) + (arr[5] * oth.arr[7])), ((arr[3] * oth.arr[2]) + (arr[4] * oth.arr[5]) + (arr[5] * oth.arr[8])),
+				
+		((arr[6] * oth.arr[0]) + (arr[7] * oth.arr[3]) + (arr[8] * oth.arr[6])), ((arr[6] * oth.arr[1]) + (arr[7] * oth.arr[4]) + (arr[8] * oth.arr[7])), ((arr[6] * oth.arr[2]) + (arr[7] * oth.arr[5]) + (arr[8] * oth.arr[8]))
+		};
+	return Matrix3(retArr);
+}

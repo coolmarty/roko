@@ -22,6 +22,8 @@ private:
 	Matrix3 zNegRot;
 	
 	Matrix3 toWorld;
+	float ang;
+	bool flag;
 };
 
 #endif
