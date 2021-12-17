@@ -10,6 +10,7 @@
 #include "camera_controller.h"
 #include <iostream>
 #include <fstream>
+#include "image_processing.h"
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
@@ -64,10 +65,18 @@ public:
 
             // Generate the result of image processing.  This could include images using the Result class.
             CameraResult* result = new CameraResult();
-            result->found = true;
-            result->pos[0] = xPos;
-            result->pos[1] = yPos;
-            result->pos[2] = zPos;
+			
+			ImageProcessing* processor = new ImageProcessing();
+			
+            result->found = processor->BlobCheck("color.jpg");
+			
+			std::vector<float> dir= processor->BlobGetDirection("color.jpg", "depth.jpg");
+			float dist = processor->BlobGetDistance("color.jpg", "depth.jpg");
+            result->pos[0] = xPos + dist * dir.at(0);
+            result->pos[1] = yPos + dist * dir.at(1);
+            result->pos[2] = zPos + dist * dir.at(2);
+			
+			delete processor;
             return result;
         }
         else {
