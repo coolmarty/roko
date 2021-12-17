@@ -179,9 +179,11 @@ void ManualMovement::AlterVelocity(Vector3& dir, Vector3& vel) {
 	move_dir = Matrix3(-(M_PI / 2), 'x') * move_dir;
 	move_dir = Matrix3(ang, 'y') * move_dir;
 	
+	/*
 	dir = Matrix3((M_PI * 2) - ang, 'y') * dir;
 	dir = Matrix3(-(M_PI / 2), 'x') * dir;
 	dir = Matrix3(ang, 'y') * dir;
+	*/
 	
 	//move_dir = (Matrix3(ang, 'y') * move_dir);
 	//std::cout << move_dir.GetX() << " " << move_dir.GetY() << " " << move_dir.GetZ() << std::endl;
