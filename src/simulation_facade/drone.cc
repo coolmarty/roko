@@ -6,12 +6,13 @@ Drone::Drone(){
 	velocity = Vector3();
 	time = 0;
 	robotFound = Point3(-1,-1,-1);
-/*
-	travelNode = 0;
-	currentNode = 0;
-*/
-	movementAccessor = SearchAndRescue();
+	travelDestination = Point3(-1000, 80, -1000); //initial travelDestination is the southwest corner
+	savedDestination = Point3(-1000, 80, -1000);
+	travelDirection = 0;
+  	battery = (Battery());
+  	movementAccessor = SearchAndRescue();
 	manual = false;
+	storage = Data();
 	battery = *(new Battery());
 }
 
@@ -21,14 +22,16 @@ Drone::~Drone(){
     }
 }
 
-Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode){
+Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, Point3 newDestination, Point3 newSavedDestination, int newDestDirection){
 	position = newPosition;
 	direction = newDirection;
 	velocity = newVelocity;
 	time = newTime;
 	robotFound = Point3(-1,-1,-1);
-	travelNode = newTravelNode;
-	currentNode = newCurrentNode;
+	travelDestination = newDestination;
+	savedDestination = newSavedDestination;
+	travelDirection = newDestDirection;
+	storage = Data();
 	battery = *(new Battery());
 }
 
@@ -38,8 +41,8 @@ Drone::Drone(const Drone& old){
 	velocity = old.velocity;
 	time = old.time;
 	robotFound = old.robotFound;
-	travelNode = old.travelNode;
-	currentNode = old.currentNode;
+	travelDestination = old.travelDestination;
+	travelDirection = old.travelDirection;
 	battery = old.battery;
 }
 
@@ -54,12 +57,13 @@ void Drone::Update(float dt){
 	
 	Point3 noRobot = Point3(-1, -1, -1);
 
-	Data storage = Data();
-	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelNode, currentNode);
+	// BELOW ADDS DATA TO THE basilisk-data-collection.csv FILE BUT PREVENTS THE SIMULATION FROM RUNNING FAST
+	// IF WE WISH TO RUN THE SIMULATION SLOWLY IN ORDER TO UPDATE DATA, UNCOMMENT THAT LINE
+	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
 	
 	if (true) {
 		if (robotFound == noRobot) {
-			movementAccessor.Search(&position, &direction, &velocity);
+			movementAccessor.Search(&position, &direction, &velocity, &travelDestination, &savedDestination, &travelDirection);
 		} else {
 			movementAccessor.Rescue(&position, &direction, &velocity, robotFound);
 		}
@@ -67,27 +71,10 @@ void Drone::Update(float dt){
 		// TODO
 	}
 
-/*
-	if(position == rechargeLocation){
-		travelNode++;
-		currentNode = travelNode;
-	}
-
-	if(robotFound != noRobot){
-	// BeelineMovement(robotFound);
-
-	}
-	else{
-	PatrolMovement(currentNode);
-	}
-*/
-
-
-
 	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
 	Vector3 timeStep = Vector3(velocity.GetX() * dt,
-								  velocity.GetY() * dt,
-								  velocity.GetZ() * dt);
+							   velocity.GetY() * dt,
+							   velocity.GetZ() * dt);
 
 	// takes picture (duh)
 	TakePicture();
@@ -96,10 +83,6 @@ void Drone::Update(float dt){
 	position.SetX(position.GetX() + timeStep.GetX());
 	position.SetY(position.GetY() + timeStep.GetY());
 	position.SetZ(position.GetZ() + timeStep.GetZ());
-/*
-	velocity.SetX(0);
-	velocity.SetY(0);
-	velocity.SetZ(0);
-*/
+
 	time += dt;
 }

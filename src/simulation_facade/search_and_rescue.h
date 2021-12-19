@@ -14,7 +14,6 @@
 #include "beeline.h"
 #include "point3.h"
 #include "vector3.h"
-
 /**
  * @brief Facade into the search and rescue functionality of the Drone
  *
@@ -29,24 +28,26 @@ public:
 	/**
 	 * @brief Enter done into search mode by setting movement pattern to patrol
 	 */
-	void Search(Point3* position, Vector3* direction, Vector3* velocity);
+	void Search(Point3* position, Vector3* direction, Vector3* velocity, Point3* travelDestination, Point3* savedDestination, int* travelDirection);
 
 	/**
 	 * @brief Enter done into rescue mode by setting movement pattern to beeline
 	 */
 	void Rescue(Point3* position, Vector3* direction, Vector3* velocity, const Point3& dest);
 
-	void SetTNode(int node);
-	void SetCNode(int node);
 
-	int GetTravel();
-	int GetCurrent();
+	/**
+	 * @brief Determines the node traveled to in order to facilitate Patrol
+	 */
+	void NextNode(Point3* position, Point3* savedNode, int* currentDirection);
+
 
 private:
-	int travelNode;
-	int currentNode;
+	Point3 node;
 	Point3 rechargeLocation;
 	bool found;
+	bool pathToRecharge;
+	int turn;
 };
 
 #endif
