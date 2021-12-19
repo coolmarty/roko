@@ -2,7 +2,7 @@
 
 Drone::Drone(){
 	position = Point3();
-	direction = Vector3();
+	direction = Vector3(0, 0, 1);
 	velocity = Vector3();
 	time = 0;
 	robotFound = Point3(-1,-1,-1);
@@ -12,6 +12,7 @@ Drone::Drone(){
   	battery = (Battery());
   	movementAccessor = SearchAndRescue();
 	manual = false;
+	manualMove = ManualMovement();
 	storage = Data();
 	battery = *(new Battery());
 }
@@ -49,6 +50,26 @@ Drone::Drone(const Drone& old){
 void Drone::TakePicture(){
 }
 
+void Drone::SetKeys(int* arr) {
+	if (arr[4] == 1 && swap_cooldown == 0) {
+		if (manual) {
+			manual = false;
+			velocity.SetX(0);
+			velocity.SetY(0);
+			velocity.SetZ(0);
+		} else {
+			manual = true;
+			velocity = Vector3(0,0,0);
+			direction = Vector3(0,0,1);
+			manualMove.SetAng(0);
+		}
+		swap_cooldown = 10;
+	}
+	if (swap_cooldown > 0) { swap_cooldown -= 1; }
+
+	this->manualMove.ChangeKeys(arr);
+}
+
 void Drone::Update(float dt){
 	
 	Point3 noRobot = Point3(-1, -1, -1);
@@ -58,14 +79,14 @@ void Drone::Update(float dt){
 	// IF WE WISH TO RUN THE SIMULATION SLOWLY IN ORDER TO UPDATE DATA, UNCOMMENT THAT LINE
 	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
 	
-	if (true) {
+	if (!manual) {
 		if (robotFound == noRobot) {
 			movementAccessor.Search(&position, &direction, &velocity, &travelDestination, &savedDestination, &travelDirection);
 		} else {
 			movementAccessor.Rescue(&position, &direction, &velocity, robotFound);
 		}
 	} else {
-		// TODO
+		manualMove.AlterVelocity(direction, velocity);
 	}
 
 	if(battery.GetBatteryLife() < 20){
