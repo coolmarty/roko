@@ -3,7 +3,7 @@
 Drone::Drone(){
 	position = Point3();
 	direction = Vector3();
-	velocity = Vector3(1, 1, 1);
+	velocity = Vector3();
 	time = 0;
 	robotFound = Point3(-1,-1,-1);
 	travelDestination = Point3(-1000, 80, -1000); //initial travelDestination is the southwest corner
@@ -31,6 +31,7 @@ Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, floa
 	travelDestination = newDestination;
 	savedDestination = newSavedDestination;
 	travelDirection = newDestDirection;
+	storage = Data();
 	battery = *(new Battery());
 }
 
