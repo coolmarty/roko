@@ -90,7 +90,7 @@ void Drone::Update(float dt){
 	}
 
 	if(battery.GetBatteryLife() < 20){
-		BeelineMovement(rechargeStation).MovePath(position, direction, velocity);
+		BeelineMovement(rechargeStation).MovePath(&position, &direction, &velocity);
 	}
 
 	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
