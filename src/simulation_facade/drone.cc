@@ -6,7 +6,8 @@ Drone::Drone(){
 	velocity = Vector3(1, 1, 1);
 	time = 0;
 	robotFound = Point3(-1,-1,-1);
-	travelDestination = Point3(-1450, 0, 1550); //initial travelDestination is the southwest corner
+	travelDestination = Point3(-1000, 80, -1000); //initial travelDestination is the southwest corner
+	savedDestination = Point3(-1000, 80, -1000);
 	travelDirection = 0;
   	battery = (Battery());
   	movementAccessor = SearchAndRescue();
@@ -20,13 +21,14 @@ Drone::~Drone(){
     }
 }
 
-Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, Point3 newDestination, int newDestDirection){
+Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, Point3 newDestination, Point3 newSavedDestination, int newDestDirection){
 	position = newPosition;
 	direction = newDirection;
 	velocity = newVelocity;
 	time = newTime;
 	robotFound = Point3(-1,-1,-1);
 	travelDestination = newDestination;
+	savedDestination = newSavedDestination;
 	travelDirection = newDestDirection;
 	battery = *(new Battery());
 }
@@ -58,7 +60,7 @@ void Drone::Update(float dt){
 	
 	if (true) {
 		if (robotFound == noRobot) {
-			movementAccessor.Search(&position, &direction, &velocity);
+			movementAccessor.Search(&position, &direction, &velocity, &travelDestination, &savedDestination, &travelDirection);
 		} else {
 			movementAccessor.Rescue(&position, &direction, &velocity, robotFound);
 		}
@@ -68,8 +70,8 @@ void Drone::Update(float dt){
 
 	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
 	Vector3 timeStep = Vector3(velocity.GetX() * dt,
-								  velocity.GetY() * dt,
-								  velocity.GetZ() * dt);
+							   velocity.GetY() * dt,
+							   velocity.GetZ() * dt);
 
 	// takes picture (duh)
 	TakePicture();

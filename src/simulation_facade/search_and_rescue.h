@@ -28,7 +28,7 @@ public:
 	/**
 	 * @brief Enter done into search mode by setting movement pattern to patrol
 	 */
-	void Search(Point3* position, Vector3* direction, Vector3* velocity);
+	void Search(Point3* position, Vector3* direction, Vector3* velocity, Point3* travelDestination, Point3* savedDestination, int* travelDirection);
 
 	/**
 	 * @brief Enter done into rescue mode by setting movement pattern to beeline
@@ -36,14 +36,14 @@ public:
 	void Rescue(Point3* position, Vector3* direction, Vector3* velocity, const Point3& dest);
 
 	
-	void NextNode(Point3* position);
+	void NextNode(Point3* position, Point3* savedNode, int* currentDirection);
 
 private:
 	Point3 node;
-	Point3 savedNode;
-	int nodeDirection;
 	Point3 rechargeLocation;
 	bool found;
+	bool pathToRecharge;
+	int turn;
 };
 
 #endif

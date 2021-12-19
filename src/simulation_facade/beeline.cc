@@ -21,8 +21,8 @@ void BeelineMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *ve
 
 	// normalizes the distance vector
 	Vector3 normalizedVector = Vector3(distanceVector.GetX()/distanceLength,
-										  distanceVector.GetY()/distanceLength,
-										  distanceVector.GetZ()/distanceLength);
+									   distanceVector.GetY()/distanceLength,
+									   distanceVector.GetZ()/distanceLength);
 
 	// sets change in direction
 	direction->SetX(normalizedVector.GetX());

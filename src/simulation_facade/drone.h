@@ -50,7 +50,7 @@ public:
 	 *
 	 * @return a drone object
 	 */
-	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, Point3 newDestination, int newDestDirection);
+	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, Point3 newDestination, Point3 newSavedDestination, int newDestDirection);
 
 	/**
 	 * @brief copy constructor for drone
@@ -90,6 +90,7 @@ private:
 	Point3 robotFound;
 	SearchAndRescue movementAccessor;
 	Point3 travelDestination; // the point which the Drone will move to
+	Point3 savedDestination;
 	int travelDirection; // the direction the Drone's destination will change
 	bool manual;
 };
