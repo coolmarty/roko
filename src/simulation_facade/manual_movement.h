@@ -20,25 +20,32 @@
 class ManualMovement {
 public:
     /**
-	 * @brief The default constructer for Drones
+	 * @brief The default constructer for ManualMovement
 	 *
-	 * @return a drone object
+	 * 
 	 */
 	ManualMovement();
 	
 	/**
-	 * @brief an overloaded constructer for Drones
+	 * @brief Changes velocity
 	 *
-	 * @return a drone object
+	 * 
 	 */
 	void AlterVelocity(Vector3& dir, Vector3& vel);
 	
 	/**
-	 * @brief an overloaded constructer for Drones
+	 * @brief Changes list of active keys
 	 *
-	 * @return a drone object
+	 * 
 	 */
 	void ChangeKeys(int* arr);
+	
+	/**
+	 * @brief Sets y rotation tracking angle
+	 *
+	 * 
+	 */
+	void SetAng(float angle) {ang = angle;}
 	
 
 private:

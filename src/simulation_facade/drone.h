@@ -65,11 +65,6 @@ public:
 	 */
 	~Drone();
 
-	/**
-	 * @brief calls to MovePath, defunct due to SearchAndRescue
-	 *
-	 */
-	void Move();
 
 	/**
 	 * @brief Takes a picture using camera
@@ -95,6 +90,7 @@ private:
 	bool manual;
 	ManualMovement manualMove;
 	Data storage;
+	int swap_cooldown = 0;
 };
 
 #endif

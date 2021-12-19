@@ -50,19 +50,22 @@ Drone::Drone(const Drone& old){
 void Drone::TakePicture(){
 }
 
-void Drone::Move(){
-	//MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt);
-}
-
 void Drone::SetKeys(int* arr) {
-	if (arr[4] == 1) {
+	if (arr[4] == 1 && swap_cooldown == 0) {
 		if (manual) {
 			manual = false;
+			velocity.SetX(0);
+			velocity.SetY(0);
+			velocity.SetZ(0);
 		} else {
 			manual = true;
+			velocity = Vector3(0,0,0);
 			direction = Vector3(0,0,1);
+			manualMove.SetAng(0);
 		}
+		swap_cooldown = 10;
 	}
+	if (swap_cooldown > 0) { swap_cooldown -= 1; }
 
 	this->manualMove.ChangeKeys(arr);
 }
@@ -81,10 +84,7 @@ void Drone::Update(float dt){
 		} else {
 			movementAccessor.Rescue(&position, &direction, &velocity, robotFound);
 		}
-		
-		// std::cout << manualMove.keys[0] << std::endl;
 	} else {
-		//std::cout << direction.GetX() << " " << direction.GetY() << " " << direction.GetZ() << std::endl;
 		manualMove.AlterVelocity(direction, velocity);
 	}
 
