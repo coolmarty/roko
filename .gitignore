@@ -7,3 +7,5 @@
 build
 bin/
 config/
+
+!web/assets/texture/*.png
