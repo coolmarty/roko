@@ -46,3 +46,4 @@ $(TESTEXEFILE): $(TESTOBJFILES)
 
 clean:
 	rm -rf build
+	rm *.csv
