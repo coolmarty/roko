@@ -12,7 +12,7 @@ void SimulationFacade::CreateEntity(picojson::object& entityData, ICameraControl
   return;
 }
 void SimulationFacade::Update(double dt, const std::map<std::string,int>& keyStatus){
-  int keyArr[4] = {0, 0, 0, 0};
+  int keyArr[5] = {0, 0, 0, 0, 0};
   
   if (keyStatus.find("ArrowRight") != keyStatus.end() && keyStatus.find("ArrowRight")->second == 1) { // Yaw
 	keyArr[1] = 1;
@@ -35,15 +35,13 @@ void SimulationFacade::Update(double dt, const std::map<std::string,int>& keySta
   } else {
 	keyArr[0] = 0;  
   }
-  /*
-  if (keyStatus.find("a") != keyStatus.end() && keyStatus.find("ArrowRight") == 1) {
-	//
-  } else if (keyStatus.find("d") != keyStatus.end() && keyStatus.find("ArrowRight") == 1) {
-	  
+  
+  if (keyStatus.find(" ") != keyStatus.end() && keyStatus.find(" ")->second == 1) {
+	keyArr[4] = 1;
   } else {
-	
+	keyArr[4] = 0;
   }
-  */
+  
   for(int i=0;i<entities.size();i++){
     entities[i]->Update(dt);
 	entities[i]->SetKeys(keyArr);

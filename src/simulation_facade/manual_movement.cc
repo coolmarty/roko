@@ -34,8 +34,8 @@ ManualMovement::ManualMovement() {
 	ang = 0;
 	flag = false;
 	
-	xPosRot = Matrix3(xPosAr); // Pitch?
-	yPosRot = Matrix3(yPosAr); // Yaw?
+	xPosRot = Matrix3(xPosAr);
+	yPosRot = Matrix3(yPosAr);
 	zPosRot = Matrix3(zPosAr);
 	xNegRot = Matrix3(xNegAr);
 	yNegRot = Matrix3(yNegAr);
@@ -103,7 +103,6 @@ void ManualMovement::AlterVelocity(Vector3& dir, Vector3& vel) {
 
 	
 	// Yaw
-
 	if (keys[1] == 1) {
 		dir = yNegRot * dir;
 		ang -= 0.05;
@@ -142,54 +141,11 @@ void ManualMovement::AlterVelocity(Vector3& dir, Vector3& vel) {
 		flag = true;
 	}
 	
-	// Roll
-/*
-	if (keys[3] == 1) {
-		if (angle >= 360) {
-			angle = 0;
-		}
-		angle += 10;
-	} else if (keys[3] == -1) {
-		if (speed <= -360) {
-			angle = 0;
-		}
-		angle -= 10;
-	}
-*/	
-	
-	
-/*
-	Vector3 testa = Vector3(3,4,5);
-	float arr[9] = {1, 0, 0, 0, cos(20), -sin(20), 0, sin(20), cos(20)};
-	Matrix3 testy = Matrix3(arr);
-	Vector3 testb = testy * testa;
-	std::cout << testb.GetX() << " " << testb.GetY() << " " << testb.GetZ() << std::endl;
-*/	
-	
-	
-	
-	/*
-	dir = dir.Normalize();
-	move_dir = move_dir.Normalize();
-	vel = move_dir * speed;
-	*/
-	
-	//Vector3 move_dir = (Matrix3((2 * M_PI) - ang, 'y') * dir);
 	move_dir = Matrix3((M_PI * 2) - ang, 'y') * dir;
 	move_dir = Matrix3(-(M_PI / 2), 'x') * move_dir;
 	move_dir = Matrix3(ang, 'y') * move_dir;
 	
-	/*
-	dir = Matrix3((M_PI * 2) - ang, 'y') * dir;
-	dir = Matrix3(-(M_PI / 2), 'x') * dir;
-	dir = Matrix3(ang, 'y') * dir;
-	*/
-	
-	//move_dir = (Matrix3(ang, 'y') * move_dir);
-	//std::cout << move_dir.GetX() << " " << move_dir.GetY() << " " << move_dir.GetZ() << std::endl;
-	//std::cout << speed << std::endl;
 	vel.SetX(move_dir.GetX() * speed);
 	vel.SetY(move_dir.GetY() * speed);
 	vel.SetZ(move_dir.GetZ() * speed);
-
 }

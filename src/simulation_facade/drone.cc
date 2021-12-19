@@ -52,6 +52,15 @@ void Drone::Move(){
 }
 
 void Drone::SetKeys(int* arr) {
+	if (arr[4] == 1) {
+		if (manual) {
+			manual = false;
+		} else {
+			manual = true;
+			direction = Vector3(0,0,1);
+		}
+	}
+
 	this->manualMove.ChangeKeys(arr);
 }
 
@@ -62,7 +71,7 @@ void Drone::Update(float dt){
 	Data storage = Data();
 	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelNode, currentNode);
 	
-	if (false) {
+	if (!manual) {
 		if (robotFound == noRobot) {
 			movementAccessor.Search(&position, &direction, &velocity);
 		} else {
