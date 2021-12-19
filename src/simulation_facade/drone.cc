@@ -56,6 +56,8 @@ void Drone::Update(float dt){
 	
 	Point3 noRobot = Point3(-1, -1, -1);
 
+	// BELOW ADDS DATA TO THE basilisk-data-collection.csv FILE BUT PREVENTS THE SIMULATION FROM RUNNING FAST
+	// IF WE WISH TO RUN THE SIMULATION SLOWLY IN ORDER TO UPDATE DATA, UNCOMMENT THAT LINE
 	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
 	
 	if (true) {
