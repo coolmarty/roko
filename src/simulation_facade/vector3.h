@@ -65,15 +65,35 @@ public:
 	 */
 	void SetZ(float newz);
 	
+	/**
+	 * @brief Calculates magnitude
+	 *
+	 */
 	float Magnitude();
 
+	/**
+	 * @brief Calculates dot product
+	 *
+	 */
 	float Dot(const Vector3& other);
 
+	/**
+	 * @brief Returns normalized version of vector
+	 *
+	 */
 	Vector3 Normalize();
 
+	/**
+	 * @brief Implements scalar multiplication
+	 *
+	 */
 	Vector3 operator*(float scalar);
 
 private:
+	/**
+	 * @brief 3D Coordinate values
+	 *
+	 */
 	float x, y, z;
 };
 
