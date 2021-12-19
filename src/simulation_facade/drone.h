@@ -93,6 +93,7 @@ private:
 	Point3 savedDestination;
 	int travelDirection; // the direction the Drone's destination will change
 	bool manual;
+	Data storage;
 };
 
 #endif

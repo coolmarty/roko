@@ -8,6 +8,7 @@
 #include <cstring>
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "vector3.h"
 #include "point3.h"
 /**
@@ -29,18 +30,6 @@ public:
 	Data(std::string newFilename);
 
 	/**
-	 * @brief Opens the file
-	 *
-	 */
-	void openFile();
-
-	/**
-	 * @brief Closes the file
-	 *
-	 */
-	void closeFile();
-
-	/**
 	 * @brief Adds a line of data to the file
 	 *
 	 */
@@ -50,8 +39,7 @@ public:
 				 Vector3 direction,
 				 float time,
 				 Point3 robotFound,
-				 Point3 travelDestination,
-				 int travelDirection);
+				 Point3 travelDestination);
 
 private:
 	std::string filename;

@@ -12,6 +12,7 @@ Drone::Drone(){
   	battery = (Battery());
   	movementAccessor = SearchAndRescue();
 	manual = false;
+	storage = Data();
 	battery = *(new Battery());
 }
 
@@ -55,8 +56,7 @@ void Drone::Update(float dt){
 	
 	Point3 noRobot = Point3(-1, -1, -1);
 
-	Data storage = Data();
-	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination, travelDirection);
+	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
 	
 	if (true) {
 		if (robotFound == noRobot) {

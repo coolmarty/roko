@@ -35,7 +35,9 @@ public:
 	 */
 	void Rescue(Point3* position, Vector3* direction, Vector3* velocity, const Point3& dest);
 
-	
+	/**
+	 * @brief Determines the node traveled to in order to facilitate Patrol
+	 */
 	void NextNode(Point3* position, Point3* savedNode, int* currentDirection);
 
 private:
