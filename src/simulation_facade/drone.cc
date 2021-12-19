@@ -77,7 +77,7 @@ void Drone::Update(float dt){
 
 	// BELOW ADDS DATA TO THE basilisk-data-collection.csv FILE BUT PREVENTS THE SIMULATION FROM RUNNING FAST
 	// IF WE WISH TO RUN THE SIMULATION SLOWLY IN ORDER TO UPDATE DATA, UNCOMMENT THAT LINE
-	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
+	// storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
 	
 	if (!manual) {
 		if (robotFound == noRobot) {
@@ -87,10 +87,6 @@ void Drone::Update(float dt){
 		}
 	} else {
 		manualMove.AlterVelocity(direction, velocity);
-	}
-
-	if(battery.GetBatteryLife() < 20){
-		BeelineMovement(rechargeStation).MovePath(&position, &direction, &velocity);
 	}
 
 	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
