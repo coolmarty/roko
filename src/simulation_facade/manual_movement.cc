@@ -136,7 +136,6 @@ void ManualMovement::AlterVelocity(Vector3& dir, Vector3& vel) {
 		if (speed < 0.01 || speed > -0.01) {
 			speed = 0;
 		}
-		std::cout << speed << std::endl;
 	}
 	
 	if (speed > 0) {
