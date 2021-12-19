@@ -8,7 +8,7 @@ void WebApp::CreateEntity(picojson::object& entityData, ICameraController& camer
 
 
 void WebApp::Update(double dt) {
-    sim.Update(dt);
+    sim.Update(dt, keyValue);
 }
 
 void WebApp::FinishUpdate(picojson::object& returnValue) {
