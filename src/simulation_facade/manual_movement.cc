@@ -82,7 +82,7 @@ void ManualMovement::AlterVelocity(Vector3& dir, Vector3& vel) {
 			//ang = 0;
 		} else {
 			dir = Matrix3((M_PI * 2) - ang, 'y') * dir;
-			dir = Matrix3(-atan(dir.GetZ() / dir.GetY())-0.001, 'x') * dir;
+			dir = Matrix3(-atan(dir.GetZ() / dir.GetY())+0.001, 'x') * dir;
 			dir = Matrix3(ang, 'y') * dir;
 		}
 	} else {
@@ -106,15 +106,15 @@ void ManualMovement::AlterVelocity(Vector3& dir, Vector3& vel) {
 	if (keys[1] == 1) {
 		dir = yNegRot * dir;
 		ang -= 0.05;
-		if (ang < -2 * M_PI) {
+		/*if (ang < -2 * M_PI) {
 			ang += 2 * M_PI;
-		}
+		}*/
 	} else if (keys[1] == -1) {
 		dir = yPosRot * dir;
 		ang += 0.05;
-		if (ang >= 2 * M_PI) {
+		/*if (ang >= 2 * M_PI) {
 			ang -= 2 * M_PI;
-		}
+		}*/
 	}
 	
 
@@ -133,6 +133,10 @@ void ManualMovement::AlterVelocity(Vector3& dir, Vector3& vel) {
 		} else if (speed < 0) {
 			speed += 0.1;
 		}
+		if (speed < 0.01 || speed > -0.01) {
+			speed = 0;
+		}
+		std::cout << speed << std::endl;
 	}
 	
 	if (speed > 0) {
