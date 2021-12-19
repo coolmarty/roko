@@ -30,6 +30,7 @@ void SearchAndRescue::Search(Point3* position, Vector3* direction, Vector3* velo
 
 	roko.SetMovementPattern(initialize_pattern);
 	roko.movement_pattern->MovePath(Point3 *pos); */
+
 	
 	if (*position == rechargeLocation || (position->GetX() <= rechargeLocation.GetX()+0.05 && position->GetX() >= rechargeLocation.GetX()-0.05 && position->GetZ() <= rechargeLocation.GetZ()+0.05 && position->GetZ() >= rechargeLocation.GetZ()-0.05) && pathToRecharge ) {
 		NextNode(position, savedDestination, travelDirection);
