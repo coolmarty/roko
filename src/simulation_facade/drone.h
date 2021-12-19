@@ -67,12 +67,6 @@ public:
 	~Drone();
 
 	/**
-	 * @brief calls to MovePath, defunct due to SearchAndRescue
-	 *
-	 */
-	void Move();
-
-	/**
 	 * @brief Takes a picture using camera
 	 *
 	 */

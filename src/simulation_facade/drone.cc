@@ -49,13 +49,10 @@ Drone::Drone(const Drone& old){
 void Drone::TakePicture(){
 }
 
-void Drone::Move(){
-	//MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity, float *dt);
-}
-
 void Drone::Update(float dt){
 	
 	Point3 noRobot = Point3(-1, -1, -1);
+	Point3 rechargeStation = Point3(50, 0, 20);
 
 	// BELOW ADDS DATA TO THE basilisk-data-collection.csv FILE BUT PREVENTS THE SIMULATION FROM RUNNING FAST
 	// IF WE WISH TO RUN THE SIMULATION SLOWLY IN ORDER TO UPDATE DATA, UNCOMMENT THAT LINE
@@ -71,6 +68,10 @@ void Drone::Update(float dt){
 		// TODO
 	}
 
+	if(battery.GetBatteryLife() < 20){
+		BeelineMovement(rechargeStation).MovePath(position, direction, velocity);
+	}
+
 	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
 	Vector3 timeStep = Vector3(velocity.GetX() * dt,
 							   velocity.GetY() * dt,
@@ -84,5 +85,6 @@ void Drone::Update(float dt){
 	position.SetY(position.GetY() + timeStep.GetY());
 	position.SetZ(position.GetZ() + timeStep.GetZ());
 
+	battery.SetBatteryLife(battery.GetBatteryLife() - dt);
 	time += dt;
 }
