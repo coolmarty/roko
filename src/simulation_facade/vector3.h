@@ -2,7 +2,7 @@
  * @file vector3.h
  *
  */
- #ifndef VECTOR3_H_
+  #ifndef VECTOR3_H_
 #define VECTOR3_H_
 
 /**
@@ -22,6 +22,7 @@ public:
 	 *
 	 */
 	Vector3(float a, float b, float c);
+
 
 	/**
 	 * @brief copy constructor
