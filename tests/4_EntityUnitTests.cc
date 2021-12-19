@@ -49,7 +49,7 @@ TEST_F(DroneTest, CreateDefaultDrone) {
   EXPECT_EQ(actualPos.GetY(),expectedPos.GetY());
   EXPECT_EQ(actualPos.GetZ(),expectedPos.GetZ());
 
-  Vector3 expectedDir = Vector3(0,0,0);
+  Vector3 expectedDir = Vector3(0,0,1);
   Vector3 actualDir = drone.GetDirection();
   EXPECT_EQ(actualDir.GetX(),expectedDir.GetX());
   EXPECT_EQ(actualDir.GetY(),expectedDir.GetY());

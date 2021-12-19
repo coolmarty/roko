@@ -13,8 +13,7 @@
 #include "battery.h"
 #include "movement_strategy.h"
 #include "data.h"
-#include "beeline.h"
-#include "patrol.h"
+#include "manual_movement.h"
 #include "search_and_rescue.h"
 /*******************************************************************************
  * Class Definitions
@@ -66,11 +65,6 @@ public:
 	 */
 	~Drone();
 
-	/**
-	 * @brief calls to MovePath, defunct due to SearchAndRescue
-	 *
-	 */
-	void Move();
 
 	/**
 	 * @brief Takes a picture using camera
@@ -86,6 +80,7 @@ public:
 
     Battery battery;
 
+	void SetKeys(int* arr);
 private:
 	Point3 robotFound;
 	SearchAndRescue movementAccessor;
@@ -93,7 +88,9 @@ private:
 	Point3 savedDestination;
 	int travelDirection; // the direction the Drone's destination will change
 	bool manual;
+	ManualMovement manualMove;
 	Data storage;
+	int swap_cooldown = 0;
 };
 
 #endif
