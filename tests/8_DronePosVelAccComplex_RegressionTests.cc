@@ -9,8 +9,9 @@ the physics of Drone should operate across any version, due to the fundamental p
 of entity. Along with testing the connections between the two Vector3 and Point3 variables,
 this will also test a combination of positive and negative movement directions to ensure
 the drone is capable of calculating, getting, and setting the necessary movement values
-in a single run of a function. The acceleration checked is 1000, a drastic amount to ensure
-it functions even with extreme accelerations that would otherwise far remove it from the map.
+in a single run of a function, omnidirectionally. The acceleration checked is 1000, a
+drastic amount to ensure it functions even with extreme accelerations that would otherwise
+far remove it from the map.
 
 */
 
