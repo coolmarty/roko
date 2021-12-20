@@ -69,7 +69,7 @@ public:
 	 * @brief Takes a picture using camera
 	 *
 	 */
-	// void TakePicture();
+	void TakePicture();
 
 	/**
 	 * @brief Updates in line with the simulation
@@ -77,11 +77,21 @@ public:
 	 */
 	void Update(float dt);
 
-    Battery battery;
-
+	/**
+	 * @brief Detects key presses
+	 *
+	 */
 	void SetKeys(int* arr);
 	
+	/**
+	 * @brief Sets robotFound to Point3 r
+	 *
+	 */
 	void SRF(Point3 r);
+
+
+
+    Battery battery;
 private:
 	Point3 robotFound;
 	SearchAndRescue movementAccessor;
