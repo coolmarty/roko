@@ -15,10 +15,10 @@
 #include "data.h"
 #include "manual_movement.h"
 #include "search_and_rescue.h"
+#include "rechargestation.h"
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
-
 /**
  * @brief The main class used for drones
  *
@@ -77,11 +77,13 @@ public:
 	 */
 	void Update(float dt);
 
-    Battery battery;
-
+        Battery battery;
 	void SetKeys(int* arr);
-	
+
+	RechargeStation* rs;
+
 	void SRF(Point3 r);
+
 private:
 	Point3 robotFound;
 	SearchAndRescue movementAccessor;
