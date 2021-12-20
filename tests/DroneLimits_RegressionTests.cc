@@ -1,6 +1,15 @@
 #include "gtest/gtest.h"
 #include "drone.h"
 
+/*
+
+Based on the basic ideas on how position and velocity are coorelated, it should always be true that
+incrementing a Drone's position by its velocity should be stable and consistent. In order to test
+this, we will use very large velocities in order to ensure that position will be what it is supposed
+to even with large increments of velocity.
+
+*/
+
 class DroneTest : public ::testing::Test {
 public:
   void SetUp( ) {
