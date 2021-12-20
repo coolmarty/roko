@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y \
 
 ENV DEP_DIR=/project/grades/Fall-2021/csci3081/dependencies
 ENV SRC_DIR=/env
+ENV project_port 8081
+ENV USE_REPO_DIR 1
 
 RUN mkdir -p ${SRC_DIR}
 RUN mkdir -p ${DEP_DIR}
@@ -63,8 +65,8 @@ RUN echo DEP_DIR=${DEP_DIR} > config/settings
 RUN make 
 
 # uncomment if you have docs
-# WORKDIR /home/user/repo/project/docs
-# RUN doxygen Doxyfile
+WORKDIR /home/user/repo/project/docs
+RUN doxygen Doxyfile
 
 # image for the project
 FROM ubuntu:18.04 as sim
@@ -86,8 +88,7 @@ COPY --from=builder /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 /usr/lib/x86_64-l
 COPY --from=builder ${DEP_DIR}/lib/libimageio.so /sim/lib/
 COPY --from=builder /home/user/repo/project/web /sim/web
 COPY --from=builder /home/user/repo/project/data /sim/data
-# uncomment if you have docs
-# COPY --from=builder /home/user/repo/project/docs/html /sim/web/docs
+COPY --from=builder /home/user/repo/project/docs/html /sim/web/docs
 COPY --from=builder /home/user/repo/project/build/web-app /sim/bin
 COPY --from=builder /home/user/repo/project/build/test-app /sim/bin
 
