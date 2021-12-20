@@ -77,13 +77,22 @@ public:
 	 */
 	void Update(float dt);
 
-        Battery battery;
+	/**
+	 * @brief Detects key presses
+	 *
+	 */
 	void SetKeys(int* arr);
-
-	RechargeStation* rs;
-
+	
+	/**
+	 * @brief Sets robotFound to Point3 r
+	 *
+	 */
 	void SRF(Point3 r);
 
+    Battery battery;
+
+	RechargeStation* rs;
+	
 private:
 	Point3 robotFound;
 	SearchAndRescue movementAccessor;

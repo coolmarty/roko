@@ -81,6 +81,11 @@ void Drone::Update(float dt){
 	Point3 rechargeLocation = Point3(50, 0, 20);
 
 
+
+
+	// takes picture (duh)
+	// GetCamera(0)->TakePicture();
+
 	// BELOW ADDS DATA TO THE basilisk-data-collection.csv FILE BUT PREVENTS THE SIMULATION FROM RUNNING FAST
 	// IF WE WISH TO RUN THE SIMULATION SLOWLY IN ORDER TO UPDATE DATA, UNCOMMENT THAT LINE
 	// storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
@@ -104,9 +109,6 @@ void Drone::Update(float dt){
 	Vector3 timeStep = Vector3(velocity.GetX() * dt,
 							   velocity.GetY() * dt,
 							   velocity.GetZ() * dt);
-
-	// takes picture (duh)
-	TakePicture();
 
 	// changes position by the time step to move it gradually forward to its destination
 	position.SetX(position.GetX() + timeStep.GetX());
