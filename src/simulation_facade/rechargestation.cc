@@ -35,7 +35,7 @@ void RechargeStation::Recharge(Battery* battery){
     battery->SetBatteryLife(battery->GetBatteryLife() + 0.1);
     chargetaken += 0.1;
  //   usleep(100);
-  std::cout << "We're at:"  << battery->GetBatteryLife() << std::endl;
+  // std::cout << "We're at:"  << battery->GetBatteryLife() << std::endl;
   }
   if(battery->GetBatteryLife() >= 100.0){
     powercells.SetFirstBattery(powercells.GetFirstBatteryLife() - chargetaken);
@@ -50,7 +50,7 @@ void RechargeStation::Recharge(Battery* battery){
     while (battery->GetBatteryLife() < 100.0){ //this for loop doesn't need the second condition because if it took even 0.1 charge off the first battery, it can't drain the next battery.
       battery->SetBatteryLife(battery->GetBatteryLife() + 0.1);
       chargetaken += 0.1;
-      std::cout << "We're at:"  << battery->GetBatteryLife() << std::endl;
+      // std::cout << "We're at:"  << battery->GetBatteryLife() << std::endl;
    //   usleep(100);
     }
     powercells.SetFirstBattery(powercells.GetFirstBatteryLife() - chargetaken);
