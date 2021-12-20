@@ -70,7 +70,7 @@ public:
 	 * @brief Takes a picture using camera
 	 *
 	 */
-	void TakePicture();
+	// void TakePicture();
 
 	/**
 	 * @brief Updates in line with the simulation

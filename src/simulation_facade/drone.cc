@@ -47,8 +47,16 @@ Drone::Drone(const Drone& old){
 	battery = old.battery;
 }
 
-void Drone::TakePicture(){
-}
+// void Drone::TakePicture(){
+// 	bool found
+// 	double pos[3];
+// 	found = cameras[0].ProcessImages(cameras[0].id, position.GetX(), position.GetY(), position.GetZ()).found
+// 	if(){
+// 		robotFound.SetX(cameras.pos[0]);
+// 		robotFound.SetY(cameras.pos[1]);
+// 		robotFound.SetZ(cameras.pos[2]);
+// 	}
+// }
 
 void Drone::SetKeys(int* arr) {
 	if (arr[4] == 1 && swap_cooldown == 0) {
@@ -74,9 +82,14 @@ void Drone::Update(float dt){
 	
 	Point3 noRobot = Point3(-1, -1, -1);
 
+
+
+	// takes picture (duh)
+	// GetCamera(0)->TakePicture();
+
 	// BELOW ADDS DATA TO THE basilisk-data-collection.csv FILE BUT PREVENTS THE SIMULATION FROM RUNNING FAST
 	// IF WE WISH TO RUN THE SIMULATION SLOWLY IN ORDER TO UPDATE DATA, UNCOMMENT THAT LINE
-	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
+	// storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
 	
 	if (!manual) {
 		if (robotFound == noRobot) {
@@ -92,9 +105,6 @@ void Drone::Update(float dt){
 	Vector3 timeStep = Vector3(velocity.GetX() * dt,
 							   velocity.GetY() * dt,
 							   velocity.GetZ() * dt);
-
-	// takes picture (duh)
-	TakePicture();
 
 	// changes position by the time step to move it gradually forward to its destination
 	position.SetX(position.GetX() + timeStep.GetX());
