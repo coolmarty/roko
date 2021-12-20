@@ -11,10 +11,14 @@
  ******************************************************************************/
 #include "entity.h"
 #include "battery.h"
+#include "movement_strategy.h"
+#include "data.h"
+#include "manual_movement.h"
+#include "search_and_rescue.h"
+#include "rechargestation.h"
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
-
 /**
  * @brief The main class used for drones
  *
@@ -23,6 +27,11 @@
 class Drone : public Entity{
 public:
 
+	/**
+	 * @brief Manual Movement
+	 *
+	 * 
+	 */
 	void SetJoystick(double x, double y, double z, double a) {
 		Vector3 dir = Vector3(x,y,z);
 		this->SetDirection(dir);
@@ -34,40 +43,66 @@ public:
 	 * @return a drone object
 	 */
 	Drone();
-
+	
 	/**
 	 * @brief an overloaded constructer for Drones
 	 *
 	 * @return a drone object
 	 */
-	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, Vector3 newAcceleration, float newTime);
+	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, Point3 newDestination, Point3 newSavedDestination, int newDestDirection);
 
 	/**
 	 * @brief copy constructor for drone
 	 *
 	 * @return a drone object
 	 */
-	Drone(const Drone& old);
+	Drone(const Drone &old);
 
+	/**
+	 * @brief destructor for drone
+	 *
+	 * 
+	 */
 	~Drone();
 
-	// Point3 GetPosition();
-	// Direction GetDirection();
-	// Vector3 GetVelocity();
-	// Vector3 GetAcceleration();
-	// float GetTime();
-
-	// void SetPosition(Point3 newPosition);
-	// void SetDirection(Direction newDirection);
-	// void SetVelocity(Vector3 newVelocity);
-	// void SetAcceleration(Vector3 newAcceleration);
-	// void SetTime(float newTime);
-
-	void Move();
+	/**
+	 * @brief Takes a picture using camera
+	 *
+	 */
 	void TakePicture();
 
+	/**
+	 * @brief Updates in line with the simulation
+	 *
+	 */
 	void Update(float dt);
-        Battery battery;
+
+	/**
+	 * @brief Detects key presses
+	 *
+	 */
+	void SetKeys(int* arr);
+	
+	/**
+	 * @brief Sets robotFound to Point3 r
+	 *
+	 */
+	void SRF(Point3 r);
+
+    Battery battery;
+
+	RechargeStation* rs;
+	
+private:
+	Point3 robotFound;
+	SearchAndRescue movementAccessor;
+	Point3 travelDestination; // the point which the Drone will move to
+	Point3 savedDestination;
+	int travelDirection; // the direction the Drone's destination will change
+	bool manual;
+	ManualMovement manualMove;
+	Data storage;
+	int swap_cooldown = 0;
 };
 
 #endif

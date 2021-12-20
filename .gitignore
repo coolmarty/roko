@@ -5,3 +5,7 @@
 *.jpg
 *-app
 build
+bin/
+config/
+
+!web/assets/texture/*.png

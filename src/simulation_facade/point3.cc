@@ -12,7 +12,7 @@ Point3::Point3(float a, float b, float c){
 	z = c;
 }
 
-Point3::Point3(const Point3& old){
+Point3::Point3(const Point3 &old){
 	x = old.x;
 	y = old.y;
 	z = old.z;
@@ -36,4 +36,12 @@ void Point3::SetY(float newy){
 }
 void Point3::SetZ(float newz){
 	z = newz;
+}
+
+bool Point3::operator==(const Point3 &other) {
+	return ((x == other.x) && (y == other.y) && (z == other.z));
+}
+
+bool Point3::operator!=(const Point3 &p){
+      return !(p.x == this->x && p.y == this->y && this->z == p.z);
 }

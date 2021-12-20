@@ -2,7 +2,7 @@
  * @file point3.h
  *
  */
-#ifndef POINT3_H_
+ #ifndef POINT3_H_
 #define POINT3_H_
 
 /**
@@ -46,7 +46,6 @@ public:
 	 *
 	 */
 	float GetZ();
-
 	/**
 	 * @brief The setter for x
 	 *
@@ -64,6 +63,16 @@ public:
 	 *
 	 */
 	void SetZ(float newz);
+	
+	bool operator==(const Point3& other);
+
+	bool operator!=(const Point3& p);
+		
+	
+
+
+
+
 
 private:
 	float x, y, z;

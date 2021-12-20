@@ -43,7 +43,7 @@ public:
    *
    *
    */
-  void Update(double dt);
+  void Update(double dt, const std::map<std::string,int>& keyStatus);
 
   /**
    * @brief creates a json object with updated data for all entities to send to the server

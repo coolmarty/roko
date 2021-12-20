@@ -1,99 +1,116 @@
 #include "drone.h"
 
-
 Drone::Drone(){
 	position = Point3();
-	direction = Vector3();
-	velocity = Vector3();
-	acceleration = Vector3(0,9.8,0);
+	direction = Vector3(0, 0, 1);
+	velocity = Vector3(5,5,5);
 	time = 0;
-  battery = (Battery());
+	robotFound = Point3(-1,-1,-1);
+	travelDestination = Point3(-1000, 80, -1000); //initial travelDestination is the southwest corner
+	savedDestination = Point3(-1000, 80, -1000);
+	travelDirection = 0;
+  	battery = (Battery());
+  	movementAccessor = SearchAndRescue();
+	manual = false;
+	manualMove = ManualMovement();
+	storage = Data();
+	battery = *(new Battery(100));
+	rs = new RechargeStation(Point3(50,0,20));
 }
 
-Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, Vector3 newAcceleration, float newTime){
+Drone::~Drone(){
+    for (int i = 0; i < cameras.size(); i++) {
+            delete cameras[i];
+    }
+}
+
+Drone::Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, Point3 newDestination, Point3 newSavedDestination, int newDestDirection){
 	position = newPosition;
 	direction = newDirection;
 	velocity = newVelocity;
-	acceleration = newAcceleration;
 	time = newTime;
-  battery = Battery();
+	robotFound = Point3(-1,-1,-1);
+	travelDestination = newDestination;
+	savedDestination = newSavedDestination;
+	travelDirection = newDestDirection;
+	storage = Data();
+	battery = *(new Battery());
 }
 
 Drone::Drone(const Drone& old){
 	position = old.position;
 	direction = old.direction;
 	velocity = old.velocity;
-	acceleration = old.acceleration;
 	time = old.time;
+	robotFound = old.robotFound;
+	travelDestination = old.travelDestination;
+	travelDirection = old.travelDirection;
 	battery = old.battery;
 }
 
-Drone::~Drone(){
-	for (int i = 0; i < cameras.size(); i++) {
-			delete cameras[i];
-	}
+void Drone::SRF(Point3 r){
+  robotFound = r;
+}
+void Drone::TakePicture(){
 }
 
-// Point3 Drone::GetPosition(){
-// 	return position;
-// }
-// Direction Drone::GetDirection(){
-// 	return direction;
-// }
-// Vector3 Drone::GetVelocity(){
-// 	return velocity;
-// }
-// Vector3 Drone::GetAcceleration(){
-// 	return acceleration;
-// }
-// float Drone::GetTime(){
-// 	return time;
-// }
+void Drone::SetKeys(int* arr) {
+	if (arr[4] == 1 && swap_cooldown == 0) {
+		if (manual) {
+			manual = false;
+			velocity.SetX(0);
+			velocity.SetY(0);
+			velocity.SetZ(0);
+		} else {
+			manual = true;
+			velocity = Vector3(0,0,0);
+			direction = Vector3(0,0,1);
+			manualMove.SetAng(0);
+		}
+		swap_cooldown = 10;
+	}
+	if (swap_cooldown > 0) { swap_cooldown -= 1; }
 
-// void Drone::SetPosition(Point3 newPosition){
-// 	position = newPosition;
-// }
-// void Drone::SetDirection(Direction newDirection){
-// 	direction = newDirection;
-// }
-// void Drone::SetVelocity(Vector3 newVelocity){
-// 	velocity = newVelocity;
-// }
-// void Drone::SetAcceleration(Vector3 newAcceleration){
-// 	acceleration = newAcceleration;
-// }
-// void Drone::SetTime(float newTime){
-// 	time = newTime;
-// }
-
-
-void Drone::Move(){
-
+	this->manualMove.ChangeKeys(arr);
 }
 
 void Drone::Update(float dt){
-		this->SetJoystick(
-        0,
-        0,
-        0,
-        0
-    );
+	// std::cout << "Battery Life: " << battery.GetBatteryLife() <<std::endl;
+	Point3 noRobot = Point3(-1, -1, -1);
 
-		Point3 position=this->GetPosition();
-		Vector3 direction = this->GetDirection();
-		position.SetX(position.GetX()+speed*direction.GetX()*dt);
-		position.SetY(position.GetY()+speed*direction.GetY()*dt);
-		position.SetZ(position.GetZ()+speed*direction.GetZ()*dt);
+	Point3 rechargeLocation = Point3(50, 0, 20);
 
-		this->SetPosition(position);
-		this->SetDirection(direction);
 
-		 // Take a picture every 5 seconds with front camera
-		 this->SetTime(this->GetTime()+dt);
+	if( ((int) (time * 100)) % 10 <= 1 ){ // setting the simulation speed high with addData would crash it. This is to only set it at certain intervals
+		storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
+	}
+	
+	if (!manual) {
+		if (robotFound == noRobot) {
+			movementAccessor.Search(&position, &direction, &velocity, &travelDestination, &savedDestination, &travelDirection);
+		} else {
+			movementAccessor.Rescue(&position, &direction, &velocity, robotFound);
+		}
+	} else {
+		manualMove.AlterVelocity(direction, velocity);
+	}
+	if(position == rechargeLocation || (position.GetX() <= rechargeLocation.GetX()+0.05 && position.GetX() >= rechargeLocation.GetX()-0.05 && position.GetZ() <= rechargeLocation.GetZ()+0.05 && position.GetZ() >= rechargeLocation.GetZ()-0.05)){
+	    rs->Recharge(&battery);
+	}	  
+	
+	
 
-		 if (this->GetTime()-lastPictureTime > 5.0) {
-			 	 std::cout<<"taking photo"<<std::endl;
-				 this->GetCamera(0)->TakePicture();
-				 lastPictureTime = this->GetTime();
-		 }
+	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
+	Vector3 timeStep = Vector3(velocity.GetX() * dt,
+							   velocity.GetY() * dt,
+							   velocity.GetZ() * dt);
+
+	// changes position by the time step to move it gradually forward to its destination
+	position.SetX(position.GetX() + timeStep.GetX());
+	position.SetY(position.GetY() + timeStep.GetY());
+	position.SetZ(position.GetZ() + timeStep.GetZ());
+
+	battery.SetBatteryLife(battery.GetBatteryLife() - dt);
+
+	time += dt;
 }
