@@ -38,7 +38,7 @@ void BeelineMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *ve
 	if(speed < 0){
 		speed = abs(speed);
 	}else if(speed == 0){
-		speed = 1;
+		speed = 3;
 	}
 
 	// sets velocity to the normalized vector multiplied by speed

@@ -75,20 +75,15 @@ void Drone::SetKeys(int* arr) {
 }
 
 void Drone::Update(float dt){
-	std::cout << "BAttery Life: " << battery.GetBatteryLife() <<std::endl;
+	// std::cout << "Battery Life: " << battery.GetBatteryLife() <<std::endl;
 	Point3 noRobot = Point3(-1, -1, -1);
 
 	Point3 rechargeLocation = Point3(50, 0, 20);
 
 
-
-
-	// takes picture (duh)
-	// GetCamera(0)->TakePicture();
-
-	// BELOW ADDS DATA TO THE basilisk-data-collection.csv FILE BUT PREVENTS THE SIMULATION FROM RUNNING FAST
-	// IF WE WISH TO RUN THE SIMULATION SLOWLY IN ORDER TO UPDATE DATA, UNCOMMENT THAT LINE
-	// storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
+	if( ((int) (time * 100)) % 10 <= 1 ){ // setting the simulation speed high with addData would crash it. This is to only set it at certain intervals
+		storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
+	}
 	
 	if (!manual) {
 		if (robotFound == noRobot) {
