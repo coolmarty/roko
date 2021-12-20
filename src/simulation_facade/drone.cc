@@ -47,16 +47,11 @@ Drone::Drone(const Drone& old){
 	battery = old.battery;
 }
 
-// void Drone::TakePicture(){
-// 	bool found
-// 	double pos[3];
-// 	found = cameras[0].ProcessImages(cameras[0].id, position.GetX(), position.GetY(), position.GetZ()).found
-// 	if(){
-// 		robotFound.SetX(cameras.pos[0]);
-// 		robotFound.SetY(cameras.pos[1]);
-// 		robotFound.SetZ(cameras.pos[2]);
-// 	}
-// }
+void Drone::SRF(Point3 r){
+  robotFound = r;
+}
+void Drone::TakePicture(){
+}
 
 void Drone::SetKeys(int* arr) {
 	if (arr[4] == 1 && swap_cooldown == 0) {
@@ -81,6 +76,7 @@ void Drone::SetKeys(int* arr) {
 void Drone::Update(float dt){
 	
 	Point3 noRobot = Point3(-1, -1, -1);
+	Point3 rechargeStation = Point3(50, 0, 20);
 
 
 
@@ -111,5 +107,6 @@ void Drone::Update(float dt){
 	position.SetY(position.GetY() + timeStep.GetY());
 	position.SetZ(position.GetZ() + timeStep.GetZ());
 
+	battery.SetBatteryLife(battery.GetBatteryLife() - dt);
 	time += dt;
 }
