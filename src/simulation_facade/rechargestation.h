@@ -16,7 +16,6 @@
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
-class Drone;
 
 /**
  * @brief The main class of RechargeStation
@@ -54,7 +53,7 @@ class RechargeStation : public Entity{
 * @brief Function to recharge a drone object passed in as a parameter, will drain power cells of the Recharge Station. If the power cell gets drained, it will discard it and take charge off the next one in line.
 *
 */
-    void Recharge(Drone* drone);
+    void Recharge(Battery* battery);
 /**
 * @brief Returns the busy boolean so two drones don't to refill at once.
 *

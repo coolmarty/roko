@@ -3,7 +3,7 @@
 Drone::Drone(){
 	position = Point3();
 	direction = Vector3(0, 0, 1);
-	velocity = Vector3();
+	velocity = Vector3(5,5,5);
 	time = 0;
 	robotFound = Point3(-1,-1,-1);
 	travelDestination = Point3(-1000, 80, -1000); //initial travelDestination is the southwest corner
@@ -14,8 +14,8 @@ Drone::Drone(){
 	manual = false;
 	manualMove = ManualMovement();
 	storage = Data();
-	battery = *(new Battery());
-	RechargeStation* rs = new RechargeStation(Point3(50,0,20));
+	battery = *(new Battery(100));
+	rs = new RechargeStation(Point3(50,0,20));
 }
 
 Drone::~Drone(){
@@ -72,7 +72,7 @@ void Drone::SetKeys(int* arr) {
 }
 
 void Drone::Update(float dt){
-	
+	std::cout << "BAttery Life: " << battery.GetBatteryLife() <<std::endl;
 	Point3 noRobot = Point3(-1, -1, -1);
 	Point3 rechargeLocation = Point3(50, 0, 20);
 
@@ -89,15 +89,10 @@ void Drone::Update(float dt){
 	} else {
 		manualMove.AlterVelocity(direction, velocity);
 	}
-	if(battery.GetBatteryLife() > 20.0){
-	  if(position == rechargeLocation || (position.GetX() <= rechargeLocation.GetX()+0.05 && position.GetX() >= rechargeLocation.GetX()-0.05 && position.GetZ() <= rechargeLocation.GetZ()+0.05 && position.GetZ() >= rechargeLocation.GetZ()-0.05)){
-	    rs->Recharge(this);
-	  }
-	  else{
-	    BeelineMovement(rechargeLocation).MovePath(&position, &direction, &velocity);
-	  }
-	  
-	}
+	if(position == rechargeLocation || (position.GetX() <= rechargeLocation.GetX()+0.05 && position.GetX() >= rechargeLocation.GetX()-0.05 && position.GetZ() <= rechargeLocation.GetZ()+0.05 && position.GetZ() >= rechargeLocation.GetZ()-0.05)){
+	    rs->Recharge(&battery);
+	}	  
+	
 	
 
 	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
@@ -112,6 +107,6 @@ void Drone::Update(float dt){
 	position.SetX(position.GetX() + timeStep.GetX());
 	position.SetY(position.GetY() + timeStep.GetY());
 	position.SetZ(position.GetZ() + timeStep.GetZ());
-
+        battery.SetBatteryLife(battery.GetBatteryLife() - dt);
 	time += dt;
 }
