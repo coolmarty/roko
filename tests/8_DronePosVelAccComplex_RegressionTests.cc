@@ -28,6 +28,7 @@ TEST_F(DroneTest, XNegYNegZNegComplexTest) {
   drone = Drone();
 
   drone.SetAcceleration(-1000, -1000, -1000);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -60,6 +61,7 @@ TEST_F(DroneTest, XPosYNegZNegComplexTest) {
   drone = Drone();
 
   drone.SetAcceleration(1000, -1000, -1000);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -92,6 +94,7 @@ TEST_F(DroneTest, XNegYPosZNegComplexTest) {
   drone = Drone();
 
   drone.SetAcceleration(-1000, 1000, -1000);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -124,6 +127,7 @@ TEST_F(DroneTest, XNegYNegZPosComplexTest) {
   drone = Drone();
 
   drone.SetAcceleration(-1000, -1000, 1000);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -156,6 +160,7 @@ TEST_F(DroneTest, XPosYPosZNegComplexTest) {
   drone = Drone();
 
   drone.SetAcceleration(1000, 1000, -1000);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -188,6 +193,7 @@ TEST_F(DroneTest, XPosYNegZPosComplexTest) {
   drone = Drone();
 
   drone.SetAcceleration(1000, -1000, 1000);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -220,6 +226,7 @@ TEST_F(DroneTest, XNegYPosZPosComplexTest) {
   drone = Drone();
 
   drone.SetAcceleration(-1000, 1000, 1000);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -252,6 +259,7 @@ TEST_F(DroneTest, XPosYPosZPosComplexTest) {
   drone = Drone();
 
   drone.SetAcceleration(1000, 1000, 1000);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),

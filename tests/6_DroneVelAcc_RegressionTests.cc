@@ -22,6 +22,7 @@ TEST_F(DroneTest, XNegAccelerationTest) {
   drone = Drone();
 
   drone.SetAcceleration(-1000, 0, 0);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -44,6 +45,7 @@ TEST_F(DroneTest, XPosAccelerationTest) {
   drone = Drone();
 
   drone.SetAcceleration(1000, 0, 0);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -66,6 +68,7 @@ TEST_F(DroneTest, YNegAccelerationTest) {
   drone = Drone();
 
   drone.SetAcceleration(0, -1000, 0);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -88,6 +91,7 @@ TEST_F(DroneTest, YPosAccelerationTest) {
   drone = Drone();
 
   drone.SetAcceleration(0, 1000, 0);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -110,6 +114,7 @@ TEST_F(DroneTest, ZNegAccelerationTest) {
   drone = Drone();
 
   drone.SetAcceleration(0, 0, -1000);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
@@ -132,6 +137,7 @@ TEST_F(DroneTest, ZPosAccelerationTest) {
   drone = Drone();
 
   drone.SetAcceleration(0, 0, 1000);
+  drone.SetVelocity(0, 0, 0);
 
   drone.SetVelocity(drone.GetAcceleration().GetX() + drone.GetVelocity().GetX(),
                     drone.GetAcceleration().GetY() + drone.GetVelocity().GetY(),
