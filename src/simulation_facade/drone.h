@@ -18,7 +18,7 @@
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
-
+class RechargeStation;
 /**
  * @brief The main class used for drones
  *
@@ -79,7 +79,6 @@ public:
 	void Update(float dt);
 
     Battery battery;
-
 	void SetKeys(int* arr);
 private:
 	Point3 robotFound;

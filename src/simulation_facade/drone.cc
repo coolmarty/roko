@@ -15,6 +15,7 @@ Drone::Drone(){
 	manualMove = ManualMovement();
 	storage = Data();
 	battery = *(new Battery());
+	RechargeStation* rs = new RechargeStation(Point3(50,0,20));
 }
 
 Drone::~Drone(){
@@ -73,6 +74,7 @@ void Drone::SetKeys(int* arr) {
 void Drone::Update(float dt){
 	
 	Point3 noRobot = Point3(-1, -1, -1);
+	Point3 rechargeLocation = Point3(50, 0, 20);
 
 	// BELOW ADDS DATA TO THE basilisk-data-collection.csv FILE BUT PREVENTS THE SIMULATION FROM RUNNING FAST
 	// IF WE WISH TO RUN THE SIMULATION SLOWLY IN ORDER TO UPDATE DATA, UNCOMMENT THAT LINE
@@ -87,6 +89,16 @@ void Drone::Update(float dt){
 	} else {
 		manualMove.AlterVelocity(direction, velocity);
 	}
+	if(battery.GetBatteryLife() > 20.0){
+	  if(position == rechargeLocation || (position.GetX() <= rechargeLocation.GetX()+0.05 && position.GetX() >= rechargeLocation.GetX()-0.05 && position.GetZ() <= rechargeLocation.GetZ()+0.05 && position.GetZ() >= rechargeLocation.GetZ()-0.05)){
+	    rs->Recharge(this);
+	  }
+	  else{
+	    BeelineMovement(rechargeLocation).MovePath(&position, &direction, &velocity);
+	  }
+	  
+	}
+	
 
 	// time step is velocity times dt. dt has yet to be implemented properly, it's a placeholder for now
 	Vector3 timeStep = Vector3(velocity.GetX() * dt,
