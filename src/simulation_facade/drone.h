@@ -13,8 +13,7 @@
 #include "battery.h"
 #include "movement_strategy.h"
 #include "data.h"
-#include "beeline.h"
-#include "patrol.h"
+#include "manual_movement.h"
 #include "search_and_rescue.h"
 /*******************************************************************************
  * Class Definitions
@@ -28,6 +27,11 @@
 class Drone : public Entity{
 public:
 
+	/**
+	 * @brief Manual Movement
+	 *
+	 * 
+	 */
 	void SetJoystick(double x, double y, double z, double a) {
 		Vector3 dir = Vector3(x,y,z);
 		this->SetDirection(dir);
@@ -45,7 +49,7 @@ public:
 	 *
 	 * @return a drone object
 	 */
-	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, int newTravelNode, int newCurrentNode);
+	Drone(Point3 newPosition, Vector3 newDirection, Vector3 newVelocity, float newTime, Point3 newDestination, Point3 newSavedDestination, int newDestDirection);
 
 	/**
 	 * @brief copy constructor for drone
@@ -54,33 +58,39 @@ public:
 	 */
 	Drone(const Drone &old);
 
+	/**
+	 * @brief destructor for drone
+	 *
+	 * 
+	 */
 	~Drone();
 
-	// Point3 GetPosition();
-	// Direction GetDirection();
-	// Vector3 GetVelocity();
-	// Vector3 GetAcceleration();
-	// float GetTime();
 
-	// void SetPosition(Point3 newPosition);
-	// void SetDirection(Direction newDirection);
-	// void SetVelocity(Vector3 newVelocity);
-	// void SetAcceleration(Vector3 newAcceleration);
-	// void SetTime(float newTime);
-
-	void Move();
+	/**
+	 * @brief Takes a picture using camera
+	 *
+	 */
 	void TakePicture();
 
+	/**
+	 * @brief Updates in line with the simulation
+	 *
+	 */
 	void Update(float dt);
 
     Battery battery;
 
+	void SetKeys(int* arr);
 private:
 	Point3 robotFound;
 	SearchAndRescue movementAccessor;
-	int travelNode; // keeps track of the drone's target location along the edge of the map, increments when it's at a recharge station
-	int currentNode; // for the drone's patrol, where it's currently moving to
+	Point3 travelDestination; // the point which the Drone will move to
+	Point3 savedDestination;
+	int travelDirection; // the direction the Drone's destination will change
 	bool manual;
+	ManualMovement manualMove;
+	Data storage;
+	int swap_cooldown = 0;
 };
 
 #endif

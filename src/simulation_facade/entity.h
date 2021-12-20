@@ -14,7 +14,6 @@
 #include "vector3.h"
 #include <vector>
 #include "camera.h"
-
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
@@ -153,6 +152,8 @@ public:
      void addCamera(Camera *camera);
 
      Camera *GetCamera(int index);
+	 
+	 virtual void SetKeys(int* arr) { };
 protected:
   Point3 position;
   Vector3 velocity;

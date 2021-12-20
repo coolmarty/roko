@@ -32,7 +32,7 @@ public:
   virtual Entity *create(picojson::object& entityData, ICameraController& cameraController)=0;
 
   /**
-   * @brief The function used to generate an entity, debug only since I couldn't get it to work without cameraController
+   * @brief The function used to generate an entity, debug only
    *
    * Takes in a picojson object containing all the data about an entity
    *

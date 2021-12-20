@@ -7,11 +7,12 @@ BeelineMovement::BeelineMovement(Point3 dest){
 }
 
 
+
 void BeelineMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *velocity){
 	// Vector from destination to position
-	Vector3 distanceVector = Vector3(position->GetX() - destination.GetX(), 
-										 position->GetY() - destination.GetY(),
-										 position->GetZ() - destination.GetZ());
+	Vector3 distanceVector = Vector3(destination.GetX() - position->GetX(), 
+									 destination.GetY() - position->GetY(),
+									 destination.GetZ() - position->GetZ());
 
 	// calculates the length of the distance
 	float distanceLength = sqrt(pow(distanceVector.GetX(),2) + 
@@ -20,8 +21,8 @@ void BeelineMovement::MovePath(Point3 *position, Vector3 *direction, Vector3 *ve
 
 	// normalizes the distance vector
 	Vector3 normalizedVector = Vector3(distanceVector.GetX()/distanceLength,
-										  distanceVector.GetY()/distanceLength,
-										  distanceVector.GetZ()/distanceLength);
+									   distanceVector.GetY()/distanceLength,
+									   distanceVector.GetZ()/distanceLength);
 
 	// sets change in direction
 	direction->SetX(normalizedVector.GetX());
