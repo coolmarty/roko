@@ -41,3 +41,7 @@ void Point3::SetZ(float newz){
 bool Point3::operator==(const Point3 &other) {
 	return ((x == other.x) && (y == other.y) && (z == other.z));
 }
+
+bool Point3::operator!=(const Point3 &p){
+      return !(p.x == this->x && p.y == this->y && this->z == p.z);
+}
