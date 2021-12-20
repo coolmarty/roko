@@ -47,6 +47,9 @@ Drone::Drone(const Drone& old){
 	battery = old.battery;
 }
 
+void Drone::SRF(Point3 r){
+  robotFound = r;
+}
 void Drone::TakePicture(){
 }
 

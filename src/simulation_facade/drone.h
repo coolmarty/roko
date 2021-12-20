@@ -80,6 +80,8 @@ public:
     Battery battery;
 
 	void SetKeys(int* arr);
+	
+	void SRF(Point3 r);
 private:
 	Point3 robotFound;
 	SearchAndRescue movementAccessor;
