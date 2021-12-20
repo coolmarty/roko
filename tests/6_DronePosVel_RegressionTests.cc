@@ -19,7 +19,7 @@ protected:
   Drone drone = Drone();
 };
 
-TEST_F(DroneTest, XNegLimitTest) {
+TEST_F(DroneTest, XNegVelocityTest) {
   drone = Drone();
 
   drone.SetVelocity(-1000, 0, 0);
@@ -41,7 +41,7 @@ TEST_F(DroneTest, XNegLimitTest) {
   EXPECT_EQ(actualVelo.GetZ(),expectedVelo.GetZ());
 }
 
-TEST_F(DroneTest, XPosLimitTest) {
+TEST_F(DroneTest, XPosVelocityTest) {
   drone = Drone();
 
   drone.SetVelocity(1000, 0, 0);
@@ -63,7 +63,7 @@ TEST_F(DroneTest, XPosLimitTest) {
   EXPECT_EQ(actualVelo.GetZ(),expectedVelo.GetZ());
 }
 
-TEST_F(DroneTest, YNegLimitTest) {
+TEST_F(DroneTest, YNegVelocityTest) {
   drone = Drone();
 
   drone.SetVelocity(0, -1000, 0);
@@ -85,7 +85,7 @@ TEST_F(DroneTest, YNegLimitTest) {
   EXPECT_EQ(actualVelo.GetZ(),expectedVelo.GetZ());
 }
 
-TEST_F(DroneTest, YPosLimitTest) {
+TEST_F(DroneTest, YPosVelocityTest) {
   drone = Drone();
 
   drone.SetVelocity(0, 1000, 0);
@@ -107,7 +107,7 @@ TEST_F(DroneTest, YPosLimitTest) {
   EXPECT_EQ(actualVelo.GetZ(),expectedVelo.GetZ());
 }
 
-TEST_F(DroneTest, ZNegLimitTest) {
+TEST_F(DroneTest, ZNegVelocityTest) {
   drone = Drone();
 
   drone.SetVelocity(0, 0, -1000);
@@ -129,7 +129,7 @@ TEST_F(DroneTest, ZNegLimitTest) {
   EXPECT_EQ(actualVelo.GetZ(),expectedVelo.GetZ());
 }
 
-TEST_F(DroneTest, ZPosLimitTest) {
+TEST_F(DroneTest, ZPosVelocityTest) {
   drone = Drone();
 
   drone.SetVelocity(0, 0, 1000);
