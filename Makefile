@@ -7,6 +7,7 @@ ROOT_DIR := $(shell git rev-parse --show-toplevel)
 WEB_DIR = /project/grades/Fall-2021/csci3081/dependencies/include/
 ACTUAL_LIB= /project/grades/Fall-2021/csci3081/dependencies/lib/
 BUILD_DIR = build
+DOCK_DIR = roko
 INCLUDES = -I.. -I$(DEP_DIR)/include -Isrc -I. -I$(DEP_DIR)/include -Iinclude -I. -I$(WEB_DIR) -Isrc/simulation_facade -Isrc/img_proc_src
 LIBDIRS = -L$(DEP_DIR)/lib -L$(ACTUAL_LIB)
 LIBS = -lCppWebServer -lwebsockets -lssl -lcrypto -lz -lpthread
@@ -26,7 +27,6 @@ IMG_PROC_FILES = $(shell find src/img_proc_src -name '*.cc')
 IMG_PROC_OBJFILES = $(addprefix $(BUILD_DIR)/, $(IMG_PROC_FILES:.cc=.o))
 IMG_PROC_EXEFILE = $(BUILD_DIR)/image-app
 
-
 all: web tests image_processor
 
 web: $(BUILD_DIR) $(WEBEXEFILE)
@@ -34,6 +34,11 @@ web: $(BUILD_DIR) $(WEBEXEFILE)
 tests: $(BUILD_DIR) $(TESTEXEFILE)
 
 image_processor: $(BUILD_DIR) $(IMG_PROC_EXEFILE)
+
+install: clean copy
+
+copy:
+	cp -a ../repo-team-22/. ../$(DOCK_DIR)
 
 # Object File Targets:
 $(BUILD_DIR)/%.o: %.cc
@@ -57,6 +62,6 @@ $(WEBEXEFILE): $(WEBOBJFILES)
 $(IMG_PROC_EXEFILE): $(IMG_PROC_OBJFILES)
 	$(CXX) $(CXXFLAGS) $(LIBDIRS) $(IMG_PROC_OBJFILES) -o $@
 
-
 clean:
 	rm -rf build
+	rm *.csv
