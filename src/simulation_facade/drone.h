@@ -65,7 +65,6 @@ public:
 	 */
 	~Drone();
 
-
 	/**
 	 * @brief Takes a picture using camera
 	 *

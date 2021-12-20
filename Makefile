@@ -64,3 +64,4 @@ $(IMG_PROC_EXEFILE): $(IMG_PROC_OBJFILES)
 
 clean:
 	rm -rf build
+	rm *.csv

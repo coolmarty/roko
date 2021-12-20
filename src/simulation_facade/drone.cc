@@ -73,10 +73,11 @@ void Drone::SetKeys(int* arr) {
 void Drone::Update(float dt){
 	
 	Point3 noRobot = Point3(-1, -1, -1);
+	Point3 rechargeStation = Point3(50, 0, 20);
 
 	// BELOW ADDS DATA TO THE basilisk-data-collection.csv FILE BUT PREVENTS THE SIMULATION FROM RUNNING FAST
 	// IF WE WISH TO RUN THE SIMULATION SLOWLY IN ORDER TO UPDATE DATA, UNCOMMENT THAT LINE
-	storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
+	// storage.addData(position, velocity, acceleration, direction, time, robotFound, travelDestination);
 	
 	if (!manual) {
 		if (robotFound == noRobot) {
@@ -101,5 +102,6 @@ void Drone::Update(float dt){
 	position.SetY(position.GetY() + timeStep.GetY());
 	position.SetZ(position.GetZ() + timeStep.GetZ());
 
+	battery.SetBatteryLife(battery.GetBatteryLife() - dt);
 	time += dt;
 }
