@@ -55,7 +55,7 @@ TEST_F(DroneTest, CreateDefaultDrone) {
   EXPECT_EQ(actualDir.GetY(),expectedDir.GetY());
   EXPECT_EQ(actualDir.GetZ(),expectedDir.GetZ());
 
-  Vector3 expectedVelo=Vector3(0,0,0);
+  Vector3 expectedVelo=Vector3(5,5,5);
   Vector3 actualVelo=drone.GetVelocity();
   EXPECT_EQ(actualVelo.GetX(),expectedVelo.GetX());
   EXPECT_EQ(actualVelo.GetY(),expectedVelo.GetY());
